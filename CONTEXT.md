@@ -148,7 +148,7 @@ Preguntas abiertas. No se inventan respuestas: se marcan como supuestos en el c�
    universidad)? ¿Qué significa «vs7»?
 2. **Volumen esperado:** casos por día, técnicos, sedes. Define el tamaño del servidor y si ClickHouse se
    justifica desde el día uno.
-3. **Servidor:** ¿el EC2 de Baruka (3.132.249.89), uno nuevo o el del cliente? ¿Dominio?
+3. **Servidor:** ¿el servidor de Baruka, uno nuevo o el del cliente? ¿Dominio?
 4. **Canales:** ¿WhatsApp con un número propio? ¿Correo entrante como canal (crear incidencia desde un correo)?
 5. **Identidad:** ¿cómo se identifica al usuario final (número de WhatsApp, correo corporativo, código de
    empleado)? ¿Hay directorio (LDAP, Google Workspace, Microsoft Entra)?
