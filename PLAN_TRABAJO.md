@@ -14,7 +14,10 @@ no tiene:
 Contexto: [`CONTEXT.md`](CONTEXT.md) · Reglas: [`AGENTS.md`](AGENTS.md) · Arquitectura:
 [`ARQUITECTURA.md`](ARQUITECTURA.md) · Diseño: [`DISENO.md`](DISENO.md) · Skills: [`SKILLS.md`](SKILLS.md).
 
-Estado: **F0 en curso** (05-10-2026). Las fases no llevan fechas: dependen del alcance que defina el cliente
+Estado (05-10-2026): **F1–F8 construidas en local** con pruebas propias; **F9 (desplegar, respaldos, seguridad) y F10 (piloto) pendientes**.
+Cambios respecto al plan: el backend se partió en **motor Go** (`backend/`) y **pasarela OCaml** (`pasarela/`); el port de kddesign se
+hizo reescribiendo para soporte, no copiando y recortando; Jev local corre en `sombra` y solo se midió con modelos sustitutos (no con
+Qwen3-1.7B). Todo dato de entrenamiento, semilla y artículo es sintético (`SUPUESTO:`). Las fases no llevan fechas: dependen del alcance que defina el cliente
 (`CONTEXT.md` §7).
 
 ---
