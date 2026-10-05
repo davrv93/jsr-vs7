@@ -1,0 +1,80 @@
+# nginx interno del contenedor «web». El nginx del borde (o un alias como /jsrbot/) solo hace proxy a este puerto.
+# La imagen oficial de nginx sustituye ${BACKEND_URL} al arrancar (solo las variables definidas; $host, $uri… no se tocan).
+
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+
+    client_max_body_size 10m;
+    server_tokens off;
+
+    # El DNS se consulta en cada petición (NGINX_LOCAL_RESOLVERS sale de /etc/resolv.conf; en una red de Docker es 127.0.0.11):
+    # si el backend está apagado, la consola arranca igual y /api contesta 502 hasta que vuelva, sin reiniciar nginx.
+    resolver ${NGINX_LOCAL_RESOLVERS} valid=15s ipv6=off;
+    set $backend ${BACKEND_URL};
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+
+    location = /healthz {
+        access_log off;
+        return 200 "ok\n";
+    }
+
+    # Eventos en vivo (SSE): sin búfer y con conexión larga.
+    location = /api/eventos {
+        proxy_pass $backend;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 1h;
+        add_header X-Accel-Buffering no always;
+    }
+
+    location /api/ {
+        proxy_pass $backend;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+        proxy_read_timeout 120s;
+    }
+
+    # El webhook de WhatsApp es interno (evolution-go → backend): no se expone por aquí.
+    location /webhook/ {
+        return 404;
+    }
+
+    # Estado público: /estado/<token> es una sola página estática; el token se lee de la URL en el navegador.
+    location ~ ^/estado/[^/]+/?$ {
+        rewrite ^ /estado/_/index.html break;
+        add_header Cache-Control "no-cache";
+    }
+
+    # Archivos con hash: caché larga.
+    location /build/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    error_page 404 /404.html;
+    location / {
+        try_files $uri $uri/index.html =404;
+        add_header Cache-Control "no-cache";
+    }
+}

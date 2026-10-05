@@ -1,0 +1,57 @@
+# Golden query pendientes_antiguedad · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: pendientes_antiguedad
+nombre: "Pendientes y antigüedad"
+version: 1
+unidad: "incidencias"
+dueno: Datos
+definicion: "Incidencias abiertas al cierre del periodo, repartidas por antigüedad desde su creación: menos de 1 día, de 1 a 3 días, de 3 a 7 días y más de 7 días."
+base: "Foto al fin del último día del periodo (00:00 de Lima del día siguiente a hasta), reconstruida desde los eventos: no importa cuándo se creó la incidencia ni cómo está hoy. El parámetro desde no se usa. El grupo es el que tenía la incidencia en el corte."
+parametros:
+  - hasta
+  - grupo
+atribucion_grupo: vigente_al_corte
+columnas:
+  - "tramo: antiguedad desde la creacion, en dias de 24 h"
+  - "incidencias: abiertas en el corte dentro del tramo"
+bordes:
+  - "Siempre devuelve los cuatro tramos, con 0 si no hay incidencias."
+  - "Una incidencia resuelta despues del corte era pendiente en el corte; una reabierta despues del corte estaba resuelta."
+  - "Una incidencia de meses atras que sigue abierta cuenta en el tramo de mas de 7 dias."
+  - "Antiguedad en tiempo de pared (dias de 24 h), no en dias laborales."
+  - "Resuelta no es pendiente: se espera la confirmacion del usuario, pero el trabajo del tecnico termino."
+preguntas_equivalentes:
+  - "¿Cuántas incidencias quedaron pendientes al cierre del mes?"
+  - "Antigüedad de las incidencias abiertas"
+  - "Backlog por antigüedad"
+  - "¿Cuántas incidencias abiertas llevan más de 7 días?"
+  - "Pendientes al cierre del trimestre"
+  - "¿Qué tan viejo es el backlog de la mesa de ayuda?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

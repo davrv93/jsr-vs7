@@ -8,8 +8,7 @@ tiene tres partes:
 3. **Agentes del producto**: las piezas autónomas que corren dentro de jsrbot y lo que cada una puede y no puede
    decidir.
 
-Estado: **solo documentación** (05-10-2026). Los comandos de la §1.3 son la convención acordada; se activan cuando
-exista el código de cada fase.
+Estado: **código construido en local** (05-10-2026). Los comandos de la §1.3 funcionan; cada carpeta tiene su `LEEME.md` con cifras reales.
 
 ---
 
@@ -28,7 +27,8 @@ exista el código de cada fase.
 
 ```
 jsr-vs7/
-  backend/        Go: API de la consola, webhook de WhatsApp, incidencias, SLA, escalamiento, asignación, eventos
+  backend/        Go, el «motor»: incidencias, SLA, asignación, escalamiento, vigía, outbox, golden queries (API interna /interno/*)
+  pasarela/       OCaml: API de la consola, auth y roles, webhook de WhatsApp, flujo del caso, avisos, chat web, estado público
   agente/         Python (FastAPI): clasificador, memoria, etapas, RAG, redacción, Jev local
   juez/           llama.cpp server con el modelo de Jev local (contenedor aparte)
   web/            Qwik: consola de la mesa, chat web de prueba, página pública de estado
@@ -43,12 +43,13 @@ jsr-vs7/
 | Qué | Comando |
 |---|---|
 | Levantar todo en local | `docker compose up -d` |
-| Pruebas del backend | `cd backend && go test ./...` |
+| Pruebas del motor (Go) | `cd backend && ./scripts/test-db.sh` |
+| Pruebas de la pasarela (OCaml, en Docker) | `cd pasarela && make probar` |
 | Pruebas del agente (corren también en el build) | `cd agente && python -m app.prueba_memoria && python -m app.prueba_etapas && python -m app.prueba_estructurado` |
 | Regresión del asistente | `cd agente && python -m app.regresion` |
 | Evaluación de Jev local | `cd agente && python -m app.evaluar_juez` |
 | Golden queries contra el conjunto de prueba | `cd analitica && ./probar_golden.sh` |
-| Validar sintaxis de una vista del frontend | `cd web && npx tsc --noEmit` |
+| Validar la consola | `cd web && npx tsc --noEmit && npm run build && npm test` |
 
 ### 1.4 Reglas que no se negocian
 

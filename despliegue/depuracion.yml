@@ -1,0 +1,6 @@
+# Publica el chat de depuración del agente en 127.0.0.1 (solo para diagnóstico; en producción no se usa).
+#   docker compose -f docker-compose.yml -f despliegue/depuracion.yml up -d agente
+services:
+  agente:
+    ports:
+      - "127.0.0.1:${JSR_AGENTE_PORT:-18582}:8000"

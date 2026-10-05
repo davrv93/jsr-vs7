@@ -1,0 +1,73 @@
+id,contexto,mensaje,intencion,categoria,etapa,accion,motivo,numero,secreto,nota
+P01,nuevo,hola,saludo,,recepcion,ninguna,,,,
+P02,nuevo,buenos días,saludo,,recepcion,ninguna,,,,
+P03,nuevo,"buenas, necesito ayuda",saludo,,recepcion,ninguna,,,,
+P04,nuevo,gracias,agradecer,,recepcion,ninguna,,,,
+P05,nuevo,mil gracias por la atención,agradecer,,recepcion,ninguna,,,,
+P06,nuevo,dime algo gracioso,fuera_de_alcance,,recepcion,ninguna,,,,
+P07,nuevo,¿qué clima hará mañana?,fuera_de_alcance,,recepcion,ninguna,,,,
+P08,nuevo,quiero pedir vacaciones,fuera_de_alcance,,recepcion,ninguna,,,,
+P09,nuevo,no me abre el correo,reportar_falla,correo,diagnostico|guia,ninguna,,,,
+P10,nuevo,la impresora no imprime,reportar_falla,impresoras,diagnostico|guia,ninguna,,,,
+P11,nuevo,no tengo internet,reportar_falla,red_wifi,diagnostico|guia,ninguna,,,,
+P12,nuevo,la vpn no conecta,reportar_falla,vpn,diagnostico|guia,ninguna,,,,
+P13,nuevo,mi laptop no prende,reportar_falla,equipo,diagnostico|guia,ninguna,,,,
+P14,nuevo,el excel se cierra solo,reportar_falla,software_oficina,diagnostico|guia,ninguna,,,,
+P15,nuevo,el sistema de planillas no carga,reportar_falla,sistema_interno,diagnostico|guia,ninguna,,,,
+P16,nuevo,mi anexo no tiene tono,reportar_falla,telefonia,diagnostico|guia,ninguna,,,,
+P17,nuevo,olvidé mi contraseña,restablecer_clave,cuentas_accesos,diagnostico|guia,ninguna,,,,
+P18,nuevo,se me bloqueó el usuario,restablecer_clave,cuentas_accesos,diagnostico|guia,ninguna,,,,
+P19,nuevo,necesito acceso a la carpeta de Contabilidad,solicitar_acceso,,incidencia,crear_incidencia,sin_articulo,,,
+P20,nuevo,necesito un mouse nuevo,solicitar_equipo,,incidencia,crear_incidencia,sin_articulo,,,
+P21,nuevo,quiero hablar con un técnico,pedir_tecnico,,incidencia,pedir_tecnico,pidio_tecnico,,,
+P22,nuevo,pásame con una persona,pedir_tecnico,,incidencia,pedir_tecnico,pidio_tecnico,,,
+P23,nuevo,se cayó el internet en toda la sede,reportar_falla,red_wifi,incidencia,crear_incidencia,p1,,,
+P24,nuevo,no funciona el sistema de ventas para nadie en toda la empresa,reportar_falla,sistema_interno,incidencia,crear_incidencia,p1,,,
+P25,nuevo,es la tercera vez que reporto y nadie hace nada,queja,,recepcion,ninguna,,,,
+P26,nuevo,¿cómo va mi ticket?,consultar_estado,,consulta_estado,consultar_estado,,,,sin incidencias abiertas
+P27,nuevo,ya funcionó,,,recepcion,ninguna,,,,sin nada abierto no se cierra nada
+P28,nuevo,sigue igual,,,recepcion,ninguna,,,,sin caso al que referirse
+P29,nuevo,asdfgh,,,recepcion,ninguna,,,,ilegible: se pide repetir
+P30,nuevo,,,,recepcion,ninguna,,,,vacío
+P31,nuevo,🙂,,,recepcion,ninguna,,,,solo un emoji
+P32,nuevo,no puedo entrar mi clave es Hola1234,,,,,,,si,pegó una contraseña
+P33,diag_correo,Outlook,aportar_dato,,diagnostico|guia,ninguna,,,,responde a la pendiente
+P34,diag_correo,el de la web,aportar_dato,,diagnostico|guia,ninguna,,,,respuesta libre a la pendiente
+P35,diag_correo,sigue igual,sigue_igual,,diagnostico,ninguna,,,,sin guía previa: sigue diagnosticando
+P36,diag_correo,quiero hablar con un técnico,pedir_tecnico,,incidencia,pedir_tecnico,pidio_tecnico,,,
+P37,diag_impresora,tercer piso,aportar_dato,,diagnostico|guia,ninguna,,,,
+P38,diag_impresora,"sede Centro, piso 2",aportar_dato,,diagnostico|guia,ninguna,,,,
+P39,guia_correo,sí,confirmar_solucion,,cierre,confirmar_solucion,,,,a ¿quedó resuelto?
+P40,guia_correo,no,sigue_igual,,incidencia,crear_incidencia,guia_agotada,,,a ¿quedó resuelto?
+P41,guia_correo,ya funcionó,confirmar_solucion,,cierre,confirmar_solucion,,,,
+P42,guia_correo,sigue igual,sigue_igual,,incidencia,crear_incidencia,guia_agotada,,,
+P43,guia_correo,no funcionó,sigue_igual,,incidencia,crear_incidencia,guia_agotada,,,
+P44,guia_correo,ahora sí abre,confirmar_solucion,,cierre,confirmar_solucion,,,,
+P45,guia_correo,gracias,agradecer,,guia,ninguna,,,,gracias no es «ya funcionó»
+P46,guia_correo,quiero hablar con un técnico,pedir_tecnico,,incidencia,pedir_tecnico,pidio_tecnico,,,
+P47,guia_correo,ok,,,guia,ninguna,,,,
+P48,guia_correo,sigo con el mismo error,sigue_igual,,incidencia,crear_incidencia,guia_agotada,,,
+P49,guia_correo,me aparece el código 0x800CCC0E,aportar_dato,,guia,ninguna,,,,dato nuevo en la guía: recordar los pasos
+P50,guia_correo,lo hice y ya quedó,confirmar_solucion,,cierre,confirmar_solucion,,,,
+P51,seguimiento,¿cómo va mi ticket?,consultar_estado,,consulta_estado,consultar_estado,,INC-000142,,
+P52,seguimiento,es la PC-CONT-07,aportar_dato,,seguimiento,agregar_dato,,INC-000142,,
+P53,seguimiento,sigue igual,sigue_igual,,seguimiento,sigue_igual,,INC-000142,,
+P54,seguimiento,ya funcionó,confirmar_solucion,,cierre,confirmar_solucion,,INC-000142,,
+P55,seguimiento,quiero hablar con un técnico,pedir_tecnico,,seguimiento,pedir_tecnico,,INC-000142,,se suma a la incidencia abierta
+P56,seguimiento,estoy en la sede Surco,aportar_dato,,seguimiento,agregar_dato,,INC-000142,,
+P57,seguimiento,gracias,agradecer,,seguimiento,ninguna,,,,
+P58,seguimiento,"pésima atención, nadie me responde",queja,,seguimiento,ninguna,,INC-000142,,
+P59,seguimiento,no me abre el correo,reportar_falla,correo,seguimiento,agregar_dato,,INC-000142,,mismo síntoma: no se crea otra
+P60,seguimiento_dos,qué pasó con el INC-000231,consultar_estado,,consulta_estado,consultar_estado,,INC-000231,,
+P61,cierre,5,agradecer,,encuesta,encuesta,,,,
+P62,cierre,le doy un 3,agradecer,,encuesta,encuesta,,,,
+P63,cierre,regular,agradecer,,encuesta,encuesta,,,,
+P64,cierre,ahora se me cayó la impresora,reportar_falla,impresoras,diagnostico|guia,ninguna,,,,otro problema tras el cierre: caso nuevo
+P65,oferta,sí,pedir_tecnico,,incidencia,pedir_tecnico,pidio_tecnico,,,
+P66,oferta,no gracias,,,,ninguna,,,,
+P67,encuesta,hola,saludo,,recepcion,ninguna,,,,
+P68,encuesta,no me abre el excel,reportar_falla,software_oficina,diagnostico|guia,ninguna,,,,
+P69,nuevo,"Hola, soy de Contabilidad y no me abre el Excel",reportar_falla,software_oficina,diagnostico|guia,ninguna,,,,
+P70,nuevo,necesito que me instalen AutoCAD,solicitar_equipo,,incidencia,crear_incidencia,sin_articulo,,,
+P71,nuevo,no puedo entrar a la carpeta compartida,reportar_falla,cuentas_accesos,diagnostico|guia,ninguna,,,,
+P72,nuevo,mi PC es la PC-CONT-07,aportar_dato,,recepcion,ninguna,,,,dato suelto sin caso

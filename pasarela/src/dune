@@ -1,0 +1,8 @@
+; Biblioteca de la pasarela: toda la logica; bin/main.ml solo la arranca.
+(library
+ (name pasarela)
+ (libraries dream lwt lwt.unix threads.posix yojson re digestif base64 caqti caqti-lwt
+  caqti-lwt.unix caqti-driver-postgresql cohttp-lwt-unix cohttp-lwt uri ptime unix)
+ ; Los avisos del compilador se muestran pero no rompen la build en desarrollo; `make construir` usa el perfil
+ ; release y `make probar` los lista al final.
+ (flags (:standard -w +a-4-9-40-41-42-44-45-70 -warn-error -a)))

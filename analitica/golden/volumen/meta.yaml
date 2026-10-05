@@ -1,0 +1,60 @@
+# Golden query volumen · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: volumen
+nombre: "Volumen de casos e incidencias"
+version: 1
+unidad: "casos e incidencias"
+dueno: Datos
+definicion: "Cuántos casos (conversaciones) y cuántas incidencias hubo, en total y por canal, categoría, sede, hora y día. Un caso no tiene categoría ni sede."
+base: "Incidencias creadas y casos iniciados en el periodo (dia y hora de Lima). Con un grupo, solo incidencias del grupo de origen y la columna casos sale NULL (los casos no tienen grupo)."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: origen
+columnas:
+  - "dimension: total, canal, categoria, sede, hora o dia"
+  - "valor: valor de la dimension (hora 00 a 23, dia aaaa-mm-dd)"
+  - "casos: casos en ese valor, NULL si no aplica (categoria, sede o grupo elegido)"
+  - "incidencias: incidencias en ese valor"
+bordes:
+  - "Siempre hay una fila total, con 0 si no hay datos."
+  - "Hora y dia en Lima: una incidencia creada el 31-jul a las 22:30 de Lima (1-ago 03:30 UTC) es del 31-jul."
+  - "Los casos solo cuentan en total, canal, hora y dia."
+  - "Una categoria o sede sin dato aparece como (sin categoria) o (sin sede)."
+  - "Las altas manuales de la consola tienen incidencia pero no caso."
+preguntas_equivalentes:
+  - "¿Cuántas incidencias hubo por categoría?"
+  - "Volumen de casos por canal"
+  - "¿A qué hora llegan más incidencias?"
+  - "Incidencias por sede y por día"
+  - "¿Cuántos casos atendimos en septiembre?"
+  - "¿De dónde vienen más solicitudes: WhatsApp o web?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

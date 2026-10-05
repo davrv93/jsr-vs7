@@ -1,0 +1,491 @@
+/* Chat web de prueba con piel de WhatsApp (referencias/baruka/DISENO_WHATSAPP.md). Aislado en .wa: la consola nunca imita
+   WhatsApp, solo esta pantalla, que existe para ver en la web lo mismo que verá la persona. Los colores copian los de
+   WhatsApp y viven en variables; el tema oscuro sigue al sistema o al selector manual. */
+
+.wa {
+  --wa-cab: #008069;
+  --wa-franja: #00a884;
+  --wa-fuera: #d9dbd5;
+  --wa-wall: #efeae2;
+  --wa-garabato: rgba(90, 66, 30, 0.115);
+  --wa-in: #ffffff;
+  --wa-out: #d9fdd3;
+  --wa-tinta: #111b21;
+  --wa-muted: #667781;
+  --wa-meta: #5b6b74;
+  --wa-tick: #53bdeb;
+  --wa-tick-gris: #8696a0;
+  --wa-enlace: #0277ab;
+  --wa-verde: #00a27e;
+  --wa-aviso: #ffeecd;
+  --wa-aviso-tinta: #54410a;
+  --wa-pill: #ffffff;
+  --wa-dia: #ffffff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  background: var(--wa-fuera);
+  color: var(--wa-tinta);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) .wa {
+    --wa-cab: #202c33;
+    --wa-franja: #0a1014;
+    --wa-fuera: #0a1014;
+    --wa-wall: #0b141a;
+    --wa-garabato: rgba(255, 255, 255, 0.055);
+    --wa-in: #202c33;
+    --wa-out: #005c4b;
+    --wa-tinta: #e9edef;
+    --wa-muted: #8696a0;
+    --wa-meta: #a9b6bd;
+    --wa-enlace: #53bdeb;
+    --wa-verde: #00a884;
+    --wa-aviso: #182229;
+    --wa-aviso-tinta: #ffd279;
+    --wa-pill: #2a3942;
+    --wa-dia: #182229;
+  }
+}
+:root[data-tema="oscuro"] .wa {
+  --wa-cab: #202c33;
+  --wa-franja: #0a1014;
+  --wa-fuera: #0a1014;
+  --wa-wall: #0b141a;
+  --wa-garabato: rgba(255, 255, 255, 0.055);
+  --wa-in: #202c33;
+  --wa-out: #005c4b;
+  --wa-tinta: #e9edef;
+  --wa-muted: #8696a0;
+  --wa-meta: #a9b6bd;
+  --wa-enlace: #53bdeb;
+  --wa-verde: #00a884;
+  --wa-aviso: #182229;
+  --wa-aviso-tinta: #ffd279;
+  --wa-pill: #2a3942;
+  --wa-dia: #182229;
+}
+
+.wa-franja {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 127px;
+  background: var(--wa-franja);
+}
+.wa-ventana {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-width: 100%;
+  height: min(960px, calc(100dvh - 40px));
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--wa-wall);
+  box-shadow: 0 6px 24px rgba(11, 20, 26, 0.28);
+}
+.wa-con-lado {
+  padding-right: 400px;
+}
+
+/* Cabecera */
+.wa-cab {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  min-height: 60px;
+  padding: env(safe-area-inset-top) 4px 0 6px;
+  background: var(--wa-cab);
+  color: #fff;
+}
+.wa-atras {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 44px;
+  color: #fff;
+  border-radius: 50%;
+}
+.wa-atras:focus-visible,
+.wa-cab .icono-boton:focus-visible {
+  outline-color: #fff;
+}
+.wa-avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #0071e3;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.wa-titulos {
+  flex: 1;
+  min-width: 0;
+}
+.wa-nombre {
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wa-estado {
+  font-size: 13px;
+  line-height: 1.2;
+  color: #fff;
+}
+.wa-cab .icono-boton {
+  color: #fff;
+  width: 44px;
+  height: 44px;
+}
+.wa-cab .icono-boton:hover,
+.wa-cab .icono-boton[aria-expanded="true"] {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+.wa-cab .menu {
+  color: var(--tinta);
+}
+
+/* Cuerpo y fondo de garabatos */
+.wa-caja {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: var(--wa-wall);
+}
+.wa-caja::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--wa-garabato);
+  -webkit-mask-image: var(--wa-patron);
+  mask-image: var(--wa-patron);
+  -webkit-mask-size: 236px 236px;
+  mask-size: 236px 236px;
+  pointer-events: none;
+}
+.wa-cuerpo {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px 10px;
+}
+.wa-dia,
+.wa-aviso {
+  align-self: center;
+  text-align: center;
+  font-size: 12.5px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+}
+.wa-dia {
+  padding: 5px 12px;
+  background: var(--wa-dia);
+  color: var(--wa-muted);
+  margin-bottom: 8px;
+}
+.wa-aviso {
+  max-width: 92%;
+  padding: 7px 12px;
+  background: var(--wa-aviso);
+  color: var(--wa-aviso-tinta);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+/* Globos */
+.wa-fila {
+  display: flex;
+  margin-top: 2px;
+}
+.wa-fila.con-cola {
+  margin-top: 9px;
+}
+.wa-usuario {
+  justify-content: flex-end;
+}
+.wa-globo {
+  position: relative;
+  max-width: min(84%, 400px);
+  padding: 6px 8px 8px 9px;
+  border-radius: 7.5px;
+  background: var(--wa-in);
+  color: var(--wa-tinta);
+  font-size: 15px;
+  line-height: 20px;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+  animation: wa-entra var(--d2) var(--ease) both;
+}
+.wa-usuario .wa-globo {
+  background: var(--wa-out);
+}
+.wa-bot.con-cola .wa-globo {
+  border-top-left-radius: 0;
+}
+.wa-usuario.con-cola .wa-globo {
+  border-top-right-radius: 0;
+}
+.wa-fila.con-cola .wa-globo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 8px;
+  height: 13px;
+  background: inherit;
+}
+.wa-bot.con-cola .wa-globo::before {
+  left: -8px;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+.wa-usuario.con-cola .wa-globo::before {
+  right: -8px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+@keyframes wa-entra {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+.wa-texto {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.wa-esp {
+  display: inline-block;
+  width: 46px;
+  height: 1px;
+}
+.wa-usuario .wa-esp {
+  width: 66px;
+}
+.wa-meta {
+  position: absolute;
+  right: 7px;
+  bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--wa-meta);
+}
+.wa-checks {
+  color: var(--wa-tick-gris);
+  transition: color var(--d1) var(--ease);
+}
+.wa-checks.leido {
+  color: var(--wa-tick);
+}
+.wa-puntos {
+  display: flex;
+  gap: 4px;
+  padding: 13px 14px;
+}
+.wa-puntos span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--wa-tick-gris);
+  animation: wa-salto 1.2s infinite var(--ease);
+}
+.wa-puntos span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.wa-puntos span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes wa-salto {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Botones de respuesta colgados del globo */
+.wa-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 3px;
+  max-width: min(84%, 400px);
+}
+.wa-botones.dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wa-boton {
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 7.5px;
+  background: var(--wa-in);
+  color: var(--wa-enlace);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+}
+.wa-boton:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+.wa-boton:disabled {
+  opacity: 0.6;
+}
+
+/* Respuestas rápidas y barra de escritura */
+.wa-rapidas {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--wa-wall);
+}
+.wa-rapidas::-webkit-scrollbar {
+  display: none;
+}
+.wa-chip {
+  flex: none;
+  min-height: 34px;
+  padding: 0 14px;
+  border-radius: 17px;
+  background: var(--wa-pill);
+  color: var(--wa-tinta);
+  font-size: 13.5px;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(11, 20, 26, 0.18);
+}
+.wa-chip:disabled {
+  opacity: 0.55;
+}
+.wa-barra {
+  flex: none;
+  display: flex;
+  gap: 8px;
+  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+  background: var(--wa-wall);
+}
+.wa-campo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 16px;
+  border-radius: 23px;
+  background: var(--wa-pill);
+}
+.wa-campo input {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--wa-tinta);
+  font-size: 16px;
+}
+.wa-campo input:focus-visible {
+  box-shadow: none;
+  outline: none;
+}
+.wa-campo:focus-within {
+  box-shadow: 0 0 0 2px var(--wa-verde);
+}
+.wa-campo input::placeholder {
+  color: var(--wa-muted);
+}
+.wa-enviar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--wa-verde);
+  color: #fff;
+}
+.wa-enviar:disabled {
+  opacity: 0.6;
+}
+.wa-enviar:focus-visible {
+  outline-color: var(--wa-tinta);
+}
+
+/* Cajón de análisis en pantallas anchas */
+.wa-lado {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo);
+  color: var(--tinta);
+  border-left: 1px solid var(--sep);
+}
+.wa-lado-cab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  padding: 0 var(--e3) 0 var(--e5);
+  border-bottom: 1px solid var(--sep);
+}
+.wa-lado-cab h2 {
+  font-size: var(--t-17);
+  font-weight: 600;
+}
+.wa-lado-cuerpo {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--e5);
+}
+
+/* Móvil: pantalla completa, sin radio ni sombra, como la app */
+@media (max-width: 560px), (max-height: 560px) {
+  .wa-franja {
+    display: none;
+  }
+  .wa {
+    display: block;
+    min-height: 100dvh;
+  }
+  .wa-ventana {
+    width: 100%;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+@media (hover: none) {
+  .wa-boton:hover:not(:disabled) {
+    filter: none;
+  }
+}

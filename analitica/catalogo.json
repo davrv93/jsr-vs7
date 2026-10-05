@@ -1,0 +1,1028 @@
+{
+  "formato": 1,
+  "nota": "Generado por analitica/herramientas/generar_catalogo.py desde golden/*/meta.yaml. No editar a mano.",
+  "kpis": [
+    {
+      "kpi": "calidad_asistente",
+      "nombre": "Calidad del asistente",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/calidad_asistente/v1.sql",
+      "sha256_sql": "d20249a9c86f53c3850814b9fa602d4ef602596f8934e1da22fe9704a3fdf47e",
+      "unidad": "%",
+      "dueno": "Datos",
+      "definicion": "Exactitud estimada del clasificador frente a las correcciones de los técnicos, porcentaje de respuestas donde el verificador quitó frases, porcentaje de respuestas regeneradas y costo del LLM de redacción por cada 1000 casos.",
+      "base": "Mensajes y feedback con fecha en el periodo (dia de Lima). Los mensajes no tienen grupo: el parámetro grupo no aplica. La exactitud es una estimación: supone correcto todo lo que ningún técnico corrigió.",
+      "parametros": [
+        "desde",
+        "hasta"
+      ],
+      "atribucion_grupo": "no_aplica",
+      "columnas": [
+        "mensajes_usuario_clasificados: mensajes de personas con una intencion asignada",
+        "correcciones_intencion: correcciones de intencion hechas por tecnicos",
+        "exactitud_frente_a_correcciones_pct: 100 x (1 - correcciones / clasificados)",
+        "respuestas_asistente: respuestas del asistente",
+        "respuestas_con_frases_quitadas: respuestas donde el verificador quito frases",
+        "pct_con_frases_quitadas: porcentaje sobre respuestas del asistente",
+        "respuestas_regeneradas: respuestas regeneradas",
+        "pct_regeneradas: porcentaje sobre respuestas del asistente",
+        "casos_atendidos: casos con al menos una respuesta del asistente en el periodo",
+        "costo_usd_total: costo del LLM de redaccion en USD",
+        "costo_usd_por_1000_casos: USD por cada 1000 casos"
+      ],
+      "bordes": [
+        "Sin mensajes: porcentajes y costos NULL, nunca 0.",
+        "Mensajes duplicados por reenvio de la outbox: v_mensajes los descarta por id.",
+        "El costo por caso se expresa por 1000 casos porque por caso es de centesimas de centavo.",
+        "Respuestas armadas por codigo (flujo fijo) tienen costo 0 y entran en el denominador."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "Calidad del asistente",
+        "¿Qué porcentaje de respuestas del bot fueron corregidas por el verificador?",
+        "Exactitud del clasificador",
+        "¿Cuánto cuesta el LLM por caso?",
+        "Porcentaje de respuestas regeneradas",
+        "¿Qué tan bien contesta el asistente?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "contencion_asistente",
+      "nombre": "Contención del asistente",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/contencion_asistente/v1.sql",
+      "sha256_sql": "d96639e37f7ac1a78e89ade8f0bc4dbb9636123bdc1ecbf6b11f84fe85c080a1",
+      "unidad": "%",
+      "dueno": "Datos",
+      "definicion": "Porcentaje de casos (conversaciones) que el asistente resolvió por sí solo y la persona confirmó, sin abrir incidencia.",
+      "base": "Casos iniciados en el periodo (dia de Lima) y ya concluidos. Los casos todavía abiertos se excluyen del denominador y se informan aparte. Los casos no tienen grupo: el parámetro grupo no aplica.",
+      "parametros": [
+        "desde",
+        "hasta"
+      ],
+      "atribucion_grupo": "no_aplica",
+      "columnas": [
+        "casos_concluidos: casos iniciados en el periodo que ya no estan abiertos",
+        "contenidos: resueltos por el asistente, confirmados y sin incidencia",
+        "porcentaje: contenidos / casos_concluidos x 100, NULL si no hay concluidos",
+        "casos_abiertos_excluidos: casos del periodo todavia abiertos"
+      ],
+      "bordes": [
+        "Denominador cero: porcentaje NULL.",
+        "Un caso resuelto por el asistente que despues termina con incidencia NO es contenido (se lee la ultima version del caso).",
+        "Por eso no se calcula con una vista materializada: el estado de un caso puede retroceder.",
+        "Casos abandonados (cerrados sin resolver) cuentan en el denominador."
+      ],
+      "objetivo": "SUPUESTO: 40 % o mas",
+      "preguntas_equivalentes": [
+        "¿Cuántos casos resuelve el asistente solo?",
+        "Contención del asistente",
+        "¿Qué porcentaje de conversaciones se resuelve sin abrir incidencia?",
+        "Tasa de autoservicio del bot",
+        "¿Cuántas consultas resolvió el asistente sin técnico?",
+        "¿El asistente está evitando incidencias?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "csat",
+      "nombre": "Satisfacción (CSAT)",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/csat/v1.sql",
+      "sha256_sql": "05b3bcf0830c768f11ac51964c3ff5095308c879c074e1ecd3c41818e498fa98",
+      "unidad": "1 a 5",
+      "dueno": "Datos",
+      "definicion": "Media de las notas de la encuesta (1 a 5), el porcentaje de respuestas de 4 o 5 y la tasa de respuesta.",
+      "base": "Encuestas enviadas en el periodo (dia de Lima de su fecha de envio) del grupo de origen elegido. Una encuesta sin puntaje esta enviada y sin responder: cuenta en la tasa de respuesta pero no en la media. Las encuestas de casos resueltos por el asistente no tienen grupo y solo entran sin filtro de grupo.",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "enviadas: encuestas enviadas en el periodo",
+        "respondidas: las que tienen puntaje",
+        "tasa_respuesta_pct: respondidas / enviadas x 100",
+        "csat_media: media del puntaje (1 a 5), NULL si no hay respuestas",
+        "pct_4_5: respondidas con 4 o 5 / respondidas x 100, NULL si no hay respuestas"
+      ],
+      "bordes": [
+        "Sin respuestas: csat_media y pct_4_5 NULL, nunca 0.",
+        "Encuesta sin responder: cuenta en enviadas, no en la media.",
+        "La misma encuesta llega dos veces (envio y respuesta): v_encuestas las junta por id.",
+        "Una encuesta enviada en octubre no entra en septiembre aunque la incidencia sea de septiembre."
+      ],
+      "objetivo": "SUPUESTO: 4,2 o mas y 85 % de respuestas de 4 o 5",
+      "preguntas_equivalentes": [
+        "¿Cuál es la satisfacción de los usuarios?",
+        "CSAT del mes",
+        "¿Qué porcentaje de usuarios calificó 4 o 5?",
+        "¿Cuántos usuarios respondieron la encuesta?",
+        "Nota promedio de la encuesta de satisfacción",
+        "¿Están contentos los usuarios con la atención?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "fcr",
+      "nombre": "Resolución al primer contacto (FCR)",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/fcr/v1.sql",
+      "sha256_sql": "f364f373864ec5842f09840c7b9d51af6b1866d5e4748f850bf01b151a95eef4",
+      "unidad": "%",
+      "dueno": "Datos",
+      "definicion": "Porcentaje de incidencias resueltas por el primer técnico asignado, sin escalamiento, sin reasignación y sin reapertura.",
+      "base": "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido, ya resueltas y con veredicto de primer contacto. Quedan fuera las nunca resueltas y las cerradas sin confirmación del usuario (primer_contacto NULL).",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "evaluadas: incidencias resueltas con veredicto",
+        "al_primer_contacto: las resueltas por el primer técnico sin escalar ni reabrir",
+        "porcentaje: al_primer_contacto / evaluadas x 100, NULL si no hay evaluadas"
+      ],
+      "bordes": [
+        "Denominador cero: porcentaje NULL.",
+        "Cierre sin confirmación (48 h laborales): no cuenta para el FCR.",
+        "Reabierta o escalada: cuenta como no resuelta al primer contacto.",
+        "El veredicto lo escribe el backend en incidencias_tiempos.primer_contacto."
+      ],
+      "objetivo": "SUPUESTO: 70 % o mas",
+      "preguntas_equivalentes": [
+        "¿Qué porcentaje de incidencias se resuelve al primer contacto?",
+        "FCR del mes",
+        "¿Cuántas incidencias resolvió el primer técnico sin escalar ni reabrir?",
+        "Resolución en el primer contacto",
+        "¿Con qué frecuencia el primer técnico lo resuelve todo?",
+        "¿Qué tan efectivo es el primer nivel?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "frt",
+      "nombre": "Tiempo de primera respuesta (FRT)",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/frt/v1.sql",
+      "sha256_sql": "52246257b128de1f210e60bbc12e4f0579891e57b085805b205817f080f61091",
+      "unidad": "minutos laborales",
+      "dueno": "Datos",
+      "definicion": "Tiempo desde que se crea la incidencia hasta la primera respuesta humana, en minutos del calendario de su prioridad (laborales, salvo P1 en 24x7). Se informa la mediana y el percentil 90.",
+      "base": "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido que ya tienen primera respuesta. Las que aun no la tienen no entran: no hay tiempo que medir (pesan en el cumplimiento de SLA).",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "evaluadas: incidencias con primera respuesta",
+        "mediana_min: mediana en minutos",
+        "p90_min: percentil 90 en minutos"
+      ],
+      "bordes": [
+        "Sin incidencias evaluadas: mediana y p90 NULL, nunca 0.",
+        "Incidencia creada el viernes 17:55: solo cuentan los 5 minutos de ese dia y el resto corre desde el lunes 08:30.",
+        "Percentil con interpolacion lineal (quantileExactInclusive).",
+        "Una incidencia sin primera respuesta nunca baja el promedio: se excluye, y su efecto aparece en sla_cumplimiento."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "¿Cuál es el tiempo de primera respuesta?",
+        "¿Cuánto tardamos en responder por primera vez a una incidencia?",
+        "FRT mediano y p90 del mes",
+        "¿En cuántos minutos responde la mesa de ayuda la primera vez?",
+        "Tiempo hasta la primera respuesta humana",
+        "¿Qué tan rápido atendemos a los usuarios?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "mttr",
+      "nombre": "Tiempo de resolución (MTTR)",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/mttr/v1.sql",
+      "sha256_sql": "c4ebec7ee5039fa2b642be66a76fed89560266d6087f4262ee9a3a3f0e8449b1",
+      "unidad": "minutos laborales",
+      "dueno": "Datos",
+      "definicion": "Tiempo desde que se crea la incidencia hasta su resolución, en minutos del calendario de su prioridad y sin contar las pausas (espera del usuario o de un tercero). Se informa la mediana y la media.",
+      "base": "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido que tienen resolución vigente. Una abierta o reabierta no entra hasta que se vuelva a resolver.",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "evaluadas: incidencias resueltas",
+        "mediana_min: mediana en minutos",
+        "media_min: media en minutos"
+      ],
+      "bordes": [
+        "Sin incidencias evaluadas: mediana y media NULL, nunca 0.",
+        "Reabierta: el tiempo se mide hasta su ULTIMA resolucion y el tiempo entre una resolucion y su reapertura corre.",
+        "Feriados, fines de semana y pausas largas no cuentan: lo calcula el backend en incidencias_tiempos.",
+        "La pregunta «MTTR por categoria» no tiene golden query: esta solo filtra por grupo."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "¿Cuál fue el MTTR de septiembre?",
+        "¿Cuánto demoramos en resolver una incidencia?",
+        "Tiempo medio de resolución",
+        "¿Cuántos minutos laborales toma resolver un caso en promedio?",
+        "¿Cuál es la mediana del tiempo de resolución?",
+        "¿En cuánto tiempo se arregla un problema?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "pendientes_antiguedad",
+      "nombre": "Pendientes y antigüedad",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/pendientes_antiguedad/v1.sql",
+      "sha256_sql": "45647815d5d16201f0689aa28cfadc5be45b6aaacf1410280019245d3f5a7003",
+      "unidad": "incidencias",
+      "dueno": "Datos",
+      "definicion": "Incidencias abiertas al cierre del periodo, repartidas por antigüedad desde su creación: menos de 1 día, de 1 a 3 días, de 3 a 7 días y más de 7 días.",
+      "base": "Foto al fin del último día del periodo (00:00 de Lima del día siguiente a hasta), reconstruida desde los eventos: no importa cuándo se creó la incidencia ni cómo está hoy. El parámetro desde no se usa. El grupo es el que tenía la incidencia en el corte.",
+      "parametros": [
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "vigente_al_corte",
+      "columnas": [
+        "tramo: antiguedad desde la creacion, en dias de 24 h",
+        "incidencias: abiertas en el corte dentro del tramo"
+      ],
+      "bordes": [
+        "Siempre devuelve los cuatro tramos, con 0 si no hay incidencias.",
+        "Una incidencia resuelta despues del corte era pendiente en el corte; una reabierta despues del corte estaba resuelta.",
+        "Una incidencia de meses atras que sigue abierta cuenta en el tramo de mas de 7 dias.",
+        "Antiguedad en tiempo de pared (dias de 24 h), no en dias laborales.",
+        "Resuelta no es pendiente: se espera la confirmacion del usuario, pero el trabajo del tecnico termino."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "¿Cuántas incidencias quedaron pendientes al cierre del mes?",
+        "Antigüedad de las incidencias abiertas",
+        "Backlog por antigüedad",
+        "¿Cuántas incidencias abiertas llevan más de 7 días?",
+        "Pendientes al cierre del trimestre",
+        "¿Qué tan viejo es el backlog de la mesa de ayuda?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "productividad_tecnico",
+      "nombre": "Productividad por técnico",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/productividad_tecnico/v1.sql",
+      "sha256_sql": "3777fe02c96fe21adb716920b2395931c5f6720b5447cb52ee3723b099d21194",
+      "unidad": "incidencias resueltas",
+      "dueno": "Datos",
+      "definicion": "Por técnico: incidencias resueltas, mediana del tiempo de primera respuesta y de resolución de esas incidencias, y satisfacción media de sus encuestas. No es un ranking: se ordena por id de técnico, nunca por desempeño.",
+      "base": "Incidencias resueltas en el periodo (dia de Lima de su última resolución), atribuidas al técnico con el que quedaron. Con un grupo, solo las del grupo actual de la incidencia. Un técnico sin resueltas en el periodo no aparece.",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "tecnico",
+      "columnas": [
+        "tecnico_id: id del tecnico (el nombre vive en Postgres)",
+        "resueltas: incidencias que resolvio en el periodo",
+        "frt_mediana_min: mediana de la primera respuesta de esas incidencias",
+        "mttr_mediana_min: mediana de la resolucion de esas incidencias",
+        "encuestas_respondidas: encuestas respondidas de esas incidencias",
+        "csat_media: media de esas encuestas, NULL si no hay"
+      ],
+      "bordes": [
+        "Un técnico con una sola resuelta tiene medianas iguales a ese único valor.",
+        "Un grupo sin datos devuelve cero filas.",
+        "csat_media NULL si el técnico no tiene encuestas respondidas.",
+        "Una reabierta sin volver a resolver no cuenta como resuelta de nadie.",
+        "Sin ranking público: el orden es por id."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "Productividad por técnico",
+        "¿Cuántas incidencias resolvió cada técnico?",
+        "Tiempos de resolución por técnico",
+        "Carga resuelta por técnico del mes",
+        "¿Cómo le fue a cada técnico en la atención?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "reaperturas",
+      "nombre": "Reaperturas en 7 días",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/reaperturas/v1.sql",
+      "sha256_sql": "e54c9989708655d72df9f3660d4ec3e355fb10c493fb4e905651c19c5d6bc6bd",
+      "unidad": "%",
+      "dueno": "Datos",
+      "definicion": "Porcentaje de incidencias resueltas que se reabrieron dentro de los 7 días siguientes a una resolución.",
+      "base": "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido que tuvieron al menos una resolución. La ventana de 7 días (límite inclusivo) no se corta en el fin del periodo.",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "resueltas: incidencias con al menos una resolucion",
+        "reabiertas_7d: las que tuvieron una reapertura dentro de los 7 dias de una resolucion",
+        "porcentaje: reabiertas_7d / resueltas x 100, NULL si no hay resueltas"
+      ],
+      "bordes": [
+        "Denominador cero: porcentaje NULL.",
+        "Una reapertura a los 7 dias y 18 horas queda fuera de la ventana.",
+        "Reabierta dos veces cuenta una sola vez.",
+        "Las resoluciones de los ultimos 7 dias de los datos pueden subestimar el valor: todavia no tuvieron tiempo de reabrirse.",
+        "Se lee de los eventos: hacen falta los instantes de la resolucion y de la reapertura."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "¿Cuántas incidencias se reabrieron?",
+        "Tasa de reapertura a 7 días",
+        "¿Qué porcentaje de las incidencias resueltas volvió a abrirse en una semana?",
+        "Reaperturas del mes",
+        "¿Estamos cerrando mal las incidencias?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "sla_cumplimiento",
+      "nombre": "Cumplimiento de SLA",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/sla_cumplimiento/v1.sql",
+      "sha256_sql": "3c382bbc6e7fd0a618ca5403e1d91bcbae5c5ccb93c8883a57080cddffae5f07",
+      "unidad": "%",
+      "dueno": "Datos",
+      "definicion": "Porcentaje de incidencias que cumplieron su plazo de SLA, medido por separado para la primera respuesta y para la resolucion. Los tiempos son laborales (calendario de la prioridad) y sin pausas, y los calcula el backend.",
+      "base": "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido. Cada metrica evalua solo las incidencias con veredicto: una abierta con el plazo vencido cuenta como incumplida, una abierta con el plazo aun vigente no entra.",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "metrica: respuesta o resolucion",
+        "evaluadas: incidencias con veredicto",
+        "cumplidas: las que cumplieron el plazo",
+        "porcentaje: cumplidas / evaluadas x 100, NULL si no hay evaluadas"
+      ],
+      "bordes": [
+        "Denominador cero: porcentaje NULL, nunca 0.",
+        "Abierta con plazo vencido: incumplida. Abierta con plazo vigente o en pausa: sin veredicto y no entra.",
+        "Cerrada fuera del periodo: no importa, la base es la fecha de creacion.",
+        "Los duplicados y las versiones viejas se resuelven con FINAL en v_tiempos.",
+        "El dia se toma en hora de Lima: una incidencia creada el 30-jun a las 23:40 de Lima no es de julio aunque en UTC ya sea 1-jul."
+      ],
+      "objetivo": "SUPUESTO: 90 % o mas, tanto en respuesta como en resolucion (la organizacion aun no lo confirmo)",
+      "preguntas_equivalentes": [
+        "¿Cuál fue el cumplimiento de SLA de septiembre?",
+        "¿Qué porcentaje de incidencias atendimos dentro del plazo?",
+        "¿Cumplimos los tiempos de respuesta y de resolución acordados?",
+        "¿Cuántas incidencias incumplieron el SLA este mes?",
+        "Dame el SLA del trimestre por grupo",
+        "¿Qué tan bien cumple la mesa de ayuda sus plazos?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "tasa_escalamiento",
+      "nombre": "Tasa de escalamiento",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/tasa_escalamiento/v1.sql",
+      "sha256_sql": "dc4216209f7c9da2a0d6a790474ff393c5c8187e4c1ba1b5fd8a868ac1f6353a",
+      "unidad": "%",
+      "dueno": "Datos",
+      "definicion": "Porcentaje de incidencias que tuvieron al menos un escalamiento funcional (pasaron a otro nivel o grupo). Los avisos jerárquicos no cuentan.",
+      "base": "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido, abiertas o cerradas. Se atribuye al grupo con el que nació la incidencia, no al que llegó al escalar; si no, la Mesa N1 nunca tendría escalamientos.",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "incidencias: incidencias creadas en el periodo",
+        "escaladas: las que tuvieron al menos un evento escalada",
+        "porcentaje: escaladas / incidencias x 100, NULL si no hay incidencias"
+      ],
+      "bordes": [
+        "Denominador cero: porcentaje NULL.",
+        "Una incidencia escalada dos veces cuenta una sola vez.",
+        "Las abiertas entran en el denominador: una abierta puede escalar todavia.",
+        "El numerador se lee de los eventos, no del contador de incidencias_estado."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "¿Cuál es la tasa de escalamiento?",
+        "¿Qué porcentaje de incidencias se escaló a otro nivel?",
+        "¿Cuántas incidencias escalaron a segundo nivel este mes?",
+        "Porcentaje de escalamientos funcionales",
+        "¿Cuánto nos cuesta no resolver en la mesa de ayuda?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    },
+    {
+      "kpi": "volumen",
+      "nombre": "Volumen de casos e incidencias",
+      "version": 1,
+      "versiones": [
+        1
+      ],
+      "archivo_sql": "golden/volumen/v1.sql",
+      "sha256_sql": "c535f0fb900aaaaa516c53ba954807edbf9f2c9a05c8028f69cffcca2b0ffcd1",
+      "unidad": "casos e incidencias",
+      "dueno": "Datos",
+      "definicion": "Cuántos casos (conversaciones) y cuántas incidencias hubo, en total y por canal, categoría, sede, hora y día. Un caso no tiene categoría ni sede.",
+      "base": "Incidencias creadas y casos iniciados en el periodo (dia y hora de Lima). Con un grupo, solo incidencias del grupo de origen y la columna casos sale NULL (los casos no tienen grupo).",
+      "parametros": [
+        "desde",
+        "hasta",
+        "grupo"
+      ],
+      "atribucion_grupo": "origen",
+      "columnas": [
+        "dimension: total, canal, categoria, sede, hora o dia",
+        "valor: valor de la dimension (hora 00 a 23, dia aaaa-mm-dd)",
+        "casos: casos en ese valor, NULL si no aplica (categoria, sede o grupo elegido)",
+        "incidencias: incidencias en ese valor"
+      ],
+      "bordes": [
+        "Siempre hay una fila total, con 0 si no hay datos.",
+        "Hora y dia en Lima: una incidencia creada el 31-jul a las 22:30 de Lima (1-ago 03:30 UTC) es del 31-jul.",
+        "Los casos solo cuentan en total, canal, hora y dia.",
+        "Una categoria o sede sin dato aparece como (sin categoria) o (sin sede).",
+        "Las altas manuales de la consola tienen incidencia pero no caso."
+      ],
+      "objetivo": "",
+      "preguntas_equivalentes": [
+        "¿Cuántas incidencias hubo por categoría?",
+        "Volumen de casos por canal",
+        "¿A qué hora llegan más incidencias?",
+        "Incidencias por sede y por día",
+        "¿Cuántos casos atendimos en septiembre?",
+        "¿De dónde vienen más solicitudes: WhatsApp o web?"
+      ],
+      "pruebas": [
+        {
+          "archivo": "esperado.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_septiembre.csv",
+          "desde": "2026-09-01",
+          "hasta": "2026-09-30",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_redes_agosto.csv",
+          "desde": "2026-08-01",
+          "hasta": "2026-08-31",
+          "grupo": "Redes"
+        },
+        {
+          "archivo": "esperado_borde_31jul_1ago.csv",
+          "desde": "2026-07-31",
+          "hasta": "2026-08-01",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_grupo_sin_datos.csv",
+          "desde": "2026-07-01",
+          "hasta": "2026-09-30",
+          "grupo": "Seguridad"
+        },
+        {
+          "archivo": "esperado_octubre.csv",
+          "desde": "2026-10-01",
+          "hasta": "2026-10-05",
+          "grupo": ""
+        },
+        {
+          "archivo": "esperado_periodo_vacio.csv",
+          "desde": "2026-12-01",
+          "hasta": "2026-12-31",
+          "grupo": ""
+        }
+      ]
+    }
+  ]
+}

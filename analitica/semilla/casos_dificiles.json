@@ -1,0 +1,170 @@
+[
+  {
+    "incidencia_id": 1,
+    "numero": "INC-000001",
+    "etiqueta": "fuera_del_periodo_junio_utc_julio",
+    "descripcion": "Creada el 30-jun 23:40 de Lima (= 1-jul 04:40 UTC): NO es de julio. Un calculo en UTC la metera en el periodo."
+  },
+  {
+    "incidencia_id": 25,
+    "numero": "INC-000025",
+    "etiqueta": "nunca_resuelta_sin_respuesta",
+    "descripcion": "Viernes 3-jul 12:00, P3, sin tecnico ni respuesta jamas: abierta de >7 dias, incumple SLA de respuesta."
+  },
+  {
+    "incidencia_id": 73,
+    "numero": "INC-000073",
+    "etiqueta": "viernes_1755",
+    "descripcion": "Creada el viernes 10-jul 17:55 (Lima). 5 min cuentan ese dia y el resto el lunes: frt=30 laborales."
+  },
+  {
+    "incidencia_id": 88,
+    "numero": "INC-000088",
+    "etiqueta": "nunca_resuelta_en_espera_tercero",
+    "descripcion": "Atendida pero detenida en espera_tercero desde el 15-jul: nunca se resuelve."
+  },
+  {
+    "incidencia_id": 157,
+    "numero": "INC-000157",
+    "etiqueta": "reapertura_fuera_de_7_dias",
+    "descripcion": "Resuelta el miercoles 22-jul 16:00 y reabierta el jueves 30-jul 10:00 (7 d 18 h): los feriados alargan la ventana de cierre, pero la reapertura queda FUERA de los 7 dias."
+  },
+  {
+    "incidencia_id": 188,
+    "numero": "INC-000188",
+    "etiqueta": "feriado_en_medio",
+    "descripcion": "Creada el lunes 27-jul 17:00, P2, resuelta el jueves 30-jul: el 28 y el 29 son feriado y no cuentan."
+  },
+  {
+    "incidencia_id": 217,
+    "numero": "INC-000217",
+    "etiqueta": "ultimo_dia_utc_cambia_de_dia_31_jul",
+    "descripcion": "Creada el 31-jul 22:30 de Lima (= 1-ago 03:30 UTC): el dia es 31-jul."
+  },
+  {
+    "incidencia_id": 230,
+    "numero": "INC-000230",
+    "etiqueta": "pausa_larga_fin_de_semana",
+    "descripcion": "Pausa por espera del usuario del martes 4-ago 11:00 al lunes 10-ago 09:30, con el feriado del 6-ago y un fin de semana dentro."
+  },
+  {
+    "incidencia_id": 258,
+    "numero": "INC-000258",
+    "etiqueta": "p1_fuera_de_horario_cumplida",
+    "descripcion": "P1 el sabado 8-ago 03:10: la guardia responde en 12 min y resuelve en 150 (24x7): cumple ambos plazos."
+  },
+  {
+    "incidencia_id": 259,
+    "numero": "INC-000259",
+    "etiqueta": "reapertura_en_2_dias",
+    "descripcion": "Resuelta el lunes y reabierta 2 dias despues: dentro de los 7 dias."
+  },
+  {
+    "incidencia_id": 281,
+    "numero": "INC-000281",
+    "etiqueta": "alta_manual_sin_caso",
+    "descripcion": "Alta manual desde la consola (canal consola): no tiene caso de conversacion."
+  },
+  {
+    "incidencia_id": 317,
+    "numero": "INC-000317",
+    "etiqueta": "doble_reapertura",
+    "descripcion": "Dos reaperturas y un escalamiento tras la segunda (reaperturas=2)."
+  },
+  {
+    "incidencia_id": 327,
+    "numero": "INC-000327",
+    "etiqueta": "nunca_resuelta_en_curso",
+    "descripcion": "Atendida el 18-ago, trabajada y nunca resuelta (en_curso)."
+  },
+  {
+    "incidencia_id": 368,
+    "numero": "INC-000368",
+    "etiqueta": "p1_fuera_de_horario_incumplida",
+    "descripcion": "P1 el domingo 23-ago 22:00: responde a los 45 min y resuelve a los 300 (24x7): incumple ambos."
+  },
+  {
+    "incidencia_id": 370,
+    "numero": "INC-000370",
+    "etiqueta": "cierre_sin_confirmacion",
+    "descripcion": "Resuelta y cerrada por el sistema a las 48 h laborales, sin confirmacion: no cuenta para el FCR (primer_contacto NULL)."
+  },
+  {
+    "incidencia_id": 424,
+    "numero": "INC-000424",
+    "etiqueta": "ultimo_dia_utc_cambia_de_dia_31_ago",
+    "descripcion": "Creada el 31-ago 23:10 de Lima (= 1-sep 04:10 UTC): el dia es 31-ago."
+  },
+  {
+    "incidencia_id": 426,
+    "numero": "INC-000426",
+    "etiqueta": "escalamiento_doble_tecnico_unico",
+    "descripcion": "N1 -> N2 -> N3: el tecnico 10 (Infraestructura N3) solo tiene esta incidencia."
+  },
+  {
+    "incidencia_id": 460,
+    "numero": "INC-000460",
+    "etiqueta": "escalada_por_sla_vencido",
+    "descripcion": "Plazo de resolucion vencido y escalada por el vigia (escalamiento funcional)."
+  },
+  {
+    "incidencia_id": 562,
+    "numero": "INC-000562",
+    "etiqueta": "sin_respuesta_asignada",
+    "descripcion": "Asignada pero sin primera respuesta jamas (22-sep)."
+  },
+  {
+    "incidencia_id": 581,
+    "numero": "INC-000581",
+    "etiqueta": "reabierta_vigente",
+    "descripcion": "Resuelta el jueves 24-sep, reabierta el lunes 28-sep y todavia reabierta (resuelta_en NULL)."
+  },
+  {
+    "incidencia_id": 585,
+    "numero": "INC-000585",
+    "etiqueta": "abierta_3_a_7_dias_al_corte",
+    "descripcion": "Creada el 25-sep, detenida 5 dias en espera_tercero: al cierre del 30-sep lleva entre 3 y 7 dias abierta. Se resuelve el 2-oct."
+  },
+  {
+    "incidencia_id": 601,
+    "numero": "INC-000601",
+    "etiqueta": "abierta_al_corte_resuelta_despues",
+    "descripcion": "Creada el 28-sep (1-3 dias al cierre), resuelta el 1-oct: pendiente en el corte, resuelta hoy."
+  },
+  {
+    "incidencia_id": 604,
+    "numero": "INC-000604",
+    "etiqueta": "resuelta_y_reabierta_antes_del_corte",
+    "descripcion": "Resuelta el 29-sep 10:15 y reabierta el 30-sep 10:15, resuelta de nuevo el 1-oct: al cierre del 30-sep esta ABIERTA (pendiente)."
+  },
+  {
+    "incidencia_id": 613,
+    "numero": "INC-000613",
+    "etiqueta": "pausa_vigente_veredicto_pendiente",
+    "descripcion": "En espera_usuario desde el 30-sep: lleva menos del plazo corrido, asi que sla_resolucion_ok sigue NULL."
+  },
+  {
+    "incidencia_id": 615,
+    "numero": "INC-000615",
+    "etiqueta": "cierra_fuera_del_periodo",
+    "descripcion": "Creada y resuelta el 30-sep (16:00), cerrada el 1-oct: la cierra fuera del periodo."
+  },
+  {
+    "incidencia_id": 620,
+    "numero": "INC-000620",
+    "etiqueta": "resuelta_antes_del_corte_reabierta_despues",
+    "descripcion": "Resuelta el 30-sep 16:20 y reabierta el 1-oct: al cierre del 30-sep esta RESUELTA (no pendiente)."
+  },
+  {
+    "incidencia_id": 623,
+    "numero": "INC-000623",
+    "etiqueta": "sin_respuesta_cola_de_madrugada",
+    "descripcion": "Creada el 30-sep 22:00 (fuera de horario), sin asignar. Al cierre del periodo lleva menos de 1 dia."
+  },
+  {
+    "incidencia_id": 624,
+    "numero": "INC-000624",
+    "etiqueta": "borde_superior_30_sep_2355",
+    "descripcion": "Creada el 30-sep 23:55 de Lima (= 1-oct 04:55 UTC): SI es de septiembre. Se resuelve el 1-oct."
+  }
+]

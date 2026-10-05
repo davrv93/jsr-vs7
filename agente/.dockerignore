@@ -1,0 +1,7 @@
+.venv
+modelos
+index
+__pycache__
+*.pyc
+.pytest_cache
+LEEME.md

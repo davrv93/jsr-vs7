@@ -1,0 +1,349 @@
+{
+  "nota": "minutos del calendario entre dos instantes UTC (laboral = lun-vie 08:30-18:00 Lima sin feriados; p1_24x7 = todo)",
+  "minutos": [
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-10T22:55:00Z",
+      "hasta": "2026-07-13T13:55:00Z",
+      "minutos": 30.0,
+      "caso": "viernes 17:55 a lunes 08:55"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-27T22:00:00Z",
+      "hasta": "2026-07-30T15:00:00Z",
+      "minutos": 150.0,
+      "caso": "lunes 17:00 a jueves 10:00 con dos feriados en medio"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-04T16:00:00Z",
+      "hasta": "2026-08-10T14:30:00Z",
+      "minutos": 1620.0,
+      "caso": "pausa del martes al lunes con un feriado y un fin de semana"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-08T08:10:00Z",
+      "hasta": "2026-08-08T08:22:00Z",
+      "minutos": 0.0,
+      "caso": "sabado de madrugada: no cuenta nada"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-14T13:00:00Z",
+      "hasta": "2026-09-14T14:00:00Z",
+      "minutos": 30.0,
+      "caso": "antes de la apertura: solo cuenta desde las 08:30"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-14T22:30:00Z",
+      "hasta": "2026-09-15T00:00:00Z",
+      "minutos": 30.0,
+      "caso": "cruza el cierre de las 18:00"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-14T13:30:00Z",
+      "hasta": "2026-09-14T23:00:00Z",
+      "minutos": 570.0,
+      "caso": "jornada completa"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-14T17:00:00Z",
+      "hasta": "2026-09-14T17:00:00Z",
+      "minutos": 0.0,
+      "caso": "intervalo vacio"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-01T04:40:00Z",
+      "hasta": "2026-07-01T14:00:00Z",
+      "minutos": 30.0,
+      "caso": "creada el 30-jun 23:40 de Lima (1-jul UTC)"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-24T03:00:00Z",
+      "hasta": "2026-08-24T14:00:00Z",
+      "minutos": 660.0,
+      "caso": "domingo 22:00 a lunes 09:00 en 24x7"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-08T08:10:00Z",
+      "hasta": "2026-08-08T08:22:00Z",
+      "minutos": 12.0,
+      "caso": "P1 de madrugada: 12 minutos"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-11T09:41:12Z",
+      "hasta": "2026-07-13T03:47:28Z",
+      "minutos": 0.0,
+      "caso": "aleatorio 0"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-23T21:57:38Z",
+      "hasta": "2026-09-24T05:20:58Z",
+      "minutos": 62.3667,
+      "caso": "aleatorio 1"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-20T22:15:33Z",
+      "hasta": "2026-08-23T00:38:29Z",
+      "minutos": 3022.9333,
+      "caso": "aleatorio 2"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-04T08:58:52Z",
+      "hasta": "2026-09-13T14:06:31Z",
+      "minutos": 3420.0,
+      "caso": "aleatorio 3"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-09T21:53:42Z",
+      "hasta": "2026-08-18T19:08:33Z",
+      "minutos": 3758.55,
+      "caso": "aleatorio 4"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-11T05:06:37Z",
+      "hasta": "2026-08-13T16:00:16Z",
+      "minutos": 1290.2667,
+      "caso": "aleatorio 5"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-03T06:40:18Z",
+      "hasta": "2026-09-10T19:43:49Z",
+      "minutos": 3223.8167,
+      "caso": "aleatorio 6"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-16T07:13:08Z",
+      "hasta": "2026-08-17T08:36:21Z",
+      "minutos": 0.0,
+      "caso": "aleatorio 7"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-06T02:27:04Z",
+      "hasta": "2026-08-12T02:54:29Z",
+      "minutos": 8667.4167,
+      "caso": "aleatorio 8"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-30T18:35:41Z",
+      "hasta": "2026-08-05T18:42:47Z",
+      "minutos": 2287.1,
+      "caso": "aleatorio 9"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-07-08T13:11:10Z",
+      "hasta": "2026-07-15T14:26:15Z",
+      "minutos": 10155.0833,
+      "caso": "aleatorio 10"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-07-27T03:48:59Z",
+      "hasta": "2026-08-01T10:34:54Z",
+      "minutos": 7605.9167,
+      "caso": "aleatorio 11"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-18T15:56:43Z",
+      "hasta": "2026-09-25T02:08:02Z",
+      "minutos": 2703.2833,
+      "caso": "aleatorio 12"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-31T16:33:38Z",
+      "hasta": "2026-09-06T03:33:21Z",
+      "minutos": 7859.7167,
+      "caso": "aleatorio 13"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-20T09:22:48Z",
+      "hasta": "2026-08-29T11:12:06Z",
+      "minutos": 3990.0,
+      "caso": "aleatorio 14"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-17T10:55:22Z",
+      "hasta": "2026-08-21T17:24:01Z",
+      "minutos": 6148.65,
+      "caso": "aleatorio 15"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-04T13:54:02Z",
+      "hasta": "2026-09-08T03:25:23Z",
+      "minutos": 1115.9667,
+      "caso": "aleatorio 16"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-03T12:54:06Z",
+      "hasta": "2026-07-11T09:30:37Z",
+      "minutos": 3420.0,
+      "caso": "aleatorio 17"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-13T09:06:02Z",
+      "hasta": "2026-08-17T10:07:14Z",
+      "minutos": 1140.0,
+      "caso": "aleatorio 18"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-23T05:28:21Z",
+      "hasta": "2026-07-28T14:06:46Z",
+      "minutos": 1710.0,
+      "caso": "aleatorio 19"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-14T22:35:00Z",
+      "hasta": "2026-08-22T22:43:50Z",
+      "minutos": 2875.0,
+      "caso": "aleatorio 20"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-22T20:15:02Z",
+      "hasta": "2026-07-26T00:13:39Z",
+      "minutos": 1304.9667,
+      "caso": "aleatorio 21"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-19T05:08:15Z",
+      "hasta": "2026-07-24T23:59:19Z",
+      "minutos": 2850.0,
+      "caso": "aleatorio 22"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-07-27T16:34:12Z",
+      "hasta": "2026-07-31T10:36:56Z",
+      "minutos": 5402.7333,
+      "caso": "aleatorio 23"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-09-25T09:33:36Z",
+      "hasta": "2026-09-25T15:42:26Z",
+      "minutos": 368.8333,
+      "caso": "aleatorio 24"
+    }
+  ],
+  "avanzar": [
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-21T21:44:57Z",
+      "minutos": 2736,
+      "hasta": "2026-08-28T19:50:57Z"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-11T18:21:25Z",
+      "minutos": 1678,
+      "hasta": "2026-08-12T22:19:25Z"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-07-08T22:10:18Z",
+      "minutos": 1465,
+      "hasta": "2026-07-09T22:35:18Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-28T12:18:59Z",
+      "minutos": 2746,
+      "hasta": "2026-09-03T21:16:00Z"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-17T19:10:59Z",
+      "minutos": 1647,
+      "hasta": "2026-08-18T22:37:59Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-05T17:07:07Z",
+      "minutos": 1837,
+      "hasta": "2026-08-11T19:14:07Z"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-07-16T03:01:36Z",
+      "minutos": 942,
+      "hasta": "2026-07-16T18:43:36Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-27T01:44:54Z",
+      "minutos": 412,
+      "hasta": "2026-09-28T20:22:00Z"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-08-31T13:36:42Z",
+      "minutos": 1023,
+      "hasta": "2026-09-01T06:39:42Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-08T15:44:11Z",
+      "minutos": 1890,
+      "hasta": "2026-08-13T16:30:00Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-07-26T11:38:04Z",
+      "minutos": 1357,
+      "hasta": "2026-07-31T17:07:00Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-20T03:10:21Z",
+      "minutos": 1004,
+      "hasta": "2026-08-21T20:44:00Z"
+    },
+    {
+      "calendario": "p1_24x7",
+      "desde": "2026-07-02T23:56:50Z",
+      "minutos": 511,
+      "hasta": "2026-07-03T08:27:50Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-08-16T02:21:50Z",
+      "minutos": 1305,
+      "hasta": "2026-08-19T16:15:00Z"
+    },
+    {
+      "calendario": "laboral",
+      "desde": "2026-09-23T11:31:49Z",
+      "minutos": 1015,
+      "hasta": "2026-09-24T20:55:00Z"
+    }
+  ]
+}

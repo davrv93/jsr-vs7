@@ -1,0 +1,233 @@
+# jsrbot · mesa de ayuda con asistente
+#
+# Stack aislado: red, volúmenes y nombres propios (prefijo jsrbot_). Solo la consola publica un puerto, y solo en
+# 127.0.0.1: el nginx del borde (o un túnel SSH) hace de proxy hacia él.
+#
+#   JSR_HTTP_PORT (18580)   consola + API (127.0.0.1)
+#   Chat de depuración del agente: docker compose -f docker-compose.yml -f despliegue/depuracion.yml up -d agente
+#                                   → http://127.0.0.1:18582/ (solo 127.0.0.1)
+#
+# Perfiles opcionales:
+#   whatsapp    evolution-go (+ su Postgres). Sin él, la pasarela solo atiende el chat web y envía en modo simulado.
+#   juez        llama-server con Qwen3-1.7B (Jev local). Sin él, el agente corre sin juez.
+#
+# Primera vez:  ./despliegue/generar-env.sh   (crea .env con secretos al azar, sin imprimirlos)
+#               docker compose build          (de una imagen a la vez: COMPOSE_PARALLEL_LIMIT=1)
+#               docker compose up -d
+#               ./despliegue/crear-admin.sh   (pide la clave del administrador sin mostrarla)
+# Nunca `docker compose config` sin -q: imprime los secretos del .env.
+
+name: jsrbot
+
+x-reinicio: &reinicio
+  restart: unless-stopped
+
+services:
+  postgres:
+    <<: *reinicio
+    image: postgres:16-alpine
+    container_name: jsrbot_postgres
+    environment:
+      POSTGRES_USER: jsrbot
+      POSTGRES_PASSWORD: ${JSR_PG_CLAVE:?define JSR_PG_CLAVE en .env (./despliegue/generar-env.sh)}
+      POSTGRES_DB: jsrbot
+      TZ: UTC
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jsrbot -d jsrbot"]
+      interval: 60s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+      start_interval: 3s
+    mem_limit: 512m
+    networks: [jsrbot]
+
+  clickhouse:
+    <<: *reinicio
+    image: ${JSR_CH_IMAGEN:-clickhouse/clickhouse-server:26.9.10.4-alpine}
+    container_name: jsrbot_clickhouse
+    environment:
+      CLICKHOUSE_SKIP_USER_SETUP: "1"
+      JSR_CH_CLAVE_SHA256: ${JSR_CH_CLAVE_SHA256:?define JSR_CH_CLAVE_SHA256 en .env}
+      JSR_CH_ANALISTA_CLAVE_SHA256: ${JSR_CH_ANALISTA_CLAVE_SHA256:?define JSR_CH_ANALISTA_CLAVE_SHA256 en .env}
+      TZ: UTC
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./analitica/perfil-poca-memoria.xml:/etc/clickhouse-server/config.d/perfil-poca-memoria.xml:ro
+      - ./analitica/usuarios.xml:/etc/clickhouse-server/users.d/usuarios.xml:ro
+    ulimits:
+      nofile: {soft: 262144, hard: 262144}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8123/ping | grep -q Ok"]
+      interval: 60s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+      start_interval: 3s
+    mem_limit: 2g   # el perfil de poca memoria usa ~250 MiB en reposo; el tope deja margen para las consultas
+    networks: [jsrbot]
+
+  motor:
+    <<: *reinicio
+    build: ./backend
+    image: jsrbot/motor:local
+    container_name: jsrbot_motor
+    depends_on:
+      postgres: {condition: service_healthy}
+      clickhouse: {condition: service_healthy}
+    environment:
+      DATABASE_URL: postgres://jsrbot:${JSR_PG_CLAVE}@postgres:5432/jsrbot?sslmode=disable
+      MOTOR_CLAVE: ${MOTOR_CLAVE:?define MOTOR_CLAVE en .env}
+      MOTOR_ADDR: ":8090"
+      ANALITICA_DIR: /analitica
+      JSR_CH_URL: http://clickhouse:8123
+      JSR_CH_BASE: ${JSR_CH_BASE:-jsrbot}
+      JSR_CH_USUARIO: ${JSR_CH_USUARIO:-jsr}
+      JSR_CH_CLAVE: ${JSR_CH_CLAVE:?define JSR_CH_CLAVE en .env}
+      JSR_CH_ANALISTA_USUARIO: ${JSR_CH_ANALISTA_USUARIO:-analista}
+      JSR_CH_ANALISTA_CLAVE: ${JSR_CH_ANALISTA_CLAVE:?define JSR_CH_ANALISTA_CLAVE en .env}
+      ANALITICA_TEXTO: ${ANALITICA_TEXTO:-0}
+      TZ: UTC
+    volumes:
+      - ./analitica:/analitica:ro
+    mem_limit: 128m
+    networks: [jsrbot]
+
+  agente:
+    <<: *reinicio
+    build: ./agente
+    image: jsrbot/agente:local
+    container_name: jsrbot_agente
+    environment:
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-deepseek/deepseek-chat-v3.1,deepseek/deepseek-v4-flash}
+      JUEZ_URL: ${JUEZ_URL:-}
+      JUEZ_MODO: ${JUEZ_MODO:-}
+      VERIFICAR_MODO: ${VERIFICAR_MODO:-sombra}
+      BANDIDO_MODO: ${BANDIDO_MODO:-sombra}
+      TZ: America/Lima
+    volumes:
+      - agente_data:/data
+    mem_limit: 2g
+    networks: [jsrbot]
+
+  pasarela:
+    <<: *reinicio
+    build: ./pasarela
+    image: jsrbot/pasarela:local
+    container_name: jsrbot_pasarela
+    depends_on:
+      motor: {condition: service_healthy}
+      agente: {condition: service_healthy}
+    environment:
+      PORT: "8080"
+      DATABASE_URL: postgres://jsrbot:${JSR_PG_CLAVE}@postgres:5432/jsrbot?sslmode=disable
+      JWT_SECRET: ${JWT_SECRET:?define JWT_SECRET en .env}
+      MOTOR_URL: http://motor:8090
+      MOTOR_CLAVE: ${MOTOR_CLAVE}
+      AGENTE_URL: http://agente:8000
+      WEBHOOK_SECRET: ${WEBHOOK_SECRET:?define WEBHOOK_SECRET en .env}
+      # «simulado» NO envía nada a nadie: solo registra a dónde habría enviado. «real» exige las tres variables de abajo.
+      EVOLUTION_MODO: ${EVOLUTION_MODO:-simulado}
+      EVOLUTION_URL: ${EVOLUTION_URL:-http://evolution:8080}
+      EVOLUTION_API_KEY: ${EVOLUTION_API_KEY:-}
+      EVOLUTION_INSTANCIA: ${EVOLUTION_INSTANCIA:-}
+      ANALITICA_TEXTO: ${ANALITICA_TEXTO:-0}
+      BASE_URL_PUBLICA: ${JSR_URL_PUBLICA:-http://localhost:18580}
+      CONFIAR_PROXY: "1"
+      CHAT_WEB: ${CHAT_WEB:-1}
+      TZ: UTC
+    mem_limit: 128m
+    networks: [jsrbot]
+
+  web:
+    <<: *reinicio
+    build:
+      context: ./web
+      args:
+        PUBLIC_URL: ${JSR_URL_PUBLICA:-http://localhost:18580}
+        BASE_PATH: ${JSR_BASE_PATH:-/}
+    image: jsrbot/web:local
+    container_name: jsrbot_web
+    depends_on:
+      pasarela: {condition: service_healthy}
+    environment:
+      BACKEND_URL: http://pasarela:8080
+    ports:
+      - "127.0.0.1:${JSR_HTTP_PORT:-18580}:80"
+    mem_limit: 64m
+    networks: [jsrbot]
+
+  # ── Perfil «whatsapp» ─────────────────────────────────────────────────────────────────────────────────────
+  evolution-db:
+    <<: *reinicio
+    image: postgres:16-alpine
+    container_name: jsrbot_evolution_db
+    profiles: ["whatsapp"]
+    environment:
+      POSTGRES_USER: evogo
+      POSTGRES_PASSWORD: ${EVOLUTION_DB_CLAVE:?define EVOLUTION_DB_CLAVE en .env}
+      POSTGRES_DB: evogo_users
+    volumes:
+      - evolution_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U evogo -d evogo_users"]
+      interval: 60s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+      start_interval: 3s
+    mem_limit: 128m
+    networks: [jsrbot]
+
+  evolution:
+    <<: *reinicio
+    # Fork de evolution-go (davrv93). Se compila desde GitHub; para fijar versión usa #<commit>.
+    build:
+      context: ${EVOLUTION_GIT_CONTEXT:-https://github.com/davrv93/evolution-go.git#main}
+    image: jsrbot/evolution-go:local
+    container_name: jsrbot_evolution
+    profiles: ["whatsapp"]
+    depends_on:
+      evolution-db: {condition: service_healthy}
+    environment:
+      SERVER_PORT: "8080"
+      POSTGRES_AUTH_DB: postgresql://evogo:${EVOLUTION_DB_CLAVE}@evolution-db:5432/evogo_auth?sslmode=disable
+      POSTGRES_USERS_DB: postgresql://evogo:${EVOLUTION_DB_CLAVE}@evolution-db:5432/evogo_users?sslmode=disable
+      GLOBAL_API_KEY: ${EVOLUTION_API_KEY:?define EVOLUTION_API_KEY en .env}
+      DATABASE_SAVE_MESSAGES: "false"
+      CLIENT_NAME: jsrbot
+      OS_NAME: jsrbot Mesa de ayuda
+      WADEBUG: INFO
+      LOGTYPE: console
+      WEBHOOK_FILES: "false"
+      CONNECT_ON_STARTUP: "true"
+      EVENT_IGNORE_GROUP: "true"
+      EVENT_IGNORE_STATUS: "true"
+      MINIO_ENABLED: "false"
+      TZ: America/Lima
+      GOMEMLIMIT: 100MiB
+    mem_limit: 160m
+    networks: [jsrbot]
+
+  # ── Perfil «juez» ─────────────────────────────────────────────────────────────────────────────────────────
+  juez:
+    <<: *reinicio
+    build: ./juez
+    image: jsrbot/juez:local
+    container_name: jsrbot_juez
+    profiles: ["juez"]
+    mem_limit: 1800m
+    networks: [jsrbot]
+
+volumes:
+  postgres_data:
+  clickhouse_data:
+  agente_data:
+  evolution_db:
+
+networks:
+  jsrbot:
+    name: jsrbot_net

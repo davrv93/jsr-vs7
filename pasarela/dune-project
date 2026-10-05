@@ -1,0 +1,6 @@
+(lang dune 3.0)
+(name pasarela)
+
+(package
+ (name pasarela)
+ (synopsis "Pasarela de jsrbot: API de la consola, webhook de WhatsApp y flujo del caso"))

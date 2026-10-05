@@ -1,0 +1,25 @@
+{
+  "politicas": {
+    "P1": {
+      "calendario": "p1_24x7",
+      "respuesta_min": 15,
+      "resolucion_min": 240
+    },
+    "P2": {
+      "calendario": "laboral",
+      "respuesta_min": 60,
+      "resolucion_min": 480
+    },
+    "P3": {
+      "calendario": "laboral",
+      "respuesta_min": 240,
+      "resolucion_min": 1440
+    },
+    "P4": {
+      "calendario": "laboral",
+      "respuesta_min": 480,
+      "resolucion_min": 2880
+    }
+  },
+  "nota": "SUPUESTO: plazos en minutos del calendario de cada prioridad. P1 usa 24x7"
+}

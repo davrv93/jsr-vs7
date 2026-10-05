@@ -1,0 +1,59 @@
+# Golden query fcr · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: fcr
+nombre: "Resolución al primer contacto (FCR)"
+version: 1
+unidad: "%"
+dueno: Datos
+definicion: "Porcentaje de incidencias resueltas por el primer técnico asignado, sin escalamiento, sin reasignación y sin reapertura."
+base: "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido, ya resueltas y con veredicto de primer contacto. Quedan fuera las nunca resueltas y las cerradas sin confirmación del usuario (primer_contacto NULL)."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: origen
+columnas:
+  - "evaluadas: incidencias resueltas con veredicto"
+  - "al_primer_contacto: las resueltas por el primer técnico sin escalar ni reabrir"
+  - "porcentaje: al_primer_contacto / evaluadas x 100, NULL si no hay evaluadas"
+bordes:
+  - "Denominador cero: porcentaje NULL."
+  - "Cierre sin confirmación (48 h laborales): no cuenta para el FCR."
+  - "Reabierta o escalada: cuenta como no resuelta al primer contacto."
+  - "El veredicto lo escribe el backend en incidencias_tiempos.primer_contacto."
+objetivo: "SUPUESTO: 70 % o mas"
+preguntas_equivalentes:
+  - "¿Qué porcentaje de incidencias se resuelve al primer contacto?"
+  - "FCR del mes"
+  - "¿Cuántas incidencias resolvió el primer técnico sin escalar ni reabrir?"
+  - "Resolución en el primer contacto"
+  - "¿Con qué frecuencia el primer técnico lo resuelve todo?"
+  - "¿Qué tan efectivo es el primer nivel?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

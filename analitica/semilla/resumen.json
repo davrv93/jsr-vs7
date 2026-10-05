@@ -1,0 +1,19 @@
+{
+  "semilla": 20261005,
+  "ahora": "2026-10-05T05:00:00Z",
+  "periodo": [
+    "2026-07-01",
+    "2026-09-30"
+  ],
+  "incidencias": 624,
+  "casos": 1203,
+  "filas": {
+    "eventos_incidencia": 4596,
+    "incidencias_estado": 3997,
+    "incidencias_tiempos": 3988,
+    "casos_estado": 3096,
+    "mensajes": 6978,
+    "encuestas": 1251,
+    "feedback": 1049
+  }
+}

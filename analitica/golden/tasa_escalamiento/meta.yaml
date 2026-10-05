@@ -1,0 +1,57 @@
+# Golden query tasa_escalamiento · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: tasa_escalamiento
+nombre: "Tasa de escalamiento"
+version: 1
+unidad: "%"
+dueno: Datos
+definicion: "Porcentaje de incidencias que tuvieron al menos un escalamiento funcional (pasaron a otro nivel o grupo). Los avisos jerárquicos no cuentan."
+base: "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido, abiertas o cerradas. Se atribuye al grupo con el que nació la incidencia, no al que llegó al escalar; si no, la Mesa N1 nunca tendría escalamientos."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: origen
+columnas:
+  - "incidencias: incidencias creadas en el periodo"
+  - "escaladas: las que tuvieron al menos un evento escalada"
+  - "porcentaje: escaladas / incidencias x 100, NULL si no hay incidencias"
+bordes:
+  - "Denominador cero: porcentaje NULL."
+  - "Una incidencia escalada dos veces cuenta una sola vez."
+  - "Las abiertas entran en el denominador: una abierta puede escalar todavia."
+  - "El numerador se lee de los eventos, no del contador de incidencias_estado."
+preguntas_equivalentes:
+  - "¿Cuál es la tasa de escalamiento?"
+  - "¿Qué porcentaje de incidencias se escaló a otro nivel?"
+  - "¿Cuántas incidencias escalaron a segundo nivel este mes?"
+  - "Porcentaje de escalamientos funcionales"
+  - "¿Cuánto nos cuesta no resolver en la mesa de ayuda?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

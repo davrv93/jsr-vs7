@@ -1,0 +1,200 @@
+/* Base: reinicio mínimo, tipografía y controles de formulario. Los valores salen de tokens.css. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  height: 100%;
+}
+html.sin-scroll {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--fondo);
+  color: var(--tinta);
+  font: 400 var(--t-15) / 1.4 var(--fuente);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  color: var(--acento);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+::selection {
+  background: var(--acento-suave);
+}
+
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.saltar {
+  position: absolute;
+  left: var(--e3);
+  top: -80px;
+  z-index: 100;
+  padding: var(--e2) var(--e4);
+  background: var(--acento-boton);
+  color: var(--sobre-acento);
+  border-radius: var(--r-pildora);
+  font-weight: 500;
+  transition: top var(--d1) var(--ease);
+}
+.saltar:focus {
+  top: var(--e3);
+}
+
+kbd {
+  font-family: var(--fuente);
+  font-size: var(--t-12);
+  color: var(--tinta-2);
+}
+
+/* ---- Controles de formulario ---- */
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 36px;
+  padding: 0 var(--e3);
+  background: var(--agrupado);
+  border: 1px solid transparent;
+  border-radius: var(--r-control);
+  font-size: var(--t-15);
+  line-height: 1.3;
+  transition:
+    border-color var(--d1) var(--ease),
+    box-shadow var(--d1) var(--ease),
+    background var(--d1) var(--ease);
+}
+textarea {
+  padding: var(--e2) var(--e3);
+  min-height: 72px;
+  resize: vertical;
+  line-height: 1.45;
+}
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 32px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2386868b' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--tinta-3);
+}
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--sep-fuerte);
+}
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px var(--acento-suave);
+  border-radius: var(--r-control);
+}
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--rojo);
+}
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 18px;
+  min-height: 18px;
+  height: 18px;
+  accent-color: var(--acento-boton);
+}
+
+@media (max-width: 768px) {
+  /* 16 px mínimo en campos: evita el zoom de iOS al enfocar. */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    min-height: 44px;
+  }
+}

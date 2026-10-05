@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+  jsrbot · ClickHouse con poca memoria (ARQUITECTURA.md §9).
+  Se monta en /etc/clickhouse-server/config.d/perfil-poca-memoria.xml.
+  Solo la configuracion del SERVIDOR. Los limites por usuario (max_threads, max_block_size,
+  memoria por consulta) viven en usuarios.xml, porque los perfiles de usuario no se definen aqui.
+
+  Presupuesto: ClickHouse tiene tope de 1,5-2 GB en un servidor de 8 GB (RAM total del servidor x 0,25).
+  Si el servidor es otro, ajusta SOLO max_server_memory_usage_to_ram_ratio.
+-->
+<clickhouse>
+    <!-- Tope duro: el servidor se niega a pasar de este porcentaje de la RAM (la del contenedor si tiene limite). -->
+    <max_server_memory_usage_to_ram_ratio>0.25</max_server_memory_usage_to_ram_ratio>
+
+    <!-- Cache de marcas: 500 MB es el valor que recomienda la documentacion para poca memoria. -->
+    <mark_cache_size>536870912</mark_cache_size>
+    <!-- Cache de bloques descomprimidos apagada: con consultas pequenas no compensa. -->
+    <uncompressed_cache_size>0</uncompressed_cache_size>
+
+    <!-- Menos hilos de fondo, pero sin tocar background_pool_size (16 por defecto): ClickHouse se niega a
+         arrancar (codigo 36) si background_pool_size x background_merges_mutations_concurrency_ratio (2)
+         queda por debajo de number_of_free_entries_in_pool_to_execute_mutation (20) o de
+         ..._to_execute_optimize_entire_partition (25). Medido al probar con 4 y con 10. Los hilos ociosos casi no pesan. -->
+    <background_move_pool_size>2</background_move_pool_size>
+    <background_fetches_pool_size>2</background_fetches_pool_size>
+    <background_common_pool_size>4</background_common_pool_size>
+    <background_schedule_pool_size>8</background_schedule_pool_size>
+    <max_concurrent_queries>16</max_concurrent_queries>
+    <asynchronous_metrics_update_period_s>60</asynchronous_metrics_update_period_s>
+
+    <!-- Sin registros del sistema: cada uno es una tabla MergeTree mas que consume RAM, disco y CPU.
+         ClickHouse no es la fuente de verdad, asi que no se necesita su historial interno. -->
+    <query_log remove="1"/>
+    <query_thread_log remove="1"/>
+    <query_views_log remove="1"/>
+    <trace_log remove="1"/>
+    <text_log remove="1"/>
+    <metric_log remove="1"/>
+    <asynchronous_metric_log remove="1"/>
+    <part_log remove="1"/>
+    <session_log remove="1"/>
+    <opentelemetry_span_log remove="1"/>
+    <processors_profile_log remove="1"/>
+    <asynchronous_insert_log remove="1"/>
+    <backup_log remove="1"/>
+    <error_log remove="1"/>
+    <crash_log remove="1"/>
+    <blob_storage_log remove="1"/>
+    <query_metric_log remove="1"/>
+    <background_schedule_pool_log remove="1"/>
+    <zookeeper_connection_log remove="1"/>
+    <transactions_info_log remove="1"/>
+
+    <!-- Solo avisos y errores en el log de archivo y de consola. -->
+    <logger>
+        <level>warning</level>
+        <console>1</console>
+        <size>50M</size>
+        <count>3</count>
+    </logger>
+
+    <!-- Sin telemetria hacia terceros. -->
+    <send_crash_reports>
+        <enabled>false</enabled>
+    </send_crash_reports>
+</clickhouse>

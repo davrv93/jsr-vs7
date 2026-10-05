@@ -1,0 +1,4 @@
+(tests
+ (names test_unit test_integracion test_api)
+ (libraries pasarela falsos alcotest alcotest-lwt lwt lwt.unix dream yojson unix cohttp-lwt-unix cohttp-lwt uri)
+ (flags (:standard -w +a-4-9-40-41-42-44-45-70 -warn-error -a)))

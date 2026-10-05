@@ -1,0 +1,61 @@
+# Golden query sla_cumplimiento · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: sla_cumplimiento
+nombre: "Cumplimiento de SLA"
+version: 1
+unidad: "%"
+dueno: Datos
+definicion: "Porcentaje de incidencias que cumplieron su plazo de SLA, medido por separado para la primera respuesta y para la resolucion. Los tiempos son laborales (calendario de la prioridad) y sin pausas, y los calcula el backend."
+base: "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido. Cada metrica evalua solo las incidencias con veredicto: una abierta con el plazo vencido cuenta como incumplida, una abierta con el plazo aun vigente no entra."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: origen
+columnas:
+  - "metrica: respuesta o resolucion"
+  - "evaluadas: incidencias con veredicto"
+  - "cumplidas: las que cumplieron el plazo"
+  - "porcentaje: cumplidas / evaluadas x 100, NULL si no hay evaluadas"
+bordes:
+  - "Denominador cero: porcentaje NULL, nunca 0."
+  - "Abierta con plazo vencido: incumplida. Abierta con plazo vigente o en pausa: sin veredicto y no entra."
+  - "Cerrada fuera del periodo: no importa, la base es la fecha de creacion."
+  - "Los duplicados y las versiones viejas se resuelven con FINAL en v_tiempos."
+  - "El dia se toma en hora de Lima: una incidencia creada el 30-jun a las 23:40 de Lima no es de julio aunque en UTC ya sea 1-jul."
+objetivo: "SUPUESTO: 90 % o mas, tanto en respuesta como en resolucion (la organizacion aun no lo confirmo)"
+preguntas_equivalentes:
+  - "¿Cuál fue el cumplimiento de SLA de septiembre?"
+  - "¿Qué porcentaje de incidencias atendimos dentro del plazo?"
+  - "¿Cumplimos los tiempos de respuesta y de resolución acordados?"
+  - "¿Cuántas incidencias incumplieron el SLA este mes?"
+  - "Dame el SLA del trimestre por grupo"
+  - "¿Qué tan bien cumple la mesa de ayuda sus plazos?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

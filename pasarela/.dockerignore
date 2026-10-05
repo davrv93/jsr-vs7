@@ -1,0 +1,7 @@
+_build
+dist
+.git
+test
+scripts
+*.md
+Dockerfile.cimientos

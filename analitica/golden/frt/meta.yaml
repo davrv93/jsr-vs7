@@ -1,0 +1,58 @@
+# Golden query frt · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: frt
+nombre: "Tiempo de primera respuesta (FRT)"
+version: 1
+unidad: "minutos laborales"
+dueno: Datos
+definicion: "Tiempo desde que se crea la incidencia hasta la primera respuesta humana, en minutos del calendario de su prioridad (laborales, salvo P1 en 24x7). Se informa la mediana y el percentil 90."
+base: "Incidencias creadas en el periodo (dia de Lima) del grupo de origen elegido que ya tienen primera respuesta. Las que aun no la tienen no entran: no hay tiempo que medir (pesan en el cumplimiento de SLA)."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: origen
+columnas:
+  - "evaluadas: incidencias con primera respuesta"
+  - "mediana_min: mediana en minutos"
+  - "p90_min: percentil 90 en minutos"
+bordes:
+  - "Sin incidencias evaluadas: mediana y p90 NULL, nunca 0."
+  - "Incidencia creada el viernes 17:55: solo cuentan los 5 minutos de ese dia y el resto corre desde el lunes 08:30."
+  - "Percentil con interpolacion lineal (quantileExactInclusive)."
+  - "Una incidencia sin primera respuesta nunca baja el promedio: se excluye, y su efecto aparece en sla_cumplimiento."
+preguntas_equivalentes:
+  - "¿Cuál es el tiempo de primera respuesta?"
+  - "¿Cuánto tardamos en responder por primera vez a una incidencia?"
+  - "FRT mediano y p90 del mes"
+  - "¿En cuántos minutos responde la mesa de ayuda la primera vez?"
+  - "Tiempo hasta la primera respuesta humana"
+  - "¿Qué tan rápido atendemos a los usuarios?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

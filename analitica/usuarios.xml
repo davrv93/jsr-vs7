@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!--
+  jsrbot · usuarios y perfiles de ClickHouse. Se monta en /etc/clickhouse-server/users.d/usuarios.xml.
+  NINGUN secreto vive aqui: cada clave llega como hash SHA-256 por variable de entorno (.env.ejemplo).
+    jsr      escritura: el backend carga la outbox y aplica esquema.sql. Dueno de la base jsrbot.
+    analista solo lectura: golden queries, tableros y SQL generado por el analista. Con limites duros.
+  El usuario "default" se elimina: no queda ninguna cuenta sin clave.
+-->
+<clickhouse>
+    <users>
+        <default remove="1"/>
+
+        <jsr>
+            <password_sha256_hex from_env="JSR_CH_CLAVE_SHA256"/>
+            <profile>jsr_escritura</profile>
+            <quota>jsr_cuota</quota>
+            <networks>
+                <ip>127.0.0.1</ip>
+                <ip>::1</ip>
+                <ip>10.0.0.0/8</ip>
+                <ip>172.16.0.0/12</ip>
+                <ip>192.168.0.0/16</ip>
+            </networks>
+            <access_management>0</access_management>
+            <grants>
+                <!-- Dueno de la base jsrbot: carga, aplica el esquema y puede vaciarla para reconstruirla. -->
+                <query>GRANT SELECT, INSERT, ALTER, CREATE, DROP, TRUNCATE, OPTIMIZE, SHOW, SYSTEM MERGES ON jsrbot.*</query>
+                <!-- Solo para vigilar la propia base (tamanos, columnas, perfil aplicado). Nada de usuarios ni de logs. -->
+                <query>GRANT SELECT ON system.tables</query>
+                <query>GRANT SELECT ON system.columns</query>
+                <query>GRANT SELECT ON system.parts</query>
+                <query>GRANT SELECT ON system.server_settings</query>
+                <query>GRANT SELECT ON system.metrics</query>
+                <query>GRANT SELECT ON system.asynchronous_metrics</query>
+            </grants>
+        </jsr>
+
+        <analista>
+            <password_sha256_hex from_env="JSR_CH_ANALISTA_CLAVE_SHA256"/>
+            <profile>jsr_analista</profile>
+            <quota>analista_cuota</quota>
+            <networks>
+                <ip>127.0.0.1</ip>
+                <ip>::1</ip>
+                <ip>10.0.0.0/8</ip>
+                <ip>172.16.0.0/12</ip>
+                <ip>192.168.0.0/16</ip>
+            </networks>
+            <access_management>0</access_management>
+            <grants>
+                <query>GRANT SELECT ON jsrbot.*</query>
+            </grants>
+        </analista>
+    </users>
+
+    <profiles>
+        <!-- Base comun: poca memoria (ARQUITECTURA.md §9): max_threads 2 y bloques de 8192 filas. -->
+        <jsr_base>
+            <max_threads>2</max_threads>
+            <max_block_size>8192</max_block_size>
+            <max_insert_threads>1</max_insert_threads>
+            <log_queries>0</log_queries>
+            <use_uncompressed_cache>0</use_uncompressed_cache>
+        </jsr_base>
+
+        <!-- Backend: cargas por lotes y reconstruccion. Tiene techo para que un lote enorme no tumbe el servidor. -->
+        <jsr_escritura>
+            <profile>jsr_base</profile>
+            <max_memory_usage>800000000</max_memory_usage>
+            <max_execution_time>120</max_execution_time>
+            <date_time_input_format>best_effort</date_time_input_format>
+            <input_format_null_as_default>1</input_format_null_as_default>
+        </jsr_escritura>
+
+        <!-- Analista y golden queries: SOLO LECTURA, con limites de memoria, tiempo y filas.
+             readonly=1 impide INSERT, DDL y tambien SET: ni el cliente ni el SQL generado pueden subir estos limites. -->
+        <jsr_analista>
+            <profile>jsr_base</profile>
+            <readonly>1</readonly>
+            <allow_ddl>0</allow_ddl>
+            <max_memory_usage>400000000</max_memory_usage>
+            <max_execution_time>10</max_execution_time>
+            <timeout_overflow_mode>throw</timeout_overflow_mode>
+            <max_rows_to_read>100000000</max_rows_to_read>
+            <read_overflow_mode>throw</read_overflow_mode>
+            <max_result_rows>10000</max_result_rows>
+            <max_result_bytes>20000000</max_result_bytes>
+            <result_overflow_mode>throw</result_overflow_mode>
+            <max_rows_to_group_by>5000000</max_rows_to_group_by>
+            <group_by_overflow_mode>throw</group_by_overflow_mode>
+            <max_rows_in_join>5000000</max_rows_in_join>
+            <join_overflow_mode>throw</join_overflow_mode>
+            <max_ast_elements>10000</max_ast_elements>
+            <max_query_size>262144</max_query_size>
+            <max_concurrent_queries_for_user>4</max_concurrent_queries_for_user>
+            <max_subquery_depth>5</max_subquery_depth>
+            <!-- OJO: wait_end_of_query NO es un ajuste de perfil, es un parametro de la URL HTTP. El cliente debe mandarlo
+                 siempre (?wait_end_of_query=1), si no un limite excedido a media respuesta llega como HTTP 200 con el cuerpo cortado. -->
+            <!-- Las golden queries se leen como JSON sin enteros de 64 bits entre comillas. -->
+            <output_format_json_quote_64bit_integers>0</output_format_json_quote_64bit_integers>
+            <output_format_json_quote_denormals>0</output_format_json_quote_denormals>
+        </jsr_analista>
+    </profiles>
+
+    <quotas>
+        <jsr_cuota>
+            <interval>
+                <duration>3600</duration>
+                <queries>0</queries>
+                <errors>0</errors>
+            </interval>
+        </jsr_cuota>
+        <analista_cuota>
+            <interval>
+                <duration>3600</duration>
+                <queries>3000</queries>
+                <errors>300</errors>
+                <result_rows>10000000</result_rows>
+                <read_rows>1000000000</read_rows>
+                <execution_time>1800</execution_time>
+            </interval>
+        </analista_cuota>
+    </quotas>
+</clickhouse>

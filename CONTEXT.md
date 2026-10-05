@@ -9,7 +9,7 @@ decidimos y por qué, y qué no sabemos todavía. Lo leen las personas y los age
 - Arquitectura: [`ARQUITECTURA.md`](ARQUITECTURA.md).
 - Diseño: [`DISENO.md`](DISENO.md) y la base que leen las skills, [`.better-web-ui.md`](.better-web-ui.md).
 
-Estado: **proyecto nuevo, solo documentación** (05-10-2026). No hay código todavía.
+Estado: **construido en local** (05-10-2026): motor Go, pasarela OCaml, agente Python, consola Qwik y analítica en ClickHouse, con pruebas propias. Sin desplegar. Los datos de entrenamiento, semilla y artículos son sintéticos (`SUPUESTO:`).
 
 ---
 
@@ -116,6 +116,7 @@ Una palabra, un significado. El código, la interfaz y los documentos usan estas
 | **Los modelos proponen; el código decide.** Prioridad, SLA, asignación, escalamiento y cierre los decide el código con reglas configurables. | Herencia de Baruka: un proceso que se puede auditar. Un SLA no puede depender de lo que redacte un LLM. |
 | **Clasificador local** (e5-small int8 + regresión logística) como primera capa. | 2 ms por mensaje en CPU, 98,5 % en Baruka, sin costo por mensaje. |
 | **Jev local open source** en vez de Jev de pago. | Sin dependencia de saldo externo para decidir y verificar. Elección del modelo: `ARQUITECTURA.md` §6. |
+| **Reparto de lenguajes:** el motor de incidencias queda en **Go** y lo que faltaba (API de la consola, webhook, flujo del caso, avisos) se escribe en **OCaml** (`pasarela/`). | Pedido del usuario (05-10-2026). Contratos en `docs/CONTRATOS.md` §5. |
 | **LLM por API para redactar** (DeepSeek por OpenRouter), con respaldo por código. | En CPU, un LLM generativo local tarda minutos por mensaje (medido en Baruka). Se revisa si hay GPU. |
 | **Postgres** para lo transaccional (incidencias, técnicos, configuración). | Varios usuarios concurrentes, transacciones, y fuente de la réplica hacia ClickHouse. Baruka usa SQLite porque es un solo bot. |
 | **ClickHouse** solo para reportería. | Consultas de KPI sobre millones de eventos en milisegundos; nunca es fuente de verdad. |

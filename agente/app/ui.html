@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#008069" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#202c33" media="(prefers-color-scheme: dark)">
+<title>jsrbot · chat de depuración</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2300a27e' d='M16 3C8.8 3 3 8.5 3 15.3c0 2.4.7 4.6 2 6.5L3.5 28.5l7-1.8c1.7.8 3.5 1.2 5.5 1.2 7.2 0 13-5.5 13-12.3S23.2 3 16 3z'/%3E%3C/svg%3E">
+<style>
+  /* Chat de depuración con la piel de WhatsApp (referencias/baruka/DISENO_WHATSAPP.md). El frontend definitivo es web/ (Qwik); esto solo enseña
+     lo que contesta el agente y por qué: etapa, clasificación, ficha, acción y bitácora. Un solo archivo, sin dependencias. */
+  :root { color-scheme: light dark;
+    --fuera:#d9dbd5; --cab:#008069; --cab-tinta:#fff; --wall:#efeae2; --in:#fff; --out:#d9fdd3; --tinta:#111b21; --muted:#667781; --meta:#5b6b74; --line:#e9edef;
+    --panel:#fff; --panel-cab:#f0f2f5; --verde:#00a27e; --verde-tinta:#008069; --aviso:#ffeecd; --aviso-tinta:#54656f; --sombra:0 1px .5px rgba(11,20,26,.13); --foco:#0277ab; --codigo:#f5f1eb; }
+  @media (prefers-color-scheme: dark) { :root {
+    --fuera:#0a1014; --cab:#202c33; --cab-tinta:#e9edef; --wall:#0b141a; --in:#202c33; --out:#005c4b; --tinta:#e9edef; --muted:#8696a0; --meta:#a9b6bd; --line:#2a3942;
+    --panel:#111b21; --panel-cab:#202c33; --verde:#00a884; --verde-tinta:#06cf9c; --aviso:#182229; --aviso-tinta:#ffd279; --sombra:0 1px .5px rgba(0,0,0,.4); --foco:#53bdeb; --codigo:#1a252c; } }
+  * { box-sizing:border-box }
+  [hidden] { display:none !important }
+  html, body { height:100%; margin:0 }
+  body { background:var(--fuera); color:var(--tinta); font:15px/20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji"; overflow:hidden }
+  button, input, select, textarea { font:inherit; color:inherit }
+  :focus-visible { outline:2px solid var(--foco); outline-offset:2px }
+  .app { display:grid; grid-template-columns:minmax(0,500px) minmax(0,1fr); gap:14px; height:100dvh; padding:14px; max-width:1280px; margin:0 auto }
+  .ventana { display:flex; flex-direction:column; min-height:0; background:var(--wall); border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(11,20,26,.14) }
+  .cab { flex:none; display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--cab); color:var(--cab-tinta) }
+  .avatar { width:40px; height:40px; flex:none; display:grid; place-items:center; border-radius:50%; background:#2f6f8f; color:#fff; font-weight:600; font-size:14px }
+  .cab h1 { margin:0; font-size:16.5px; line-height:21px; font-weight:600 }
+  .cab p { margin:0; font-size:13px; line-height:17px; opacity:.85 }
+  .cab .quien { flex:1; min-width:0 }
+  .cab button { border:1px solid rgba(255,255,255,.4); background:transparent; border-radius:8px; padding:5px 10px; color:inherit; cursor:pointer; font-size:13px }
+  .msgs { flex:1; min-height:0; overflow-y:auto; display:flex; flex-direction:column; padding:8px 14px 10px; scrollbar-width:thin }
+  .aviso { align-self:center; max-width:94%; margin:4px 0 8px; padding:6px 12px; border-radius:7.5px; background:var(--aviso); color:var(--aviso-tinta); font-size:12.5px; line-height:17px; text-align:center; box-shadow:var(--sombra) }
+  .m { max-width:84%; margin-top:3px; animation:entra .16s ease-out }
+  .m.persona { align-self:flex-end }
+  .m.asistente { align-self:flex-start }
+  .b { position:relative; padding:6px 9px 18px; border-radius:7.5px; box-shadow:var(--sombra); white-space:pre-wrap; overflow-wrap:anywhere }
+  .persona .b { background:var(--out) } .asistente .b { background:var(--in) }
+  .hora { position:absolute; right:7px; bottom:3px; font-size:11px; color:var(--meta) }
+  .etiqueta { display:inline-block; margin-top:3px; padding:1px 8px; border-radius:99px; background:var(--line); color:var(--muted); font-size:11.5px }
+  .pie { flex:none; display:flex; gap:8px; align-items:center; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:var(--panel-cab) }
+  .pie input[type=text] { flex:1; min-width:0; min-height:44px; padding:10px 16px; border:0; border-radius:22px; background:var(--panel) }
+  .pie button { flex:none; width:44px; height:44px; border:0; border-radius:50%; background:var(--verde); color:#fff; font-size:18px; cursor:pointer }
+  .pie button:disabled { opacity:.5; cursor:default }
+  .rapidas { flex:none; display:flex; gap:6px; overflow-x:auto; padding:6px 10px 0; background:var(--panel-cab); scrollbar-width:none }
+  .rapidas button { flex:none; border:1px solid var(--line); background:var(--panel); border-radius:99px; padding:6px 12px; font-size:13px; cursor:pointer; white-space:nowrap }
+  @keyframes entra { from { opacity:0; transform:translateY(4px) } }
+  @media (prefers-reduced-motion: reduce) { .m { animation:none } }
+
+  .depurar { display:flex; flex-direction:column; min-height:0; background:var(--panel); border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(11,20,26,.14) }
+  .depurar > header { flex:none; padding:10px 14px; background:var(--panel-cab); font-weight:600; display:flex; justify-content:space-between; align-items:center }
+  .depurar .cuerpo { flex:1; min-height:0; overflow-y:auto; padding:10px 14px 16px }
+  .depurar h2 { margin:14px 0 6px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600 }
+  .depurar h2:first-child { margin-top:0 }
+  .fila { display:flex; flex-wrap:wrap; gap:6px }
+  .chip { padding:2px 10px; border-radius:99px; background:var(--line); font-size:13px }
+  .chip.ok { background:color-mix(in srgb, var(--verde) 22%, transparent) } .chip.malo { background:color-mix(in srgb, #d9534f 22%, transparent) }
+  .tabla { width:100%; border-collapse:collapse; font-size:13px }
+  .tabla td { padding:3px 6px; border-bottom:1px solid var(--line); vertical-align:top } .tabla td:first-child { color:var(--muted); white-space:nowrap; width:1%; padding-right:12px }
+  pre { margin:0; padding:8px 10px; background:var(--codigo); border-radius:8px; font:12px/17px ui-monospace, Menlo, Consolas, monospace; white-space:pre-wrap; overflow-wrap:anywhere }
+  ul.b2 { margin:0; padding-left:18px; font-size:13px } ul.b2 li { margin:2px 0 }
+  .perfil { display:grid; grid-template-columns:1fr 1fr; gap:6px 8px; font-size:13px }
+  .perfil label { display:flex; flex-direction:column; color:var(--muted); font-size:12px } .perfil input { padding:5px 8px; border:1px solid var(--line); border-radius:6px; background:var(--panel) }
+  .vacio { color:var(--muted); font-size:13px }
+  @media (max-width: 900px) { body { overflow:auto } .app { display:block; height:auto; padding:0 } .ventana { height:100dvh; border-radius:0 } .depurar { margin:12px; min-height:60dvh } }
+</style>
+</head>
+<body>
+<main class="app">
+  <section class="ventana" aria-label="Chat con el asistente">
+    <header class="cab">
+      <div class="avatar" aria-hidden="true">JB</div>
+      <div class="quien"><h1>Soporte jsrbot</h1><p id="estado">asistente de la mesa de ayuda</p></div>
+      <button id="nuevo" type="button" title="Empezar un caso nuevo">Caso nuevo</button>
+    </header>
+    <div class="msgs" id="msgs" role="log" aria-live="polite" aria-label="Conversación">
+      <div class="aviso">Chat de depuración: lo que escribes llega a <b>POST /chat</b> igual que desde el backend. A la derecha, por qué contestó lo que contestó.</div>
+    </div>
+    <div class="rapidas" id="rapidas" aria-label="Mensajes de prueba"></div>
+    <form class="pie" id="form" autocomplete="off">
+      <label for="texto" hidden>Mensaje</label>
+      <input type="text" id="texto" placeholder="Escribe un mensaje" maxlength="2000" enterkeyhint="send">
+      <button type="submit" id="enviar" aria-label="Enviar">➤</button>
+    </form>
+  </section>
+
+  <aside class="depurar" aria-label="Análisis del turno">
+    <header><span>Análisis del último turno</span><label style="font-weight:400;font-size:13px"><input type="checkbox" id="llm" checked> usar LLM si hay clave</label></header>
+    <div class="cuerpo" id="analisis">
+      <h2>Perfil de la persona (lo manda el backend)</h2>
+      <div class="perfil">
+        <label>Nombre<input id="p-nombre" value="Ana Ríos"></label><label>Equipo registrado<input id="p-equipo" value="PC-CONT-07"></label>
+        <label>Sede<input id="p-sede" value="Centro"></label><label>Área<input id="p-area" value="Contabilidad"></label>
+      </div>
+      <div id="resultado"><p class="vacio">Escribe un mensaje para ver la etapa, la clasificación, la ficha del caso y la acción que propone el agente.</p></div>
+    </div>
+  </aside>
+</main>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const S = { etapa: 'recepcion', memoria: {}, historial: [], abiertas: [], n: 141, caso: Math.floor(Math.random() * 1e6), ocupado: false };
+  const RAPIDAS = ['no me abre el correo desde esta mañana', 'la impresora del tercer piso no imprime', 'se cayó el internet en toda la sede', 'olvidé mi contraseña',
+                   'quiero hablar con un técnico', '¿cómo va mi ticket?', 'sigue igual', 'ya funcionó, gracias', 'mi clave es Perro123'];
+  const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const hora = () => new Date().toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
+
+  function burbuja(rol, texto, etiqueta) {
+    const d = document.createElement('div');
+    d.className = 'm ' + rol;
+    d.innerHTML = '<div class="b">' + esc(texto) + '<span class="hora">' + hora() + '</span></div>' + (etiqueta ? '<span class="etiqueta">' + esc(etiqueta) + '</span>' : '');
+    $('#msgs').appendChild(d);
+    $('#msgs').scrollTop = $('#msgs').scrollHeight;
+  }
+
+  function perfil() {
+    const e = $('#p-equipo').value.trim();
+    return { nombre: $('#p-nombre').value.trim(), sede: $('#p-sede').value.trim(), area: $('#p-area').value.trim(), vip: false, equipos: e ? [e] : [] };
+  }
+
+  // El backend de bolsillo: lo mínimo de lo que haría el backend con lo que propone el agente.
+  function atender(j) {
+    const acc = j.accion || {}; let extra = '';
+    if (acc.tipo === 'crear_incidencia' || (acc.tipo === 'pedir_tecnico' && acc.incidencia)) {
+      S.n += 1; const num = 'INC-' + String(S.n).padStart(6, '0');
+      S.abiertas.push({ numero: num, estado: 'nueva', titulo: acc.incidencia.titulo, categoria: acc.incidencia.categoria, tecnico: null, vence_resolucion_en: null });
+      j.memoria.incidencia = num; extra = ' Registré ' + num + '.';
+    } else if (acc.numero && ['consultar_estado', 'pedir_tecnico', 'sigue_igual', 'agregar_dato'].includes(acc.tipo)) {
+      const inc = S.abiertas.find((i) => i.numero === acc.numero); extra = inc ? ' ' + acc.numero + ' está ' + inc.estado + '.' : '';
+    }
+    if (acc.tipo === 'confirmar_solucion' && acc.numero) S.abiertas = S.abiertas.filter((i) => i.numero !== acc.numero);
+    return ((j.respuesta || '') + extra).trim();
+  }
+
+  async function enviar(texto) {
+    if (S.ocupado || !texto.trim()) return;
+    S.ocupado = true; $('#enviar').disabled = true; $('#estado').textContent = 'escribiendo…';
+    burbuja('persona', texto);
+    try {
+      const r = await fetch('/chat', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({
+        caso_id: S.caso, canal: 'web', mensaje: texto, historial: S.historial.slice(-12), etapa: S.etapa, memoria: S.memoria, perfil: perfil(),
+        incidencias_abiertas: S.abiertas, ahora: new Date().toISOString(), usar_llm: $('#llm').checked }) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const j = await r.json();
+      const final = atender(j);
+      S.etapa = j.etapa; S.memoria = j.memoria;
+      S.historial.push({ rol: 'usuario', texto: j.texto_usuario_guardar }, { rol: 'asistente', texto: final });
+      burbuja('asistente', final || '(sin texto: el backend lo arma)', j.etapa + ' · ' + j.accion.tipo);
+      pintar(j);
+    } catch (e) {
+      burbuja('asistente', 'No pude contactar al agente: ' + e.message);
+    } finally {
+      S.ocupado = false; $('#enviar').disabled = false; $('#estado').textContent = 'asistente de la mesa de ayuda'; $('#texto').focus();
+    }
+  }
+
+  function pintar(j) {
+    const sab = Object.entries(j.memoria.sabemos || {}).filter(([k, v]) => v && !(Array.isArray(v) && !v.length));
+    const fila = (a, b) => '<tr><td>' + esc(a) + '</td><td>' + b + '</td></tr>';
+    const conf = (x) => (x == null ? '—' : Math.round(x * 100) + ' %');
+    const a = j.analisis || {};
+    $('#resultado').innerHTML =
+      '<h2>Decisión</h2><div class="fila"><span class="chip ok">etapa: ' + esc(j.etapa) + '</span><span class="chip">acción: ' + esc(j.accion.tipo) + '</span>' +
+      (a.p1 ? '<span class="chip malo">P1</span>' : '') + (j.senales.contrasena_oculta ? '<span class="chip malo">contraseña oculta</span>' : '') +
+      (j.senales.queja ? '<span class="chip malo">queja</span>' : '') + (j.senales.pide_tecnico ? '<span class="chip">pide técnico</span>' : '') + '<span class="chip">ánimo: ' + esc(j.senales.animo) + '</span></div>' +
+      '<h2>Clasificación</h2><table class="tabla">' +
+        fila('intención', esc(j.intencion) + ' · ' + conf(j.confianza) + ' (' + esc(a.nivel) + ')') +
+        fila('categoría', j.categoria ? esc(j.categoria) + ' · ' + conf(j.categoria_confianza) : '—') +
+        fila('otras intenciones', (a.top_intenciones || []).map((t) => esc(t[0]) + ' ' + conf(t[1])).join(' · ')) +
+        fila('artículo', a.articulo ? esc(a.articulo.clave) + ' · parecido ' + a.articulo.score + (a.articulo.suficiente ? ' (suficiente)' : ' (a medias)') : 'ninguno') +
+        fila('juez local', esc(j.juez.modo) + (j.juez.veredictos.clasificacion ? ' · ' + esc(JSON.stringify(j.juez.veredictos.clasificacion)) : '')) +
+        fila('LLM', a.llm && a.llm.usado ? 'sí · ' + esc(a.llm.modelo) + ' · US$ ' + j.costo_usd + (j.regenerada ? ' · regenerada' : '') + (j.frases_quitadas ? ' · frases quitadas: ' + j.frases_quitadas : '') : 'no (plantillas)') +
+        fila('latencia', j.latencia_ms + ' ms') + '</table>' +
+      '<h2>Por qué (bitácora)</h2>' + ((a.bitacora || []).length ? '<ul class="b2">' + a.bitacora.map((x) => '<li>' + esc(x) + '</li>').join('') + '</ul>' : '<p class="vacio">sin reglas especiales</p>') +
+      '<h2>Ficha del caso (memoria)</h2><table class="tabla">' + fila('pendiente', esc(j.memoria.pendiente || '—')) + fila('categoría', esc(j.memoria.categoria || '—')) +
+        fila('guías', 'intentos ' + j.memoria.intentos_guia + ' · mostradas ' + esc((j.memoria.articulos_mostrados || []).join(', ') || '—')) + fila('preguntado', esc((j.memoria.preguntado || []).join(', ') || '—')) +
+        sab.map(([k, v]) => fila(k, esc(Array.isArray(v) ? v.join(', ') : v))).join('') + '</table>' +
+      '<h2>Acción propuesta al backend</h2><pre>' + esc(JSON.stringify(j.accion, null, 1)) + '</pre>' +
+      '<h2>Sugerencia para el técnico</h2>' + (j.sugerencia_tecnico ? '<pre>' + esc(j.sugerencia_tecnico.texto) + '</pre>' + (j.sugerencia_tecnico.articulo ? '<p class="vacio">artículo ' + esc(j.sugerencia_tecnico.articulo) + '</p>' : '') : '<p class="vacio">ninguna</p>') +
+      '<h2>Lo que se guarda del mensaje</h2><pre>' + esc(j.texto_usuario_guardar) + '</pre>' +
+      '<h2>Incidencias abiertas (backend de bolsillo)</h2>' + (S.abiertas.length ? '<ul class="b2">' + S.abiertas.map((i) => '<li>' + esc(i.numero) + ' · ' + esc(i.estado) + ' · ' + esc(i.titulo) + '</li>').join('') + '</ul>' : '<p class="vacio">ninguna</p>');
+  }
+
+  function nuevoCaso() {
+    S.etapa = 'recepcion'; S.memoria = {}; S.historial = []; S.abiertas = []; S.caso = Math.floor(Math.random() * 1e6);
+    $('#msgs').innerHTML = '<div class="aviso">Caso nuevo: etapa y memoria en blanco, sin incidencias abiertas.</div>';
+    $('#resultado').innerHTML = '<p class="vacio">Escribe un mensaje para ver la etapa, la clasificación, la ficha del caso y la acción que propone el agente.</p>';
+    $('#texto').focus();
+  }
+
+  $('#rapidas').innerHTML = RAPIDAS.map((t) => '<button type="button">' + esc(t) + '</button>').join('');
+  $('#rapidas').addEventListener('click', (e) => { if (e.target.tagName === 'BUTTON') enviar(e.target.textContent); });
+  $('#form').addEventListener('submit', (e) => { e.preventDefault(); const t = $('#texto').value; $('#texto').value = ''; enviar(t); });
+  $('#nuevo').addEventListener('click', nuevoCaso);
+  $('#texto').focus();
+})();
+</script>
+</body>
+</html>

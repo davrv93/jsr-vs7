@@ -1,0 +1,63 @@
+{
+  "calendarios": {
+    "laboral": {
+      "zona": "America/Lima",
+      "veinticuatro_siete": false,
+      "horario": {
+        "1": [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        "2": [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        "3": [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        "4": [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        "5": [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        "6": [],
+        "7": []
+      },
+      "feriados": [
+        {
+          "fecha": "2026-07-28",
+          "nombre": "Fiestas Patrias (sintetico)"
+        },
+        {
+          "fecha": "2026-07-29",
+          "nombre": "Fiestas Patrias (sintetico)"
+        },
+        {
+          "fecha": "2026-08-06",
+          "nombre": "Feriado sintetico de la semilla"
+        }
+      ]
+    },
+    "p1_24x7": {
+      "zona": "America/Lima",
+      "veinticuatro_siete": true,
+      "horario": {},
+      "feriados": []
+    }
+  },
+  "nota": "SUPUESTO: horario y feriados sinteticos de la semilla, formato igual al de calendarios.horario del esquema de Postgres"
+}

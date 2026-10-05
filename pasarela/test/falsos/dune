@@ -1,0 +1,14 @@
+; Servicios falsos para las pruebas y para el humo: el agente (Python), el motor (Go) y evolution-go, cada uno un
+; servidor Dream que cumple el CONTRATO (docs/CONTRATOS.md §1 y §5). El motor falso escribe en la MISMA base que lee la
+; pasarela, como el motor real.
+(library
+ (name falsos)
+ (modules servidor agente_falso motor_falso evolution_falso)
+ (libraries pasarela dream lwt lwt.unix yojson unix)
+ (flags (:standard -w +a-4-9-40-41-42-44-45-70 -warn-error -a)))
+
+(executable
+ (name falsos_main)
+ (modules falsos_main)
+ (libraries falsos pasarela dream lwt lwt.unix yojson unix)
+ (flags (:standard -w +a-4-9-40-41-42-44-45-70 -warn-error -a)))

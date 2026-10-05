@@ -1,0 +1,439 @@
+[
+ {
+  "clave": "KB-001",
+  "titulo": "Outlook no sincroniza los correos nuevos",
+  "categoria": "correo",
+  "sintomas": [
+   "Outlook no baja los correos nuevos",
+   "no me llegan correos nuevos al Outlook",
+   "el correo no sincroniza",
+   "Outlook dice desconectado o trabajando sin conexión",
+   "no me abre el correo desde esta mañana"
+  ],
+  "pasos": [
+   "Mira la barra inferior de Outlook: si dice «Trabajando sin conexión» o «Desconectado», ve a la pestaña «Enviar y recibir» y pulsa «Trabajar sin conexión» para desactivarlo.",
+   "Comprueba que tienes internet abriendo una página web en el navegador.",
+   "Cierra Outlook por completo y vuelve a abrirlo.",
+   "Pulsa la tecla F9 para forzar el envío y la recepción de todas las carpetas.",
+   "Si sigue igual, ve a Archivo > Configuración de la cuenta > Configuración de la cuenta, selecciona tu cuenta y pulsa «Reparar».",
+   "Reinicia el equipo y abre Outlook otra vez."
+  ],
+  "escalar": "Si Outlook muestra un código de error o la cuenta pide credenciales sin parar, anótalo: se registra una incidencia.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Outlook no sincroniza los correos nuevos\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- Outlook no baja los correos nuevos\n- no me llegan correos nuevos al Outlook\n- el correo no sincroniza\n- Outlook dice desconectado o trabajando sin conexión\n- no me abre el correo desde esta mañana\n\n## Pasos\n1. Mira la barra inferior de Outlook: si dice «Trabajando sin conexión» o «Desconectado», ve a la pestaña «Enviar y recibir» y pulsa «Trabajar sin conexión» para desactivarlo.\n2. Comprueba que tienes internet abriendo una página web en el navegador.\n3. Cierra Outlook por completo y vuelve a abrirlo.\n4. Pulsa la tecla F9 para forzar el envío y la recepción de todas las carpetas.\n5. Si sigue igual, ve a Archivo > Configuración de la cuenta > Configuración de la cuenta, selecciona tu cuenta y pulsa «Reparar».\n6. Reinicia el equipo y abre Outlook otra vez.\n\n## Cuándo pasar a un técnico\nSi Outlook muestra un código de error o la cuenta pide credenciales sin parar, anótalo: se registra una incidencia."
+ },
+ {
+  "clave": "KB-002",
+  "titulo": "Correos atascados en la Bandeja de salida",
+  "categoria": "correo",
+  "sintomas": [
+   "los correos se quedan en la bandeja de salida",
+   "no puedo enviar correos",
+   "el mensaje no sale y queda en la bandeja de salida",
+   "no se envían los correos con adjuntos"
+  ],
+  "pasos": [
+   "Abre la carpeta «Bandeja de salida» y mira si el mensaje atascado lleva un adjunto de más de 20 MB.",
+   "Haz doble clic en el mensaje y pulsa «Enviar» otra vez.",
+   "Si no sale, arrastra el mensaje a «Borradores», quita el adjunto y envíalo de nuevo con un enlace a tu carpeta de red.",
+   "En la pestaña «Enviar y recibir», comprueba que «Trabajar sin conexión» no esté activado.",
+   "Cierra Outlook, ábrelo de nuevo y espera un minuto."
+  ],
+  "escalar": "Si ningún correo sale, aunque no lleven adjuntos, se registra una incidencia.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas). El límite de 20 MB es un valor de ejemplo.",
+  "cuerpo": "# Correos atascados en la Bandeja de salida\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas). El límite de 20 MB es un valor de ejemplo.\n\n## Síntomas\n- los correos se quedan en la bandeja de salida\n- no puedo enviar correos\n- el mensaje no sale y queda en la bandeja de salida\n- no se envían los correos con adjuntos\n\n## Pasos\n1. Abre la carpeta «Bandeja de salida» y mira si el mensaje atascado lleva un adjunto de más de 20 MB.\n2. Haz doble clic en el mensaje y pulsa «Enviar» otra vez.\n3. Si no sale, arrastra el mensaje a «Borradores», quita el adjunto y envíalo de nuevo con un enlace a tu carpeta de red.\n4. En la pestaña «Enviar y recibir», comprueba que «Trabajar sin conexión» no esté activado.\n5. Cierra Outlook, ábrelo de nuevo y espera un minuto.\n\n## Cuándo pasar a un técnico\nSi ningún correo sale, aunque no lleven adjuntos, se registra una incidencia."
+ },
+ {
+  "clave": "KB-003",
+  "titulo": "Buzón de correo lleno",
+  "categoria": "correo",
+  "sintomas": [
+   "mi buzón está lleno",
+   "ya no recibo correos porque el buzón está lleno",
+   "Outlook me pide liberar espacio",
+   "me dice que superé el límite del buzón"
+  ],
+  "pasos": [
+   "En Outlook, ve a Archivo > Información > «Herramientas de limpieza» > «Vaciar la carpeta Elementos eliminados».",
+   "Vacía también la carpeta «Correo no deseado».",
+   "Ordena los mensajes por tamaño con Ver > «Ordenar por» > Tamaño y borra los más grandes que ya no necesites.",
+   "Guarda los adjuntos grandes en tu carpeta de red y borra el mensaje original.",
+   "Cierra Outlook, ábrelo otra vez y comprueba si ya llegan los correos nuevos."
+  ],
+  "escalar": "Si necesitas más espacio de forma permanente, se registra una solicitud de ampliación.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Buzón de correo lleno\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- mi buzón está lleno\n- ya no recibo correos porque el buzón está lleno\n- Outlook me pide liberar espacio\n- me dice que superé el límite del buzón\n\n## Pasos\n1. En Outlook, ve a Archivo > Información > «Herramientas de limpieza» > «Vaciar la carpeta Elementos eliminados».\n2. Vacía también la carpeta «Correo no deseado».\n3. Ordena los mensajes por tamaño con Ver > «Ordenar por» > Tamaño y borra los más grandes que ya no necesites.\n4. Guarda los adjuntos grandes en tu carpeta de red y borra el mensaje original.\n5. Cierra Outlook, ábrelo otra vez y comprueba si ya llegan los correos nuevos.\n\n## Cuándo pasar a un técnico\nSi necesitas más espacio de forma permanente, se registra una solicitud de ampliación."
+ },
+ {
+  "clave": "KB-004",
+  "titulo": "Olvidé mi contraseña: cómo restablecerla",
+  "categoria": "cuentas_accesos",
+  "sintomas": [
+   "olvidé mi contraseña",
+   "no recuerdo mi clave",
+   "quiero restablecer mi contraseña",
+   "mi contraseña venció o expiró",
+   "no puedo iniciar sesión en Windows"
+  ],
+  "pasos": [
+   "En la pantalla de inicio de sesión, pulsa «Restablecer contraseña» o «¿Olvidaste tu contraseña?» si aparece.",
+   "Verifica tu identidad con el código que llega a tu celular o a tu correo alternativo registrado.",
+   "Crea una contraseña nueva de al menos 12 caracteres, con mayúsculas, minúsculas, números y un símbolo.",
+   "No reutilices una contraseña anterior y no la compartas con nadie, tampoco por este chat.",
+   "Cuando la cambies, cierra sesión en el celular y en otros equipos y vuelve a entrar con la nueva."
+  ],
+  "escalar": "Si no aparece la opción o el código no llega, se abre una solicitud de restablecimiento con un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas). La longitud de 12 caracteres es un valor de ejemplo.",
+  "cuerpo": "# Olvidé mi contraseña: cómo restablecerla\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas). La longitud de 12 caracteres es un valor de ejemplo.\n\n## Síntomas\n- olvidé mi contraseña\n- no recuerdo mi clave\n- quiero restablecer mi contraseña\n- mi contraseña venció o expiró\n- no puedo iniciar sesión en Windows\n\n## Pasos\n1. En la pantalla de inicio de sesión, pulsa «Restablecer contraseña» o «¿Olvidaste tu contraseña?» si aparece.\n2. Verifica tu identidad con el código que llega a tu celular o a tu correo alternativo registrado.\n3. Crea una contraseña nueva de al menos 12 caracteres, con mayúsculas, minúsculas, números y un símbolo.\n4. No reutilices una contraseña anterior y no la compartas con nadie, tampoco por este chat.\n5. Cuando la cambies, cierra sesión en el celular y en otros equipos y vuelve a entrar con la nueva.\n\n## Cuándo pasar a un técnico\nSi no aparece la opción o el código no llega, se abre una solicitud de restablecimiento con un técnico."
+ },
+ {
+  "clave": "KB-005",
+  "titulo": "Cuenta bloqueada por intentos fallidos",
+  "categoria": "cuentas_accesos",
+  "sintomas": [
+   "mi cuenta está bloqueada",
+   "mi usuario se bloqueó",
+   "puse mal la clave varias veces",
+   "dice que la cuenta está bloqueada"
+  ],
+  "pasos": [
+   "Espera 15 minutos: el bloqueo por intentos fallidos suele liberarse solo.",
+   "Mientras esperas, cierra sesión en tu celular y en otros dispositivos que tengan guardada la contraseña anterior: suelen provocar el bloqueo.",
+   "Pasados los 15 minutos, escribe tu contraseña con calma y revisa que la tecla Bloq Mayús esté apagada.",
+   "Si sigue bloqueada, no sigas intentando: se abre una solicitud para que un técnico la desbloquee."
+  ],
+  "escalar": "Una cuenta que sigue bloqueada tras 15 minutos la desbloquea un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas). Los 15 minutos de bloqueo son un valor de ejemplo.",
+  "cuerpo": "# Cuenta bloqueada por intentos fallidos\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas). Los 15 minutos de bloqueo son un valor de ejemplo.\n\n## Síntomas\n- mi cuenta está bloqueada\n- mi usuario se bloqueó\n- puse mal la clave varias veces\n- dice que la cuenta está bloqueada\n\n## Pasos\n1. Espera 15 minutos: el bloqueo por intentos fallidos suele liberarse solo.\n2. Mientras esperas, cierra sesión en tu celular y en otros dispositivos que tengan guardada la contraseña anterior: suelen provocar el bloqueo.\n3. Pasados los 15 minutos, escribe tu contraseña con calma y revisa que la tecla Bloq Mayús esté apagada.\n4. Si sigue bloqueada, no sigas intentando: se abre una solicitud para que un técnico la desbloquee.\n\n## Cuándo pasar a un técnico\nUna cuenta que sigue bloqueada tras 15 minutos la desbloquea un técnico."
+ },
+ {
+  "clave": "KB-006",
+  "titulo": "Acceso denegado a una carpeta compartida",
+  "categoria": "cuentas_accesos",
+  "sintomas": [
+   "no puedo entrar a la carpeta compartida",
+   "me dice acceso denegado en la carpeta",
+   "no tengo permiso para abrir la carpeta de mi área",
+   "no puedo guardar en la carpeta compartida"
+  ],
+  "pasos": [
+   "Copia el mensaje de error y la ruta de la carpeta, por ejemplo \\\\servidor\\Contabilidad.",
+   "Cierra sesión en Windows y vuelve a entrar: los permisos nuevos solo se aplican al iniciar sesión.",
+   "Comprueba que estás conectado a la red de la oficina o a la VPN.",
+   "Prueba abrir la carpeta escribiendo la ruta completa en la barra del Explorador de archivos.",
+   "Si sigue diciendo «Acceso denegado», necesitas un permiso: el responsable de la carpeta debe autorizarlo y se registra la solicitud."
+  ],
+  "escalar": "Los permisos nuevos los concede el responsable de la carpeta; el técnico los aplica con su autorización.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Acceso denegado a una carpeta compartida\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- no puedo entrar a la carpeta compartida\n- me dice acceso denegado en la carpeta\n- no tengo permiso para abrir la carpeta de mi área\n- no puedo guardar en la carpeta compartida\n\n## Pasos\n1. Copia el mensaje de error y la ruta de la carpeta, por ejemplo \\\\servidor\\Contabilidad.\n2. Cierra sesión en Windows y vuelve a entrar: los permisos nuevos solo se aplican al iniciar sesión.\n3. Comprueba que estás conectado a la red de la oficina o a la VPN.\n4. Prueba abrir la carpeta escribiendo la ruta completa en la barra del Explorador de archivos.\n5. Si sigue diciendo «Acceso denegado», necesitas un permiso: el responsable de la carpeta debe autorizarlo y se registra la solicitud.\n\n## Cuándo pasar a un técnico\nLos permisos nuevos los concede el responsable de la carpeta; el técnico los aplica con su autorización."
+ },
+ {
+  "clave": "KB-007",
+  "titulo": "La VPN no conecta",
+  "categoria": "vpn",
+  "sintomas": [
+   "no me conecta la VPN",
+   "no puedo conectarme a la VPN desde mi casa",
+   "la VPN da error de autenticación",
+   "la VPN se queda en conectando"
+  ],
+  "pasos": [
+   "Comprueba que tienes internet abriendo una página web sin la VPN.",
+   "Cierra por completo el cliente VPN y vuelve a abrirlo.",
+   "Revisa que tu usuario y tu contraseña sean los de tu cuenta de la organización y que Bloq Mayús esté apagada.",
+   "Si estás en una red WiFi pública (cafetería, hotel), cámbiate a otra red o a los datos de tu celular.",
+   "Reinicia el equipo y vuelve a conectar la VPN.",
+   "Si aparece un código de error, anótalo y envíamelo."
+  ],
+  "escalar": "Si el error persiste con otra red, se registra una incidencia con el código de error.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# La VPN no conecta\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- no me conecta la VPN\n- no puedo conectarme a la VPN desde mi casa\n- la VPN da error de autenticación\n- la VPN se queda en conectando\n\n## Pasos\n1. Comprueba que tienes internet abriendo una página web sin la VPN.\n2. Cierra por completo el cliente VPN y vuelve a abrirlo.\n3. Revisa que tu usuario y tu contraseña sean los de tu cuenta de la organización y que Bloq Mayús esté apagada.\n4. Si estás en una red WiFi pública (cafetería, hotel), cámbiate a otra red o a los datos de tu celular.\n5. Reinicia el equipo y vuelve a conectar la VPN.\n6. Si aparece un código de error, anótalo y envíamelo.\n\n## Cuándo pasar a un técnico\nSi el error persiste con otra red, se registra una incidencia con el código de error."
+ },
+ {
+  "clave": "KB-008",
+  "titulo": "La VPN conecta pero no abre los sistemas internos",
+  "categoria": "vpn",
+  "sintomas": [
+   "conecta la VPN pero no entro a los sistemas",
+   "con la VPN no abre la carpeta compartida",
+   "la VPN está conectada pero no carga el sistema interno"
+  ],
+  "pasos": [
+   "Confirma que la VPN dice «Conectado» y que la hora de tu equipo es la correcta.",
+   "Desconéctate de la VPN y vuelve a conectarte.",
+   "Abre el sistema escribiendo su dirección completa, no desde un marcador antiguo.",
+   "Abre el Símbolo del sistema y ejecuta ipconfig /flushdns para vaciar la caché de nombres.",
+   "Prueba con otro sistema interno para saber si falla uno solo o todos.",
+   "Si falla un solo sistema, probablemente esté caído: indícamelo para registrar la incidencia."
+  ],
+  "escalar": "Si falla un solo sistema para varias personas, es una caída del sistema y va directo a un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# La VPN conecta pero no abre los sistemas internos\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- conecta la VPN pero no entro a los sistemas\n- con la VPN no abre la carpeta compartida\n- la VPN está conectada pero no carga el sistema interno\n\n## Pasos\n1. Confirma que la VPN dice «Conectado» y que la hora de tu equipo es la correcta.\n2. Desconéctate de la VPN y vuelve a conectarte.\n3. Abre el sistema escribiendo su dirección completa, no desde un marcador antiguo.\n4. Abre el Símbolo del sistema y ejecuta ipconfig /flushdns para vaciar la caché de nombres.\n5. Prueba con otro sistema interno para saber si falla uno solo o todos.\n6. Si falla un solo sistema, probablemente esté caído: indícamelo para registrar la incidencia.\n\n## Cuándo pasar a un técnico\nSi falla un solo sistema para varias personas, es una caída del sistema y va directo a un técnico."
+ },
+ {
+  "clave": "KB-009",
+  "titulo": "WiFi lenta o que se desconecta",
+  "categoria": "red_wifi",
+  "sintomas": [
+   "el wifi está lento",
+   "el wifi se corta cada rato",
+   "el internet va muy lento",
+   "se desconecta el wifi",
+   "la señal del wifi es débil"
+  ],
+  "pasos": [
+   "Acércate al router o al punto de acceso y comprueba si mejora.",
+   "Activa el modo avión 10 segundos y desactívalo para reiniciar el WiFi del equipo.",
+   "Olvida la red: Configuración > Red e Internet > WiFi > «Administrar redes conocidas» > Olvidar, y vuelve a conectarte.",
+   "Cierra los programas que usan mucha red, como descargas o copias a la nube.",
+   "Reinicia el equipo.",
+   "Si a tus compañeros también les pasa, avísame: se registra como falla de red."
+  ],
+  "escalar": "Si afecta a varias personas o a todo un piso, se registra como falla de red y va a un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# WiFi lenta o que se desconecta\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- el wifi está lento\n- el wifi se corta cada rato\n- el internet va muy lento\n- se desconecta el wifi\n- la señal del wifi es débil\n\n## Pasos\n1. Acércate al router o al punto de acceso y comprueba si mejora.\n2. Activa el modo avión 10 segundos y desactívalo para reiniciar el WiFi del equipo.\n3. Olvida la red: Configuración > Red e Internet > WiFi > «Administrar redes conocidas» > Olvidar, y vuelve a conectarte.\n4. Cierra los programas que usan mucha red, como descargas o copias a la nube.\n5. Reinicia el equipo.\n6. Si a tus compañeros también les pasa, avísame: se registra como falla de red.\n\n## Cuándo pasar a un técnico\nSi afecta a varias personas o a todo un piso, se registra como falla de red y va a un técnico."
+ },
+ {
+  "clave": "KB-010",
+  "titulo": "Conectado al WiFi o al cable pero sin internet",
+  "categoria": "red_wifi",
+  "sintomas": [
+   "dice conectado pero no hay internet",
+   "no tengo internet en mi computadora",
+   "ninguna página abre",
+   "el ícono de red tiene un triángulo amarillo",
+   "no funciona el cable de red"
+  ],
+  "pasos": [
+   "Mira si el ícono de red muestra un triángulo amarillo: Windows detecta que no hay salida a internet.",
+   "Desconecta y vuelve a conectar el WiFi o el cable de red.",
+   "Abre el Símbolo del sistema y ejecuta ipconfig /release y después ipconfig /renew.",
+   "Ejecuta el solucionador: Configuración > Red e Internet > «Solucionador de problemas de red».",
+   "Reinicia el equipo.",
+   "Prueba con otro equipo en el mismo punto de red: si tampoco tiene internet, es una falla de la red y no de tu equipo."
+  ],
+  "escalar": "Si otros equipos tampoco tienen internet, es una falla de red y se registra de inmediato.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Conectado al WiFi o al cable pero sin internet\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- dice conectado pero no hay internet\n- no tengo internet en mi computadora\n- ninguna página abre\n- el ícono de red tiene un triángulo amarillo\n- no funciona el cable de red\n\n## Pasos\n1. Mira si el ícono de red muestra un triángulo amarillo: Windows detecta que no hay salida a internet.\n2. Desconecta y vuelve a conectar el WiFi o el cable de red.\n3. Abre el Símbolo del sistema y ejecuta ipconfig /release y después ipconfig /renew.\n4. Ejecuta el solucionador: Configuración > Red e Internet > «Solucionador de problemas de red».\n5. Reinicia el equipo.\n6. Prueba con otro equipo en el mismo punto de red: si tampoco tiene internet, es una falla de la red y no de tu equipo.\n\n## Cuándo pasar a un técnico\nSi otros equipos tampoco tienen internet, es una falla de red y se registra de inmediato."
+ },
+ {
+  "clave": "KB-011",
+  "titulo": "La impresora no imprime o los trabajos se quedan en cola",
+  "categoria": "impresoras",
+  "sintomas": [
+   "la impresora no imprime",
+   "mi trabajo se queda en la cola de impresión",
+   "la impresora dice sin conexión",
+   "mando a imprimir y no sale nada",
+   "no encuentro la impresora"
+  ],
+  "pasos": [
+   "Verifica que la impresora esté encendida, con papel y sin luces de error.",
+   "Abre Configuración > «Impresoras y escáneres», elige la impresora y pulsa «Abrir cola de impresión».",
+   "En el menú Impresora, pulsa «Cancelar todos los documentos» para limpiar los trabajos atascados.",
+   "Si dice «Sin conexión», en el menú Impresora desmarca «Usar impresora sin conexión».",
+   "Apaga la impresora 30 segundos y préndela de nuevo.",
+   "Imprime una página de prueba. Si otra persona sí puede imprimir y tú no, avísame."
+  ],
+  "escalar": "Si nadie puede imprimir en la impresora, se registra una incidencia con su nombre y ubicación.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# La impresora no imprime o los trabajos se quedan en cola\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- la impresora no imprime\n- mi trabajo se queda en la cola de impresión\n- la impresora dice sin conexión\n- mando a imprimir y no sale nada\n- no encuentro la impresora\n\n## Pasos\n1. Verifica que la impresora esté encendida, con papel y sin luces de error.\n2. Abre Configuración > «Impresoras y escáneres», elige la impresora y pulsa «Abrir cola de impresión».\n3. En el menú Impresora, pulsa «Cancelar todos los documentos» para limpiar los trabajos atascados.\n4. Si dice «Sin conexión», en el menú Impresora desmarca «Usar impresora sin conexión».\n5. Apaga la impresora 30 segundos y préndela de nuevo.\n6. Imprime una página de prueba. Si otra persona sí puede imprimir y tú no, avísame.\n\n## Cuándo pasar a un técnico\nSi nadie puede imprimir en la impresora, se registra una incidencia con su nombre y ubicación."
+ },
+ {
+  "clave": "KB-012",
+  "titulo": "Atasco de papel en la impresora",
+  "categoria": "impresoras",
+  "sintomas": [
+   "se atascó el papel",
+   "la impresora dice atasco de papel",
+   "hay papel atorado y no puedo sacarlo",
+   "dice atasco pero no hay papel"
+  ],
+  "pasos": [
+   "Apaga la impresora y desconéctala de la corriente.",
+   "Abre las tapas y la bandeja y retira el papel con las dos manos, tirando suavemente en el sentido de salida.",
+   "Revisa que no queden trozos de papel dentro.",
+   "Coloca hojas sin doblar ni mojar en la bandeja, sin pasar la marca de máximo.",
+   "Cierra todo, enciende la impresora y vuelve a imprimir."
+  ],
+  "escalar": "Si el atasco se repite o dice atasco sin haber papel dentro, necesita revisión de un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Atasco de papel en la impresora\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- se atascó el papel\n- la impresora dice atasco de papel\n- hay papel atorado y no puedo sacarlo\n- dice atasco pero no hay papel\n\n## Pasos\n1. Apaga la impresora y desconéctala de la corriente.\n2. Abre las tapas y la bandeja y retira el papel con las dos manos, tirando suavemente en el sentido de salida.\n3. Revisa que no queden trozos de papel dentro.\n4. Coloca hojas sin doblar ni mojar en la bandeja, sin pasar la marca de máximo.\n5. Cierra todo, enciende la impresora y vuelve a imprimir.\n\n## Cuándo pasar a un técnico\nSi el atasco se repite o dice atasco sin haber papel dentro, necesita revisión de un técnico."
+ },
+ {
+  "clave": "KB-013",
+  "titulo": "La impresión sale con manchas, rayas o en blanco",
+  "categoria": "impresoras",
+  "sintomas": [
+   "la impresora imprime con rayas",
+   "salen manchas negras",
+   "las hojas salen en blanco",
+   "la impresión sale clara o borrosa"
+  ],
+  "pasos": [
+   "Imprime una página de prueba desde las propiedades de la impresora.",
+   "En el menú de la impresora, ejecuta «Limpieza de cabezales» o «Mantenimiento» según el modelo.",
+   "Retira el tóner o el cartucho, agítalo suavemente de lado a lado y vuelve a colocarlo.",
+   "Si las rayas salen siempre en el mismo sitio, limpia el cristal del escáner con un paño seco.",
+   "Si sigue igual o el nivel de tóner es bajo, hay que cambiar el consumible: avísame para solicitarlo."
+  ],
+  "escalar": "El cambio de tóner o de cartucho se solicita; no se hace en este paso.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# La impresión sale con manchas, rayas o en blanco\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- la impresora imprime con rayas\n- salen manchas negras\n- las hojas salen en blanco\n- la impresión sale clara o borrosa\n\n## Pasos\n1. Imprime una página de prueba desde las propiedades de la impresora.\n2. En el menú de la impresora, ejecuta «Limpieza de cabezales» o «Mantenimiento» según el modelo.\n3. Retira el tóner o el cartucho, agítalo suavemente de lado a lado y vuelve a colocarlo.\n4. Si las rayas salen siempre en el mismo sitio, limpia el cristal del escáner con un paño seco.\n5. Si sigue igual o el nivel de tóner es bajo, hay que cambiar el consumible: avísame para solicitarlo.\n\n## Cuándo pasar a un técnico\nEl cambio de tóner o de cartucho se solicita; no se hace en este paso."
+ },
+ {
+  "clave": "KB-014",
+  "titulo": "Equipo lento o que se queda pegado",
+  "categoria": "equipo",
+  "sintomas": [
+   "mi computadora está lenta",
+   "la compu se cuelga",
+   "se queda pegada",
+   "tarda mucho en iniciar",
+   "los programas abren muy lento"
+  ],
+  "pasos": [
+   "Guarda tu trabajo y reinicia el equipo con Inicio > Reiniciar.",
+   "Abre el Administrador de tareas con Ctrl + Mayús + Esc, entra en «Procesos» y cierra los programas que usen más del 80 % de CPU o de memoria.",
+   "En la pestaña «Inicio» del Administrador de tareas, desactiva los programas que no necesitas al arrancar.",
+   "Revisa el espacio en Configuración > Sistema > Almacenamiento: libera archivos si quedan menos de 10 GB.",
+   "Instala las actualizaciones pendientes en Configuración > Windows Update.",
+   "Si sigue lento después de esto, hay que revisarlo con un técnico."
+  ],
+  "escalar": "Si el equipo hace ruidos raros o se calienta mucho, se registra una incidencia.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Equipo lento o que se queda pegado\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- mi computadora está lenta\n- la compu se cuelga\n- se queda pegada\n- tarda mucho en iniciar\n- los programas abren muy lento\n\n## Pasos\n1. Guarda tu trabajo y reinicia el equipo con Inicio > Reiniciar.\n2. Abre el Administrador de tareas con Ctrl + Mayús + Esc, entra en «Procesos» y cierra los programas que usen más del 80 % de CPU o de memoria.\n3. En la pestaña «Inicio» del Administrador de tareas, desactiva los programas que no necesitas al arrancar.\n4. Revisa el espacio en Configuración > Sistema > Almacenamiento: libera archivos si quedan menos de 10 GB.\n5. Instala las actualizaciones pendientes en Configuración > Windows Update.\n6. Si sigue lento después de esto, hay que revisarlo con un técnico.\n\n## Cuándo pasar a un técnico\nSi el equipo hace ruidos raros o se calienta mucho, se registra una incidencia."
+ },
+ {
+  "clave": "KB-015",
+  "titulo": "Pantalla azul y reinicio inesperado",
+  "categoria": "equipo",
+  "sintomas": [
+   "me salió la pantalla azul",
+   "se reinició solo con un mensaje de error azul",
+   "la computadora se reinicia sola",
+   "pantallazo azul"
+  ],
+  "pasos": [
+   "Anota el código o mensaje que aparece en la pantalla azul, por ejemplo CRITICAL_PROCESS_DIED, o toma una foto.",
+   "Deja que el equipo se reinicie por sí solo.",
+   "Si pasó después de conectar un dispositivo nuevo (USB, impresora, disco), desconéctalo.",
+   "Instala las actualizaciones pendientes en Configuración > Windows Update.",
+   "Si la pantalla azul vuelve a salir, guarda tu trabajo con frecuencia y avísame para registrar la incidencia con el código."
+  ],
+  "escalar": "Una pantalla azul que se repite siempre pasa a un técnico, con el código anotado.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Pantalla azul y reinicio inesperado\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- me salió la pantalla azul\n- se reinició solo con un mensaje de error azul\n- la computadora se reinicia sola\n- pantallazo azul\n\n## Pasos\n1. Anota el código o mensaje que aparece en la pantalla azul, por ejemplo CRITICAL_PROCESS_DIED, o toma una foto.\n2. Deja que el equipo se reinicie por sí solo.\n3. Si pasó después de conectar un dispositivo nuevo (USB, impresora, disco), desconéctalo.\n4. Instala las actualizaciones pendientes en Configuración > Windows Update.\n5. Si la pantalla azul vuelve a salir, guarda tu trabajo con frecuencia y avísame para registrar la incidencia con el código.\n\n## Cuándo pasar a un técnico\nUna pantalla azul que se repite siempre pasa a un técnico, con el código anotado."
+ },
+ {
+  "clave": "KB-016",
+  "titulo": "La laptop no enciende",
+  "categoria": "equipo",
+  "sintomas": [
+   "mi laptop no prende",
+   "no enciende ni la luz",
+   "la computadora no arranca",
+   "el equipo no responde al botón de encendido"
+  ],
+  "pasos": [
+   "Conecta el cargador original y espera 15 minutos antes de volver a intentarlo.",
+   "Revisa que el cargador esté firme en el equipo y en el tomacorriente, y prueba con otro tomacorriente.",
+   "Desconecta todo lo que tenga conectado: USB, monitor, base o dock.",
+   "Mantén pulsado el botón de encendido 30 segundos, suéltalo y púlsalo una vez.",
+   "Si ves luces pero no hay imagen, conecta un monitor externo para saber si falla la pantalla.",
+   "Si no responde nada, necesita revisión de un técnico."
+  ],
+  "escalar": "Un equipo que no enciende tras estos pasos lo revisa un técnico; no abras el equipo.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# La laptop no enciende\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- mi laptop no prende\n- no enciende ni la luz\n- la computadora no arranca\n- el equipo no responde al botón de encendido\n\n## Pasos\n1. Conecta el cargador original y espera 15 minutos antes de volver a intentarlo.\n2. Revisa que el cargador esté firme en el equipo y en el tomacorriente, y prueba con otro tomacorriente.\n3. Desconecta todo lo que tenga conectado: USB, monitor, base o dock.\n4. Mantén pulsado el botón de encendido 30 segundos, suéltalo y púlsalo una vez.\n5. Si ves luces pero no hay imagen, conecta un monitor externo para saber si falla la pantalla.\n6. Si no responde nada, necesita revisión de un técnico.\n\n## Cuándo pasar a un técnico\nUn equipo que no enciende tras estos pasos lo revisa un técnico; no abras el equipo."
+ },
+ {
+  "clave": "KB-017",
+  "titulo": "Teams sin audio o sin micrófono",
+  "categoria": "software_oficina",
+  "sintomas": [
+   "en Teams no se escucha",
+   "no se oye el audio de la reunión",
+   "no me escuchan en Teams",
+   "el micrófono no funciona en Teams"
+  ],
+  "pasos": [
+   "En la reunión, pulsa «Más» > «Configuración del dispositivo» y confirma que el altavoz y el micrófono elegidos son los correctos.",
+   "Comprueba que el volumen de Windows no esté en silencio y prueba con los parlantes o con otros audífonos.",
+   "Ve a Configuración > «Privacidad y seguridad» > Micrófono y activa el acceso para Teams.",
+   "Si usas audífonos, desconéctalos y vuelve a conectarlos.",
+   "Cierra Teams por completo (clic derecho en su ícono de la bandeja > Salir) y ábrelo otra vez.",
+   "Reinicia el equipo y vuelve a unirte a la reunión."
+  ],
+  "escalar": "Si el audio falla en todos los programas, el problema es del equipo y se registra una incidencia.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Teams sin audio o sin micrófono\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- en Teams no se escucha\n- no se oye el audio de la reunión\n- no me escuchan en Teams\n- el micrófono no funciona en Teams\n\n## Pasos\n1. En la reunión, pulsa «Más» > «Configuración del dispositivo» y confirma que el altavoz y el micrófono elegidos son los correctos.\n2. Comprueba que el volumen de Windows no esté en silencio y prueba con los parlantes o con otros audífonos.\n3. Ve a Configuración > «Privacidad y seguridad» > Micrófono y activa el acceso para Teams.\n4. Si usas audífonos, desconéctalos y vuelve a conectarlos.\n5. Cierra Teams por completo (clic derecho en su ícono de la bandeja > Salir) y ábrelo otra vez.\n6. Reinicia el equipo y vuelve a unirte a la reunión.\n\n## Cuándo pasar a un técnico\nSi el audio falla en todos los programas, el problema es del equipo y se registra una incidencia."
+ },
+ {
+  "clave": "KB-018",
+  "titulo": "Excel se cierra solo o se congela",
+  "categoria": "software_oficina",
+  "sintomas": [
+   "el Excel se cierra solo",
+   "Excel se congela con archivos grandes",
+   "Excel no responde",
+   "se cierra el Excel cuando abro un archivo pesado"
+  ],
+  "pasos": [
+   "Abre Excel en modo seguro: pulsa Windows + R, escribe excel /safe y pulsa Enter.",
+   "Si en modo seguro funciona, desactiva los complementos en Archivo > Opciones > Complementos > «Ir…» y desmarca los que no necesites.",
+   "Guarda una copia del archivo con otro nombre en Archivo > «Guardar como» y trabaja en esa copia.",
+   "Cierra los demás programas pesados mientras trabajas con archivos grandes.",
+   "Repara Office en Configuración > Aplicaciones > «Aplicaciones instaladas» > Microsoft 365 > Modificar > «Reparación rápida»."
+  ],
+  "escalar": "Si el archivo se corrompe o se pierde información, se registra una incidencia de inmediato.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Excel se cierra solo o se congela\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- el Excel se cierra solo\n- Excel se congela con archivos grandes\n- Excel no responde\n- se cierra el Excel cuando abro un archivo pesado\n\n## Pasos\n1. Abre Excel en modo seguro: pulsa Windows + R, escribe excel /safe y pulsa Enter.\n2. Si en modo seguro funciona, desactiva los complementos en Archivo > Opciones > Complementos > «Ir…» y desmarca los que no necesites.\n3. Guarda una copia del archivo con otro nombre en Archivo > «Guardar como» y trabaja en esa copia.\n4. Cierra los demás programas pesados mientras trabajas con archivos grandes.\n5. Repara Office en Configuración > Aplicaciones > «Aplicaciones instaladas» > Microsoft 365 > Modificar > «Reparación rápida».\n\n## Cuándo pasar a un técnico\nSi el archivo se corrompe o se pierde información, se registra una incidencia de inmediato."
+ },
+ {
+  "clave": "KB-019",
+  "titulo": "El teléfono IP no tiene tono",
+  "categoria": "telefonia",
+  "sintomas": [
+   "mi teléfono no tiene tono",
+   "el anexo está muerto",
+   "el teléfono de mi escritorio no funciona",
+   "el teléfono dice registrando",
+   "no puedo hacer llamadas desde mi anexo"
+  ],
+  "pasos": [
+   "Revisa que el cable de red del teléfono esté bien conectado en los dos extremos.",
+   "Mira si la pantalla muestra la hora: si está apagada, revisa el cable de alimentación o de red.",
+   "Desconecta el cable de red del teléfono 10 segundos y vuelve a conectarlo.",
+   "Si la pantalla dice «Registrando» o «Sin servicio», espera dos minutos.",
+   "Comprueba que el cable del auricular esté firme en el teléfono.",
+   "Si no vuelve el tono, indícame tu número de anexo para registrar la incidencia."
+  ],
+  "escalar": "Si fallan varios anexos a la vez, es una caída de la central telefónica y va directo a un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# El teléfono IP no tiene tono\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- mi teléfono no tiene tono\n- el anexo está muerto\n- el teléfono de mi escritorio no funciona\n- el teléfono dice registrando\n- no puedo hacer llamadas desde mi anexo\n\n## Pasos\n1. Revisa que el cable de red del teléfono esté bien conectado en los dos extremos.\n2. Mira si la pantalla muestra la hora: si está apagada, revisa el cable de alimentación o de red.\n3. Desconecta el cable de red del teléfono 10 segundos y vuelve a conectarlo.\n4. Si la pantalla dice «Registrando» o «Sin servicio», espera dos minutos.\n5. Comprueba que el cable del auricular esté firme en el teléfono.\n6. Si no vuelve el tono, indícame tu número de anexo para registrar la incidencia.\n\n## Cuándo pasar a un técnico\nSi fallan varios anexos a la vez, es una caída de la central telefónica y va directo a un técnico."
+ },
+ {
+  "clave": "KB-020",
+  "titulo": "Un sistema interno no carga o muestra la pantalla en blanco",
+  "categoria": "sistema_interno",
+  "sintomas": [
+   "el sistema de ventas no carga",
+   "el sistema interno se queda en blanco",
+   "la página del sistema no abre",
+   "el sistema se queda cargando",
+   "el sistema da error al entrar"
+  ],
+  "pasos": [
+   "Actualiza la página con Ctrl + F5.",
+   "Abre el sistema en una ventana de incógnito con Ctrl + Mayús + N para descartar problemas de caché.",
+   "Borra la caché del navegador con Ctrl + Mayús + Supr, elige «Imágenes y archivos en caché» y pulsa «Borrar datos».",
+   "Prueba con otro navegador, Edge o Chrome.",
+   "Pregunta a un compañero si le pasa lo mismo: si le pasa a varios, probablemente el sistema está caído.",
+   "Anota la hora y el mensaje de error que ves y pásamelos."
+  ],
+  "escalar": "Si el sistema falla para varias personas, es una caída y va directo a un técnico.",
+  "supuesto": "SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).",
+  "cuerpo": "# Un sistema interno no carga o muestra la pantalla en blanco\n\n> SUPUESTO: procedimiento genérico de Windows 10/11 y Microsoft 365, escrito como ejemplo. Debe revisarlo y adaptarlo quien conozca la organización (nombres de portales, plazos, políticas).\n\n## Síntomas\n- el sistema de ventas no carga\n- el sistema interno se queda en blanco\n- la página del sistema no abre\n- el sistema se queda cargando\n- el sistema da error al entrar\n\n## Pasos\n1. Actualiza la página con Ctrl + F5.\n2. Abre el sistema en una ventana de incógnito con Ctrl + Mayús + N para descartar problemas de caché.\n3. Borra la caché del navegador con Ctrl + Mayús + Supr, elige «Imágenes y archivos en caché» y pulsa «Borrar datos».\n4. Prueba con otro navegador, Edge o Chrome.\n5. Pregunta a un compañero si le pasa lo mismo: si le pasa a varios, probablemente el sistema está caído.\n6. Anota la hora y el mensaje de error que ves y pásamelos.\n\n## Cuándo pasar a un técnico\nSi el sistema falla para varias personas, es una caída y va directo a un técnico."
+ }
+]

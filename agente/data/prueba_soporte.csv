@@ -1,0 +1,154 @@
+mensaje,intencion,categoria
+"Buenas, desde hoy en la mañana mi Outlook no baja ningún correo nuevo",reportar_falla,correo
+"la impresora del segundo piso está botando las hojas en blanco, ya probé apagarla",reportar_falla,impresoras
+"no logro entrar a la VPN, me sale error de usuario o contraseña",reportar_falla,vpn
+"Hola, el wifi de mi piso va muy muy lento desde el mediodía",reportar_falla,red_wifi
+mi laptop se apaga sola cada vez que la desconecto del cargador,reportar_falla,equipo
+oye el teams no me deja prender la cámara en las reuniones,reportar_falla,software_oficina
+"No puedo abrir el sistema de facturación, sale una pantalla blanca",reportar_falla,sistema_interno
+el anexo de recepción suena ocupado todo el rato,reportar_falla,telefonia
+Se me cuelga la computadora cada vez que abro más de tres pestañas,reportar_falla,equipo
+no me llegan los correos que mandan de fuera de la empresa,reportar_falla,correo
+la fotocopiadora dice error de atasco pero no hay ningún papel dentro,reportar_falla,impresoras
+mi cuenta de Windows dice que el perfil no se pudo cargar,reportar_falla,cuentas_accesos
+"Todo el internet de la sede está caído, nadie puede trabajar",reportar_falla,red_wifi
+el Word me muestra el documento con letras raras,reportar_falla,software_oficina
+la vpn se conecta pero luego no puedo abrir el sistema de planillas,reportar_falla,vpn
+mi pc no reconoce el segundo monitor desde que actualizó,reportar_falla,equipo
+no me sale el botón de enviar en el sistema de reservas,reportar_falla,sistema_interno
+el telefono ip de mi mesa muestra registrando y no hace nada,reportar_falla,telefonia
+Necesito que me den acceso a la carpeta de Marketing en el servidor,solicitar_acceso,cuentas_accesos
+"Por favor habiliten a Rosa Quispe en el sistema de planillas, ingresó esta semana",solicitar_acceso,sistema_interno
+quisiera pedir que me activen el acceso remoto para trabajar desde casa,solicitar_acceso,vpn
+me pueden crear un correo para el nuevo asistente administrativo,solicitar_acceso,correo
+solicito permiso para ver el reporte de ventas del área comercial,solicitar_acceso,sistema_interno
+necesito entrar al wifi de la empresa con mi tablet,solicitar_acceso,red_wifi
+requiero permisos de instalación en mi equipo para cargar un programa,solicitar_acceso,cuentas_accesos
+Me falta una laptop para el practicante que entra mañana,solicitar_equipo,equipo
+Necesito que me instalen Power BI en mi computadora,solicitar_equipo,software_oficina
+"quiero un mouse nuevo, el mío ya no hace clic bien",solicitar_equipo,equipo
+requerimos una impresora para el almacén,solicitar_equipo,impresoras
+podrían darme unos audífonos para las llamadas,solicitar_equipo,equipo
+"necesito que cambien mi monitor, tiene una raya vertical",solicitar_equipo,equipo
+"Se me bloqueó la cuenta, ¿pueden desbloquearla?",restablecer_clave,cuentas_accesos
+no recuerdo la contraseña del sistema de ventas,restablecer_clave,sistema_interno
+"Quiero resetear la clave de mi correo, la olvidé después de las vacaciones",restablecer_clave,correo
+"me pide cambiar la contraseña pero no me la acepta, necesito ayuda para restablecerla",restablecer_clave,cuentas_accesos
+olvidé mi clave de la VPN,restablecer_clave,vpn
+mi usuario de la red está bloqueado desde esta mañana,restablecer_clave,cuentas_accesos
+"necesito una clave nueva para entrar a mi PC, la anterior ya no me la sé",restablecer_clave,cuentas_accesos
+¿Ya se sabe algo de mi ticket del correo?,consultar_estado,
+me dicen en qué quedó lo que reporté el lunes,consultar_estado,
+Quiero saber quién va a ver mi incidencia INC-000231,consultar_estado,
+y mi solicitud de la laptop? ya la aprobaron?,consultar_estado,
+cuánto más me van a hacer esperar con mi caso,consultar_estado,
+ya asignaron técnico a mi caso de la impresora?,consultar_estado,
+"Hola, consulto por el avance de mi reclamo de la semana pasada",consultar_estado,
+cómo va lo de mi acceso a la carpeta?,consultar_estado,
+Mi PC se llama LAP-VEN-12,aportar_dato,
+el error dice acceso denegado,aportar_dato,
+fue desde antes de ayer,aportar_dato,
+estoy en el local de Surco,aportar_dato,
+a mis compañeros de al lado les pasa lo mismo,aportar_dato,
+uso Windows 11,aportar_dato,
+lo intenté con otro navegador y igual,aportar_dato,
+"el mensaje que sale es ""servidor no disponible""",aportar_dato,
+soy de Logística,aportar_dato,
+la impresora es una Epson de tinta,aportar_dato,
+estoy conectado por cable de red,aportar_dato,
+"Ya lo hice y quedó perfecto, muchas gracias",confirmar_solucion,
+"listo, ya me deja entrar",confirmar_solucion,
+ahora sí está imprimiendo,confirmar_solucion,
+Problema resuelto,confirmar_solucion,
+ya volvió a funcionar el wifi,confirmar_solucion,
+"con eso quedó, ya pude abrir el archivo",confirmar_solucion,
+"ya me salió, gracias por la guía, todo ok",confirmar_solucion,
+Ok pero sigo con el mismo error,sigue_igual,
+"no pasó nada, está igual que antes",sigue_igual,
+hice todos los pasos y sigue sin conectar,sigue_igual,
+ya lo probé y todavía no funciona,sigue_igual,
+lamentablemente el problema continúa,sigue_igual,
+"ni así, sigue el mismo mensaje de error",sigue_igual,
+"no me sirvió, la impresora sigue sin responder",sigue_igual,
+Prefiero hablar con una persona,pedir_tecnico,
+pásenme con soporte técnico por favor,pedir_tecnico,
+quiero que un técnico venga a ver mi PC,pedir_tecnico,
+"mejor que me llame alguien, esto del chat no avanza",pedir_tecnico,
+necesito un humano que me ayude con esto,pedir_tecnico,
+envíen a alguien de sistemas a mi oficina,pedir_tecnico,
+quiero hablar directamente con un ingeniero,pedir_tecnico,
+"Qué mal servicio, es la cuarta vez que escribo y nadie me atiende",queja,
+"estoy cansado de este soporte, no resuelven nada",queja,
+Me parece una falta de respeto que me tengan esperando tanto,queja,
+"quiero hacer un reclamo formal, nadie vino en toda la tarde",queja,
+"Ustedes son lentísimos, ya perdí medio día por esto",queja,
+"inaceptable, ya llevo una semana sin mi laptop",queja,
+Gracias por la ayuda,agradecer,
+"mil gracias, muy amable",agradecer,
+Te lo agradezco muchísimo,agradecer,
+"ok gracias, es todo por ahora",agradecer,
+muchas gracias por atenderme,agradecer,
+"gracias, que te vaya bien",agradecer,
+Hola,saludo,
+buenas tardes,saludo,
+holaaa,saludo,
+"Buen día, ¿está disponible el soporte?",saludo,
+"hola, necesito hacer una consulta",saludo,
+"buenos días, ¿me atienden?",saludo,
+¿Quién es el presidente del Perú?,fuera_de_alcance,
+cuéntame algo gracioso,fuera_de_alcance,
+quiero que me ayudes con mi tarea de matemática,fuera_de_alcance,
+cuándo pagan la gratificación,fuera_de_alcance,
+dónde puedo comprar zapatillas baratas,fuera_de_alcance,
+qué hora es en Madrid,fuera_de_alcance,
+recomiéndame un restaurante para almorzar,fuera_de_alcance,
+cuánto cuesta un pasaje a Cusco,fuera_de_alcance,
+"Hola buenas, soy de Contabilidad y no me abre el Excel",reportar_falla,software_oficina
+oye mi compu no prende desde que se fue la luz,reportar_falla,equipo
+el sistema de ventas me saca cada rato y tengo que loguearme otra vez,reportar_falla,sistema_interno
+no puedo mandar correos con adjuntos grandes,reportar_falla,correo
+la impresora de recepción imprime todo torcido,reportar_falla,impresoras
+"sin internet en el piso 4, hace una hora",reportar_falla,red_wifi
+no me entra ninguna llamada al anexo 3021,reportar_falla,telefonia
+el correo me pide usuario y contraseña cada cinco minutos,reportar_falla,correo
+"mi bandeja de entrada no se actualiza, tengo que cerrar y abrir el outlook",reportar_falla,correo
+"no puedo adjuntar archivos en el correo, se queda cargando",reportar_falla,correo
+la clave del correo me da error aunque la escribo bien,reportar_falla,cuentas_accesos
+al iniciar sesión en mi PC sale que no hay servidor de inicio disponible,reportar_falla,cuentas_accesos
+no tengo permiso para guardar en la carpeta de Gerencia,reportar_falla,cuentas_accesos
+mi usuario del dominio ya no existe según el sistema,reportar_falla,cuentas_accesos
+el wifi de la sala de directorio ni aparece en la lista,reportar_falla,red_wifi
+el internet funciona pero las videollamadas se congelan,reportar_falla,red_wifi
+"mi cable de red no tiene conexión, la luz del puerto está apagada",reportar_falla,red_wifi
+la vpn me desconecta apenas abro una videollamada,reportar_falla,vpn
+dice que la vpn no puede resolver el nombre del servidor,reportar_falla,vpn
+no me deja instalar la vpn en mi laptop nueva,reportar_falla,vpn
+la impresora de contabilidad dice papel atascado y ya revisé,reportar_falla,impresoras
+"mandé a imprimir y se quedó en cola, nadie imprime en el piso",reportar_falla,impresoras
+el tóner salió con manchas negras en los bordes,reportar_falla,impresoras
+mi pc tarda quince minutos en prender,reportar_falla,equipo
+se me rompió la bisagra de la laptop y la tapa no cierra,reportar_falla,equipo
+la pantalla del monitor se pone negra por ratos,reportar_falla,equipo
+el ventilador de mi laptop hace un ruido horrible,reportar_falla,equipo
+el Excel me dice que no hay memoria suficiente para abrir el libro,reportar_falla,software_oficina
+"no se puede compartir pantalla en Teams, el botón está gris",reportar_falla,software_oficina
+el PowerPoint se cierra cuando intento guardar,reportar_falla,software_oficina
+"no puedo abrir ningún archivo pdf, se queda cargando",reportar_falla,software_oficina
+el sistema de inventario no me deja registrar la salida de mercadería,reportar_falla,sistema_interno
+al entrar a planillas me aparece un error de base de datos,reportar_falla,sistema_interno
+la página de intranet carga pero no me deja iniciar sesión,reportar_falla,sistema_interno
+el aplicativo de caja se congela al cerrar el día,reportar_falla,sistema_interno
+las llamadas que hago desde mi anexo se cortan al instante,reportar_falla,telefonia
+no puedo configurar el desvío de llamadas de mi teléfono,reportar_falla,telefonia
+el teléfono de la sala de reuniones no tiene pantalla,reportar_falla,telefonia
+mi teléfono IP suena pero al contestar no hay audio,reportar_falla,telefonia
+el sensor de la puerta de ingreso no lee mi fotocheck,reportar_falla,otro
+se inundó el piso del cuarto donde está el rack,reportar_falla,otro
+quiero reportar que la luz de la sala de servidores parpadea,reportar_falla,otro
+no sé a quién escribirle por un tema de mi escritorio,reportar_falla,otro
+requiero un acceso de lectura a la carpeta de proyectos para una auditoría,solicitar_acceso,cuentas_accesos
+necesito que me den el acceso a la intranet,solicitar_acceso,sistema_interno
+me conceden el acceso a la red wifi de visitas para unos clientes,solicitar_acceso,red_wifi
+solicito un teclado y un mouse nuevos para mi escritorio,solicitar_equipo,equipo
+necesito que instalen Photoshop en la computadora de diseño,solicitar_equipo,software_oficina
+necesito un teléfono IP para la nueva persona de recepción,solicitar_equipo,telefonia

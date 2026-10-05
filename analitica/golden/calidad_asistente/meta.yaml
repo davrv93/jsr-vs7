@@ -1,0 +1,65 @@
+# Golden query calidad_asistente · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: calidad_asistente
+nombre: "Calidad del asistente"
+version: 1
+unidad: "%"
+dueno: Datos
+definicion: "Exactitud estimada del clasificador frente a las correcciones de los técnicos, porcentaje de respuestas donde el verificador quitó frases, porcentaje de respuestas regeneradas y costo del LLM de redacción por cada 1000 casos."
+base: "Mensajes y feedback con fecha en el periodo (dia de Lima). Los mensajes no tienen grupo: el parámetro grupo no aplica. La exactitud es una estimación: supone correcto todo lo que ningún técnico corrigió."
+parametros:
+  - desde
+  - hasta
+atribucion_grupo: no_aplica
+columnas:
+  - "mensajes_usuario_clasificados: mensajes de personas con una intencion asignada"
+  - "correcciones_intencion: correcciones de intencion hechas por tecnicos"
+  - "exactitud_frente_a_correcciones_pct: 100 x (1 - correcciones / clasificados)"
+  - "respuestas_asistente: respuestas del asistente"
+  - "respuestas_con_frases_quitadas: respuestas donde el verificador quito frases"
+  - "pct_con_frases_quitadas: porcentaje sobre respuestas del asistente"
+  - "respuestas_regeneradas: respuestas regeneradas"
+  - "pct_regeneradas: porcentaje sobre respuestas del asistente"
+  - "casos_atendidos: casos con al menos una respuesta del asistente en el periodo"
+  - "costo_usd_total: costo del LLM de redaccion en USD"
+  - "costo_usd_por_1000_casos: USD por cada 1000 casos"
+bordes:
+  - "Sin mensajes: porcentajes y costos NULL, nunca 0."
+  - "Mensajes duplicados por reenvio de la outbox: v_mensajes los descarta por id."
+  - "El costo por caso se expresa por 1000 casos porque por caso es de centesimas de centavo."
+  - "Respuestas armadas por codigo (flujo fijo) tienen costo 0 y entran en el denominador."
+preguntas_equivalentes:
+  - "Calidad del asistente"
+  - "¿Qué porcentaje de respuestas del bot fueron corregidas por el verificador?"
+  - "Exactitud del clasificador"
+  - "¿Cuánto cuesta el LLM por caso?"
+  - "Porcentaje de respuestas regeneradas"
+  - "¿Qué tan bien contesta el asistente?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

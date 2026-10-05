@@ -1,0 +1,8 @@
+# Para un Docker sin rangos de red libres («all predefined address pools have been fully subnetted»):
+# fija la subred de jsrbot. Elige una que no use ninguna red tuya (`docker network inspect` muestra las ocupadas).
+# Uso: añade a .env  COMPOSE_FILE=docker-compose.yml:despliegue/subred.yml
+networks:
+  jsrbot:
+    ipam:
+      config:
+        - subnet: 192.168.64.0/24

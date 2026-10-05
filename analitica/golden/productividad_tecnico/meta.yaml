@@ -1,0 +1,61 @@
+# Golden query productividad_tecnico · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: productividad_tecnico
+nombre: "Productividad por técnico"
+version: 1
+unidad: "incidencias resueltas"
+dueno: Datos
+definicion: "Por técnico: incidencias resueltas, mediana del tiempo de primera respuesta y de resolución de esas incidencias, y satisfacción media de sus encuestas. No es un ranking: se ordena por id de técnico, nunca por desempeño."
+base: "Incidencias resueltas en el periodo (dia de Lima de su última resolución), atribuidas al técnico con el que quedaron. Con un grupo, solo las del grupo actual de la incidencia. Un técnico sin resueltas en el periodo no aparece."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: tecnico
+columnas:
+  - "tecnico_id: id del tecnico (el nombre vive en Postgres)"
+  - "resueltas: incidencias que resolvio en el periodo"
+  - "frt_mediana_min: mediana de la primera respuesta de esas incidencias"
+  - "mttr_mediana_min: mediana de la resolucion de esas incidencias"
+  - "encuestas_respondidas: encuestas respondidas de esas incidencias"
+  - "csat_media: media de esas encuestas, NULL si no hay"
+bordes:
+  - "Un técnico con una sola resuelta tiene medianas iguales a ese único valor."
+  - "Un grupo sin datos devuelve cero filas."
+  - "csat_media NULL si el técnico no tiene encuestas respondidas."
+  - "Una reabierta sin volver a resolver no cuenta como resuelta de nadie."
+  - "Sin ranking público: el orden es por id."
+preguntas_equivalentes:
+  - "Productividad por técnico"
+  - "¿Cuántas incidencias resolvió cada técnico?"
+  - "Tiempos de resolución por técnico"
+  - "Carga resuelta por técnico del mes"
+  - "¿Cómo le fue a cada técnico en la atención?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

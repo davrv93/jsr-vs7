@@ -1,0 +1,1054 @@
+mensaje,intencion,variante,grupo_id
+No me abre el correo desde esta mañana.,reportar_falla,correcta,I001
+"oye no me jala el outlook, desde temprano nomas",reportar_falla,informal,I001
+no me abre el coreo desde esta mañna,reportar_falla,errores_ortograficos,I001
+La impresora del tercer piso no imprime.,reportar_falla,correcta,I002
+la impresora del 3er piso no saca nada pe,reportar_falla,informal,I002
+la inpresora del tercer piso no inprime,reportar_falla,errores_ortograficos,I002
+No puedo conectarme a la VPN desde mi casa.,reportar_falla,correcta,I003
+"no me conecta la vpn desde mi casa, ayuda",reportar_falla,informal,I003
+no pudo conectarme a la vepeene desde mi casa,reportar_falla,errores_ortograficos,I003
+El internet está muy lento en mi área.,reportar_falla,correcta,I004
+"el internet esta lentisimo acá, no carga nada",reportar_falla,informal,I004
+el interne esta muy lento en mi aria,reportar_falla,errores_ortograficos,I004
+Mi computadora está muy lenta y se queda pegada.,reportar_falla,correcta,I005
+mi compu esta lentisima y se cuelga todo el rato,reportar_falla,informal,I005
+mi computadora esta muy lenta y se kede pegada,reportar_falla,errores_ortograficos,I005
+Me salió una pantalla azul y se reinició mi equipo.,reportar_falla,correcta,I006
+se me puso la pantalla azul y se reinició la pc,reportar_falla,informal,I006
+me salio una pantalla asul y se reinicio mi ekipo,reportar_falla,errores_ortograficos,I006
+En Teams no se escucha el audio de las reuniones.,reportar_falla,correcta,I007
+"en el teams no se escucha nada, ni los parlantes",reportar_falla,informal,I007
+en tims no se escucha el audio de las reuniones,reportar_falla,errores_ortograficos,I007
+El sistema interno de ventas no carga.,reportar_falla,correcta,I008
+"el sistema de ventas no abre, se queda en blanco",reportar_falla,informal,I008
+el sistema interno de bentas no carga,reportar_falla,errores_ortograficos,I008
+"No puedo enviar correos, se quedan en la bandeja de salida.",reportar_falla,correcta,I009
+los correos se quedan en la bandeja de salida y no salen,reportar_falla,informal,I009
+"no puedo enviar corros, se quedan en la bandeja de salida",reportar_falla,errores_ortograficos,I009
+El teléfono de mi escritorio no tiene tono.,reportar_falla,correcta,I010
+"mi anexo no da tono, esta muerto",reportar_falla,informal,I010
+el telefono de mi escritorio no tiene tonoo,reportar_falla,errores_ortograficos,I010
+Excel se cierra solo cada vez que abro un archivo grande.,reportar_falla,correcta,I011
+el excel se cierra solo cuando abro un archivo pesado,reportar_falla,informal,I011
+el ecxel se sierra solo cuando abro un archibo grande,reportar_falla,errores_ortograficos,I011
+El wifi se desconecta cada pocos minutos.,reportar_falla,correcta,I012
+"el wifi se corta cada ratito, es una lata",reportar_falla,informal,I012
+el wifi se desconekta cada pocos minutos,reportar_falla,errores_ortograficos,I012
+No puedo entrar a la carpeta compartida de mi área.,reportar_falla,correcta,I013
+"no me deja entrar a la carpeta compartida, dice que no tengo permiso",reportar_falla,informal,I013
+no puedo entrar a la carpeta conpartida de mi area,reportar_falla,errores_ortograficos,I013
+La pantalla de mi laptop parpadea y se ve rara.,reportar_falla,correcta,I014
+"la pantalla de mi lap parpadea, se ve fea",reportar_falla,informal,I014
+la pantala de mi laptop parpadea y se be rara,reportar_falla,errores_ortograficos,I014
+Mi cuenta me dice que el usuario o la clave son incorrectos aunque los escribo bien.,reportar_falla,correcta,I015
+me bota usuario o clave incorrecta y yo la pongo bien,reportar_falla,informal,I015
+mi cuenta me dise que el usuario o la clave son incorectos aunke los escribo bien,reportar_falla,errores_ortograficos,I015
+El escáner de la oficina no envía los documentos al correo.,reportar_falla,correcta,I016
+"el escaner no manda los docs al correo, no llega nada",reportar_falla,informal,I016
+el escaner de la ofisina no envia los documentos al coreo,reportar_falla,errores_ortograficos,I016
+Necesito acceso a la carpeta compartida de Contabilidad.,solicitar_acceso,correcta,I017
+necesito que me den acceso a la carpeta de contabilidad,solicitar_acceso,informal,I017
+nesecito aceso a la carpeta compartida de contabilidad,solicitar_acceso,errores_ortograficos,I017
+Quisiera solicitar acceso al sistema de ventas para un nuevo colaborador.,solicitar_acceso,correcta,I018
+hay un nuevo en mi area y necesita acceso al sistema de ventas,solicitar_acceso,informal,I018
+quisiera solisitar acceso al sistema de bentas para un nuebo colaborador,solicitar_acceso,errores_ortograficos,I018
+"Por favor, necesito que me den permisos de escritura en la carpeta de Logística.",solicitar_acceso,correcta,I019
+me pueden dar permiso para editar la carpeta de logistica,solicitar_acceso,informal,I019
+por fabor nesecito permisos de escritura en la carpeta de logistika,solicitar_acceso,errores_ortograficos,I019
+Solicito una cuenta de correo para una practicante que ingresa el lunes.,solicitar_acceso,correcta,I020
+necesito crear un correo para una practicante que entra el lunes,solicitar_acceso,informal,I020
+solisito una cuenta de corero para una practicante que ingresa el lunes,solicitar_acceso,errores_ortograficos,I020
+Necesito acceso a la VPN para trabajar desde casa.,solicitar_acceso,correcta,I021
+me habilitan la vpn pa trabajar desde mi casa,solicitar_acceso,informal,I021
+nesecito aceso a la vpn para trabajar desde casa,solicitar_acceso,errores_ortograficos,I021
+Quiero que me den de alta en la plataforma de capacitación.,solicitar_acceso,correcta,I022
+me dan de alta en la plataforma de capacitaciones,solicitar_acceso,informal,I022
+quiero que me den de alta en la plataforma de capasitacion,solicitar_acceso,errores_ortograficos,I022
+Solicito acceso de solo lectura a la base de datos de reportes.,solicitar_acceso,correcta,I023
+"necesito entrar a la base de reportes, solo para ver",solicitar_acceso,informal,I023
+solisito aceso de solo lectura a la base de datos de reportes,solicitar_acceso,errores_ortograficos,I023
+Necesito que me habiliten el acceso al wifi corporativo en mi celular.,solicitar_acceso,correcta,I024
+me pueden dar acceso al wifi de la empresa en mi cel,solicitar_acceso,informal,I024
+nesecito que me abiliten el aceso al wifi corporativo en mi selular,solicitar_acceso,errores_ortograficos,I024
+Mi jefe me pidió que solicite acceso al sistema de planillas.,solicitar_acceso,correcta,I025
+mi jefe dice que pida acceso al sistema de planillas,solicitar_acceso,informal,I025
+mi jefe me pidio que solisite aceso al sistema de planillas,solicitar_acceso,errores_ortograficos,I025
+Necesito permiso para entrar a la sala de servidores.,solicitar_acceso,correcta,I026
+quiero un permiso pa entrar a la sala de servidores,solicitar_acceso,informal,I026
+nesecito permiso para entrar a la sala de serbidores,solicitar_acceso,errores_ortograficos,I026
+Solicito acceso al correo compartido de atención al cliente.,solicitar_acceso,correcta,I027
+necesito acceso al correo compartido de atencion al cliente,solicitar_acceso,informal,I027
+solisito aceso al correo conpartido de atencion al cliente,solicitar_acceso,errores_ortograficos,I027
+Necesito que me den acceso al SharePoint del proyecto nuevo.,solicitar_acceso,correcta,I028
+me dan acceso al sharepoint del proyecto nuevo porfa,solicitar_acceso,informal,I028
+nesecito que me den aceso al sharepoint del proyecto nuebo,solicitar_acceso,errores_ortograficos,I028
+Necesito una laptop nueva para el trabajo remoto.,solicitar_equipo,correcta,I029
+necesito una laptop nueva para trabajar desde casa,solicitar_equipo,informal,I029
+nesecito una laptop nueba para el trabajo remoto,solicitar_equipo,errores_ortograficos,I029
+Quisiera solicitar un mouse y un teclado inalámbricos.,solicitar_equipo,correcta,I030
+me pueden dar un mouse y teclado inalambricos,solicitar_equipo,informal,I030
+quisiera solisitar un maus y un teclado inalambricos,solicitar_equipo,errores_ortograficos,I030
+Necesito un segundo monitor para mi escritorio.,solicitar_equipo,correcta,I031
+me hace falta otro monitor pa mi escritorio,solicitar_equipo,informal,I031
+nesecito un segundo monitor para mi escritorio,solicitar_equipo,errores_ortograficos,I031
+Solicito la instalación de AutoCAD en mi computadora.,solicitar_equipo,correcta,I032
+necesito que me instalen el autocad en mi compu,solicitar_equipo,informal,I032
+solisito la instalasion de autocad en mi computadora,solicitar_equipo,errores_ortograficos,I032
+Necesito una diadema con micrófono para las videollamadas.,solicitar_equipo,correcta,I033
+necesito unos audifonos con microfono pa las reuniones,solicitar_equipo,informal,I033
+nesecito una diadema con microfono para las bideollamadas,solicitar_equipo,errores_ortograficos,I033
+Quisiera pedir un cargador nuevo para mi laptop porque el mío se dañó.,solicitar_equipo,correcta,I034
+"se malogro mi cargador, me dan uno nuevo",solicitar_equipo,informal,I034
+quisiera pedir un cargador nuebo para mi laptop porque el mio se daño,solicitar_equipo,errores_ortograficos,I034
+Solicito un proyector para la sala de reuniones del segundo piso.,solicitar_equipo,correcta,I035
+necesitamos un proyector pa la sala del 2do piso,solicitar_equipo,informal,I035
+solisito un proyector para la sala de reuniones del segundo piso,solicitar_equipo,errores_ortograficos,I035
+Necesito una licencia de Adobe Acrobat para editar PDF.,solicitar_equipo,correcta,I036
+"necesito el acrobat pa editar pdfs, me dan licencia",solicitar_equipo,informal,I036
+nesecito una lisencia de adobe acrobat para editar pdf,solicitar_equipo,errores_ortograficos,I036
+Mi equipo es muy antiguo y quisiera pedir uno nuevo.,solicitar_equipo,correcta,I037
+"mi pc es una reliquia, quiero que me cambien",solicitar_equipo,informal,I037
+mi equipo es muy antiguo y quisiera pedir uno nuebo,solicitar_equipo,errores_ortograficos,I037
+Necesito un celular corporativo para visitas a clientes.,solicitar_equipo,correcta,I038
+necesito un cel de la empresa pa las visitas,solicitar_equipo,informal,I038
+nesecito un selular corporatibo para bisitas a clientes,solicitar_equipo,errores_ortograficos,I038
+Solicito una impresora para el área de Recursos Humanos.,solicitar_equipo,correcta,I039
+necesitamos una impresora en recursos humanos,solicitar_equipo,informal,I039
+solisito una inpresora para el area de recursos humanos,solicitar_equipo,errores_ortograficos,I039
+Necesito un adaptador HDMI para conectar mi laptop al televisor.,solicitar_equipo,correcta,I040
+necesito un cable hdmi pa conectar mi lap al tele,solicitar_equipo,informal,I040
+nesecito un adaptador hdmi para conectar mi laptop al telebisor,solicitar_equipo,errores_ortograficos,I040
+Olvidé mi contraseña de correo.,restablecer_clave,correcta,I041
+se me olvidó la clave de mi correo,restablecer_clave,informal,I041
+olbide mi contraseña del coreo,restablecer_clave,errores_ortograficos,I041
+"Mi usuario está bloqueado, necesito desbloquearlo.",restablecer_clave,correcta,I042
+"mi usuario se bloqueó, me lo desbloquean",restablecer_clave,informal,I042
+mi usuario esta bloqeado nesecito desbloquearlo,restablecer_clave,errores_ortograficos,I042
+Necesito restablecer mi contraseña de Windows.,restablecer_clave,correcta,I043
+"necesito cambiar mi clave de windows, no me la acuerdo",restablecer_clave,informal,I043
+nesecito restablecer mi contraseña de windows,restablecer_clave,errores_ortograficos,I043
+Mi contraseña venció y no sé cómo cambiarla.,restablecer_clave,correcta,I044
+me dice que mi clave expiró y no sé cambiarla,restablecer_clave,informal,I044
+mi contraseña bencio y no se como cambiarla,restablecer_clave,errores_ortograficos,I044
+"Quiero recuperar el acceso a mi cuenta, no recuerdo la clave.",restablecer_clave,correcta,I045
+"no me acuerdo de mi clave, quiero recuperar mi cuenta",restablecer_clave,informal,I045
+quiero recuperar el aceso a mi cuenta no recuerdo la clabe,restablecer_clave,errores_ortograficos,I045
+"Por favor, restablezcan mi contraseña del sistema de ventas.",restablecer_clave,correcta,I046
+me resetean mi clave del sistema de ventas porfa,restablecer_clave,informal,I046
+por fabor restablescan mi contraseña del sistema de bentas,restablecer_clave,errores_ortograficos,I046
+Después de tres intentos fallidos mi cuenta quedó bloqueada.,restablecer_clave,correcta,I047
+puse mal mi clave 3 veces y se bloqueó mi cuenta,restablecer_clave,informal,I047
+despues de tres intentos fallidos mi cuenta quedo bloqeada,restablecer_clave,errores_ortograficos,I047
+Necesito una contraseña temporal para ingresar a mi cuenta.,restablecer_clave,correcta,I048
+necesito una clave temporal pa entrar a mi cuenta,restablecer_clave,informal,I048
+nesecito una contraseña temporal para ingresar a mi cuenta,restablecer_clave,errores_ortograficos,I048
+Cambié de celular y perdí el código de verificación de mi cuenta.,restablecer_clave,correcta,I049
+cambie de cel y ya no tengo el codigo pa entrar a mi cuenta,restablecer_clave,informal,I049
+cambie de selular y perdi el codigo de berificacion de mi cuenta,restablecer_clave,errores_ortograficos,I049
+Quiero cambiar mi contraseña porque creo que alguien la conoce.,restablecer_clave,correcta,I050
+"creo que alguien sabe mi clave, quiero cambiarla",restablecer_clave,informal,I050
+quiero cambiar mi contraseña porque creo que alguien la conose,restablecer_clave,errores_ortograficos,I050
+"No recuerdo mi contraseña de la VPN, ¿pueden restablecerla?",restablecer_clave,correcta,I051
+"no me acuerdo mi clave de la vpn, me la resetean",restablecer_clave,informal,I051
+no recuerdo mi contraseña de la vepeene pueden restablecerla,restablecer_clave,errores_ortograficos,I051
+"Mi cuenta de Teams quedó bloqueada, necesito que la desbloqueen.",restablecer_clave,correcta,I052
+"se bloqueó mi cuenta de teams, desbloqueenla porfa",restablecer_clave,informal,I052
+mi cuenta de tims quedo bloqeada nesecito que la desbloqeen,restablecer_clave,errores_ortograficos,I052
+¿Cómo va mi incidencia?,consultar_estado,correcta,I053
+"oye, cómo va mi ticket",consultar_estado,informal,I053
+como ba mi insidencia,consultar_estado,errores_ortograficos,I053
+¿Tienen alguna novedad sobre el caso INC-000142?,consultar_estado,correcta,I054
+alguna novedad del INC-000142 pe,consultar_estado,informal,I054
+tienen alguna nobedad sobre el caso INC-000142,consultar_estado,errores_ortograficos,I054
+Quisiera saber en qué estado está mi solicitud.,consultar_estado,correcta,I055
+quiero saber como esta mi pedido,consultar_estado,informal,I055
+quisiera saber en que estado esta mi solisitud,consultar_estado,errores_ortograficos,I055
+¿Ya asignaron a alguien para atender mi reporte?,consultar_estado,correcta,I056
+ya le asignaron a alguien mi reporte,consultar_estado,informal,I056
+ya asignaron a alguien para atender mi reporte,consultar_estado,errores_ortograficos,I056
+¿Cuánto falta para que atiendan mi incidencia?,consultar_estado,correcta,I057
+cuanto falta pa que me atiendan,consultar_estado,informal,I057
+cuanto falta para que atiendan mi insidencia,consultar_estado,errores_ortograficos,I057
+¿Quién es el técnico que lleva mi caso?,consultar_estado,correcta,I058
+quien es el tecnico que ve mi caso,consultar_estado,informal,I058
+quien es el tecnico que lleba mi caso,consultar_estado,errores_ortograficos,I058
+Quiero saber si ya resolvieron el problema que reporté ayer.,consultar_estado,correcta,I059
+ya resolvieron lo que reporte ayer,consultar_estado,informal,I059
+quiero saber si ya resolbieron el problema que reporte ayer,consultar_estado,errores_ortograficos,I059
+¿Para cuándo estaría lista mi solicitud de acceso?,consultar_estado,correcta,I060
+para cuando estaria lista mi solicitud del acceso,consultar_estado,informal,I060
+para cuando estaria lista mi solisitud de aceso,consultar_estado,errores_ortograficos,I060
+"Necesito el estado de mi ticket, por favor.",consultar_estado,correcta,I061
+me dicen como va mi ticket porfa,consultar_estado,informal,I061
+nesecito el estado de mi tiket por fabor,consultar_estado,errores_ortograficos,I061
+¿Mi incidencia sigue abierta o ya la cerraron?,consultar_estado,correcta,I062
+mi caso sigue abierto o ya lo cerraron,consultar_estado,informal,I062
+mi insidencia sigue abierta o ya la serraron,consultar_estado,errores_ortograficos,I062
+¿Se acuerdan de mi caso? No he tenido respuesta del técnico.,consultar_estado,correcta,I063
+"y mi caso, el tecnico no me ha dicho nada aún",consultar_estado,informal,I063
+se acuerdan de mi caso no e tenido respuesta del tecnico,consultar_estado,errores_ortograficos,I063
+¿Cuándo me van a responder sobre la solicitud del equipo?,consultar_estado,correcta,I064
+cuando me responden lo del equipo que pedi,consultar_estado,informal,I064
+cuando me van a responder sobre la solisitud del ekipo,consultar_estado,errores_ortograficos,I064
+¿Podrían decirme el avance de mi reporte?,consultar_estado,correcta,I065
+me dan el avance de mi reporte,consultar_estado,informal,I065
+podrian desirme el abance de mi reporte,consultar_estado,errores_ortograficos,I065
+Es la computadora PC-CONT-07.,aportar_dato,correcta,I066
+es la pc-cont-07 pe,aportar_dato,informal,I066
+es la computadora PC-CONT-07,aportar_dato,errores_ortograficos,I066
+Me aparece el error 0x800CCC0E.,aportar_dato,correcta,I067
+me sale el error 0x800CCC0E,aportar_dato,informal,I067
+me aparese el eror 0x800CCC0E,aportar_dato,errores_ortograficos,I067
+Empezó ayer por la tarde.,aportar_dato,correcta,I068
+empezo ayer en la tarde nomas,aportar_dato,informal,I068
+empeso ayer por la tarde,aportar_dato,errores_ortograficos,I068
+"Estoy en la sede Centro, tercer piso.",aportar_dato,correcta,I069
+"estoy en la sede centro, en el 3er piso",aportar_dato,informal,I069
+estoy en la sede sentro tersser piso,aportar_dato,errores_ortograficos,I069
+"Solo me pasa a mí, mis compañeros están bien.",aportar_dato,correcta,I070
+"solo me pasa a mi, los demas estan bien",aportar_dato,informal,I070
+solo me pasa a mi mis compañeros estan bien,aportar_dato,errores_ortograficos,I070
+Trabajo en el área de Contabilidad.,aportar_dato,correcta,I071
+soy del area de contabilidad,aportar_dato,informal,I071
+trabajo en el area de contavilidad,aportar_dato,errores_ortograficos,I071
+Uso Outlook de Microsoft 365.,aportar_dato,correcta,I072
+uso el outlook 365,aportar_dato,informal,I072
+uso outlok de microsoft 365,aportar_dato,errores_ortograficos,I072
+Ya reinicié la computadora y probé cerrando sesión.,aportar_dato,correcta,I073
+ya reinicie la pc y cerre sesion,aportar_dato,informal,I073
+ya reinisie la computadora y probe serrando sesion,aportar_dato,errores_ortograficos,I073
+La impresora se llama HP-Piso3.,aportar_dato,correcta,I074
+la impresora es la hp-piso3,aportar_dato,informal,I074
+la inpresora se llama HP-Piso3,aportar_dato,errores_ortograficos,I074
+El mensaje dice que no se puede establecer la conexión con el servidor.,aportar_dato,correcta,I075
+dice que no se puede establecer conexion con el servidor,aportar_dato,informal,I075
+el mensaje dise que no se puede establecer la conexion con el serbidor,aportar_dato,errores_ortograficos,I075
+Me pasa desde hace dos días.,aportar_dato,correcta,I076
+me pasa hace dos dias,aportar_dato,informal,I076
+me pasa desde hase dos dias,aportar_dato,errores_ortograficos,I076
+"Le pasa a todos en la oficina, nadie puede entrar.",aportar_dato,correcta,I077
+"nos pasa a todos aca, nadie puede entrar",aportar_dato,informal,I077
+le pasa a todos en la ofisina nadie puede entrar,aportar_dato,errores_ortograficos,I077
+Mi equipo es una laptop Lenovo ThinkPad.,aportar_dato,correcta,I078
+mi equipo es una lenovo thinkpad,aportar_dato,informal,I078
+mi ekipo es una laptop lenobo thinkpad,aportar_dato,errores_ortograficos,I078
+"Me conecto por wifi, no por cable.",aportar_dato,correcta,I079
+"estoy por wifi, no por cable",aportar_dato,informal,I079
+me conecto por wifi no por cable,aportar_dato,errores_ortograficos,I079
+Mi anexo es el 2045.,aportar_dato,correcta,I080
+mi anexo es el 2045 nomas,aportar_dato,informal,I080
+mi anexo es el dos mil cuarenta y sinco,aportar_dato,errores_ortograficos,I080
+"Ya funcionó, gracias.",confirmar_solucion,correcta,I081
+listo ya funcionó,confirmar_solucion,informal,I081
+ya funsiono grasias,confirmar_solucion,errores_ortograficos,I081
+"Ya quedó resuelto, puedo trabajar con normalidad.",confirmar_solucion,correcta,I082
+"ya quedó, ya puedo trabajar normal",confirmar_solucion,informal,I082
+ya quedo resuelto ya puedo trabajar con normalidad,confirmar_solucion,errores_ortograficos,I082
+Ahora sí abre el correo.,confirmar_solucion,correcta,I083
+ahora si abre el correo pe,confirmar_solucion,informal,I083
+ahora si abre el coreo,confirmar_solucion,errores_ortograficos,I083
+"Ya pude imprimir, el problema se solucionó.",confirmar_solucion,correcta,I084
+"ya imprimió, ya se arregló",confirmar_solucion,informal,I084
+ya pude inprimir el problema se solucionó,confirmar_solucion,errores_ortograficos,I084
+"Se solucionó, ya puedo ingresar a mi cuenta.",confirmar_solucion,correcta,I085
+"ya se solucionó, ya entro a mi cuenta",confirmar_solucion,informal,I085
+se solusiono ya puedo ingresar a mi cuenta,confirmar_solucion,errores_ortograficos,I085
+"Perfecto, con esos pasos ya me conecta la VPN.",confirmar_solucion,correcta,I086
+con eso ya me conecta la vpn,confirmar_solucion,informal,I086
+perfecto con esos pasos ya me conecta la vepeene,confirmar_solucion,errores_ortograficos,I086
+"Sí, ya está solucionado.",confirmar_solucion,correcta,I087
+"sí pe, ya está solucionado",confirmar_solucion,informal,I087
+si ya esta solusionado,confirmar_solucion,errores_ortograficos,I087
+"Ya volvió el internet, todo en orden.",confirmar_solucion,correcta,I088
+"ya volvió el internet, todo bien",confirmar_solucion,informal,I088
+ya bolbio el interne todo en orden,confirmar_solucion,errores_ortograficos,I088
+"Funcionó, ya no sale el error.",confirmar_solucion,correcta,I089
+"funcionó, ya no sale el error",confirmar_solucion,informal,I089
+funsiono ya no sale el eror,confirmar_solucion,errores_ortograficos,I089
+"Ya tengo audio en Teams, se arregló.",confirmar_solucion,correcta,I090
+"ya escucho en teams, se arreglo",confirmar_solucion,informal,I090
+ya tengo audio en tims se areglo,confirmar_solucion,errores_ortograficos,I090
+"Ya está, el técnico lo dejó funcionando.",confirmar_solucion,correcta,I091
+"ya está, el tecnico lo dejo andando",confirmar_solucion,informal,I091
+ya esta el tecnico lo dejo funsionando,confirmar_solucion,errores_ortograficos,I091
+Confirmo que ya quedó resuelto mi caso.,confirmar_solucion,correcta,I092
+"confirmo, mi caso ya quedó resuelto",confirmar_solucion,informal,I092
+konfirmo que ya quedo resuelto mi caso,confirmar_solucion,errores_ortograficos,I092
+Ya se arregló el problema de la impresora.,confirmar_solucion,correcta,I093
+ya se arregló lo de la impresora,confirmar_solucion,informal,I093
+ya se areglo el problema de la inpresora,confirmar_solucion,errores_ortograficos,I093
+"Sigue igual, no se solucionó.",sigue_igual,correcta,I094
+sigue igual pe,sigue_igual,informal,I094
+sigue ygual no se solusiono,sigue_igual,errores_ortograficos,I094
+Hice los pasos y el problema continúa.,sigue_igual,correcta,I095
+hice todo lo que dijiste y nada,sigue_igual,informal,I095
+hise los pasos y el problema continua,sigue_igual,errores_ortograficos,I095
+Probé lo que me indicaron y sigue sin abrir.,sigue_igual,correcta,I096
+probé lo que me dijiste y sigue sin abrir,sigue_igual,informal,I096
+probe lo que me indicaron y sigue sin abrir,sigue_igual,errores_ortograficos,I096
+"No funcionó, el error sigue apareciendo.",sigue_igual,correcta,I097
+"no funcionó, el error sale otra vez",sigue_igual,informal,I097
+no funsiono el eror sigue apareciendo,sigue_igual,errores_ortograficos,I097
+El problema persiste después de reiniciar.,sigue_igual,correcta,I098
+reinicié y lo mismo,sigue_igual,informal,I098
+el problema persiste despues de reinisiar,sigue_igual,errores_ortograficos,I098
+"Nada, sigue sin imprimir.",sigue_igual,correcta,I099
+"nada, sigue sin imprimir",sigue_igual,informal,I099
+nada sigue sin inprimir,sigue_igual,errores_ortograficos,I099
+"Todavía no puedo conectarme, sigue fallando.",sigue_igual,correcta,I100
+"todavía no me conecto, sigue fallando",sigue_igual,informal,I100
+todabia no puedo conectarme sigue fayando,sigue_igual,errores_ortograficos,I100
+Hice lo que decía el paso tres y no cambió nada.,sigue_igual,correcta,I101
+hice el paso 3 y no cambia nada,sigue_igual,informal,I101
+hise lo que desia el paso tres y no cambio nada,sigue_igual,errores_ortograficos,I101
+"Sigue la misma falla, no hubo ningún cambio.",sigue_igual,correcta,I102
+"la misma falla, nada ha cambiado",sigue_igual,informal,I102
+sigue la misma falla no hubo ningun cambio,sigue_igual,errores_ortograficos,I102
+Lo intenté otra vez y volvió a salir lo mismo.,sigue_igual,correcta,I103
+lo intenté de nuevo y salió lo mismo,sigue_igual,informal,I103
+lo intente otra bes y bolbio a salir lo mismo,sigue_igual,errores_ortograficos,I103
+"Sigo igual, no me sirvió.",sigue_igual,correcta,I104
+"sigo igual, no me sirvió",sigue_igual,informal,I104
+sigo ygual no me sirbio,sigue_igual,errores_ortograficos,I104
+"Aún no se arregla, el equipo continúa lento.",sigue_igual,correcta,I105
+"aun no se arregla, la compu sigue lenta",sigue_igual,informal,I105
+aun no se areglo el ekipo continua lento,sigue_igual,errores_ortograficos,I105
+"Quiero hablar con un técnico, por favor.",pedir_tecnico,correcta,I106
+quiero hablar con un tecnico nomas,pedir_tecnico,informal,I106
+quiero hablar con un tecnico por fabor,pedir_tecnico,errores_ortograficos,I106
+Necesito que me atienda una persona.,pedir_tecnico,correcta,I107
+necesito que me atienda una persona real,pedir_tecnico,informal,I107
+nesecito que me atienda una persona,pedir_tecnico,errores_ortograficos,I107
+Prefiero que me llame alguien de sistemas.,pedir_tecnico,correcta,I108
+que me llame alguien de sistemas,pedir_tecnico,informal,I108
+prefiero que me llame alguien de sistemas,pedir_tecnico,errores_ortograficos,I108
+¿Puede venir un técnico a mi escritorio?,pedir_tecnico,correcta,I109
+puede venir un tecnico a mi escritorio,pedir_tecnico,informal,I109
+puede benir un tecnico a mi escritorio,pedir_tecnico,errores_ortograficos,I109
+"No quiero seguir con el asistente, pásame con un técnico.",pedir_tecnico,correcta,I110
+"ya no quiero un bot, pasame con un tecnico",pedir_tecnico,informal,I110
+no quiero seguir con el asistente pasame con un tecnico,pedir_tecnico,errores_ortograficos,I110
+Necesito que un especialista revise mi equipo en persona.,pedir_tecnico,correcta,I111
+que un especialista vea mi equipo en persona,pedir_tecnico,informal,I111
+nesecito que un especialista rebise mi ekipo en persona,pedir_tecnico,errores_ortograficos,I111
+"Por favor, comuníquenme con un humano.",pedir_tecnico,correcta,I112
+comunicame con un humano porfa,pedir_tecnico,informal,I112
+por fabor comuniquenme con un umano,pedir_tecnico,errores_ortograficos,I112
+Quiero que un técnico me llame al anexo.,pedir_tecnico,correcta,I113
+que un tecnico me llame a mi anexo,pedir_tecnico,informal,I113
+quiero que un tecnico me llame al anexo,pedir_tecnico,errores_ortograficos,I113
+"Escalen mi caso a un técnico, por favor.",pedir_tecnico,correcta,I114
+pasen mi caso a un tecnico porfa,pedir_tecnico,informal,I114
+escalen mi caso a un tecnico por fabor,pedir_tecnico,errores_ortograficos,I114
+"No me sirve el chat, necesito hablar con alguien de soporte.",pedir_tecnico,correcta,I115
+"el chat no me ayuda, quiero hablar con alguien de soporte",pedir_tecnico,informal,I115
+no me sirbe el chat nesecito hablar con alguien de soporte,pedir_tecnico,errores_ortograficos,I115
+¿Me puede contactar un técnico hoy?,pedir_tecnico,correcta,I116
+me puede contactar un tecnico hoy,pedir_tecnico,informal,I116
+me puede contactar un tecnico oy,pedir_tecnico,errores_ortograficos,I116
+Quiero que alguien venga a revisar la impresora.,pedir_tecnico,correcta,I117
+que alguien venga a ver la impresora,pedir_tecnico,informal,I117
+quiero que alguien benga a rebisar la inpresora,pedir_tecnico,errores_ortograficos,I117
+Déjenme con una persona de la mesa de ayuda.,pedir_tecnico,correcta,I118
+pasame con alguien de la mesa de ayuda,pedir_tecnico,informal,I118
+dejenme con una persona de la mesa de ayuda,pedir_tecnico,errores_ortograficos,I118
+Es la tercera vez que reporto esto y nadie lo soluciona.,queja,correcta,I119
+ya es la tercera vez que reporto y nadie hace nada,queja,informal,I119
+es la tersera bes que reporto esto y nadie lo soluciona,queja,errores_ortograficos,I119
+"Esta atención es pésima, llevo dos días esperando.",queja,correcta,I120
+"pesima atencion, llevo dos dias esperando",queja,informal,I120
+esta atension es pesima llebo dos dias esperando,queja,errores_ortograficos,I120
+Estoy muy molesto porque nadie me responde.,queja,correcta,I121
+estoy molesto porque nadie me responde,queja,informal,I121
+estoy muy molesto porke nadie me responde,queja,errores_ortograficos,I121
+Quiero presentar una queja formal por la demora.,queja,correcta,I122
+quiero poner una queja por la demora,queja,informal,I122
+quiero presentar una keja formal por la demora,queja,errores_ortograficos,I122
+"Esto es inaceptable, el sistema siempre falla y nadie hace nada.",queja,correcta,I123
+"esto es una burla, siempre falla y nadie hace nada",queja,informal,I123
+esto es inaseptable el sistema siempre falla y nadie hace nada,queja,errores_ortograficos,I123
+"Me están haciendo perder el tiempo, no sirve el soporte.",queja,correcta,I124
+"me hacen perder el tiempo, el soporte no sirve",queja,informal,I124
+me estan asiendo perder el tiempo no sirbe el soporte,queja,errores_ortograficos,I124
+Estoy harto de que se caiga el internet todos los días.,queja,correcta,I125
+"ya me harté, se cae el internet todos los dias",queja,informal,I125
+estoy arto de que se caiga el interne todos los dias,queja,errores_ortograficos,I125
+"Nadie me avisó nada y tengo trabajo urgente, qué mal servicio.",queja,correcta,I126
+"nadie me avisó y tengo trabajo urgente, mal servicio",queja,informal,I126
+nadie me abiso nada y tengo trabajo urgente que mal serbicio,queja,errores_ortograficos,I126
+Ya van cinco días con mi pedido y no me dan ninguna respuesta.,queja,correcta,I127
+cinco dias con mi pedido y ni una respuesta,queja,informal,I127
+ya ban sinco dias con mi pedido y no me dan ninguna respuesta,queja,errores_ortograficos,I127
+"Voy a reclamar con mi jefe, esto no puede seguir así.",queja,correcta,I128
+"voy a reclamar a mi jefe, ya no aguanto",queja,informal,I128
+boy a reclamar con mi jefe esto no puede seguir asi,queja,errores_ortograficos,I128
+El técnico nunca llegó y me dejaron esperando todo el día.,queja,correcta,I129
+"el tecnico nunca llegó, me dejaron plantado todo el dia",queja,informal,I129
+el tecnico nunca llego y me dejaron esperando todo el dia,queja,errores_ortograficos,I129
+"Qué desastre de servicio, siempre es lo mismo con ustedes.",queja,correcta,I130
+"que desastre de servicio, siempre lo mismo con ustedes",queja,informal,I130
+que desastre de serbicio siempre es lo mismo con ustedes,queja,errores_ortograficos,I130
+Muchas gracias por tu ayuda.,agradecer,correcta,I131
+mil gracias por la ayuda,agradecer,informal,I131
+muchas grasias por tu ayuda,agradecer,errores_ortograficos,I131
+"Gracias, eso era todo.",agradecer,correcta,I132
+"gracias, era todo nomas",agradecer,informal,I132
+grasias eso era todo,agradecer,errores_ortograficos,I132
+Te agradezco la atención.,agradecer,correcta,I133
+te agradezco la atención,agradecer,informal,I133
+te agradesco la atension,agradecer,errores_ortograficos,I133
+Gracias por la información.,agradecer,correcta,I134
+gracias por la info,agradecer,informal,I134
+grasias por la informasion,agradecer,errores_ortograficos,I134
+"Muy amable, gracias.",agradecer,correcta,I135
+"muy amable, gracias",agradecer,informal,I135
+muy amable grasias,agradecer,errores_ortograficos,I135
+Gracias por responder tan rápido.,agradecer,correcta,I136
+gracias por responder rapidito,agradecer,informal,I136
+grasias por responder tan rapido,agradecer,errores_ortograficos,I136
+Agradezco mucho el apoyo.,agradecer,correcta,I137
+agradezco mucho el apoyo,agradecer,informal,I137
+agradesco mucho el apoyo,agradecer,errores_ortograficos,I137
+"Gracias, que tengas un buen día.",agradecer,correcta,I138
+"gracias, buen dia",agradecer,informal,I138
+grasias que tengas un buen dia,agradecer,errores_ortograficos,I138
+Gracias por tu paciencia.,agradecer,correcta,I139
+gracias por la paciencia,agradecer,informal,I139
+grasias por tu pasiencia,agradecer,errores_ortograficos,I139
+"Perfecto, muchas gracias.",agradecer,correcta,I140
+"ya, mil gracias",agradecer,informal,I140
+perfecto muchas grasias,agradecer,errores_ortograficos,I140
+"Gracias, quedo atento a lo que me indiquen.",agradecer,correcta,I141
+"gracias, quedo atento",agradecer,informal,I141
+grasias quedo atento a lo que me indiquen,agradecer,errores_ortograficos,I141
+Se los agradezco mucho.,agradecer,correcta,I142
+se los agradezco un montón,agradecer,informal,I142
+se los agradesco mucho,agradecer,errores_ortograficos,I142
+"Gracias por todo, hasta luego.",agradecer,correcta,I143
+"gracias por todo, chau",agradecer,informal,I143
+grasias por todo asta luego,agradecer,errores_ortograficos,I143
+"Hola, buenos días.",saludo,correcta,I144
+holaa buenas,saludo,informal,I144
+ola buenos dias,saludo,errores_ortograficos,I144
+"Buenas tardes, ¿me pueden ayudar?",saludo,correcta,I145
+"buenas tardes, una consulta",saludo,informal,I145
+buenas tardes me pueden ayudar,saludo,errores_ortograficos,I145
+"Hola, necesito ayuda.",saludo,correcta,I146
+"hola, ayuda porfa",saludo,informal,I146
+ola nesecito ayuda,saludo,errores_ortograficos,I146
+Buenas noches.,saludo,correcta,I147
+buenas noches pe,saludo,informal,I147
+buenas noches,saludo,errores_ortograficos,I147
+"Hola, ¿hay alguien ahí?",saludo,correcta,I148
+"hola, hay alguien?",saludo,informal,I148
+ola ay alguien ay,saludo,errores_ortograficos,I148
+"Buenos días, quisiera hacer una consulta.",saludo,correcta,I149
+"buen dia, una consultita",saludo,informal,I149
+buenos dias quisiera acer una consulta,saludo,errores_ortograficos,I149
+"Hola, ¿con quién hablo?",saludo,correcta,I150
+"holi, con quien hablo",saludo,informal,I150
+ola con quien hablo,saludo,errores_ortograficos,I150
+"Hola, quería pedir ayuda al soporte.",saludo,correcta,I151
+"hola, quería pedir ayuda a sistemas",saludo,informal,I151
+ola queria pedir ayuda al soporte,saludo,errores_ortograficos,I151
+"Hola, buen día, ¿cómo estás?",saludo,correcta,I152
+"holaaa, cómo estás",saludo,informal,I152
+ola buen dia como estas,saludo,errores_ortograficos,I152
+"Buenas, necesito comunicarme con soporte.",saludo,correcta,I153
+"buenas, soporte?",saludo,informal,I153
+buenas nesecito comunicarme con soporte,saludo,errores_ortograficos,I153
+"Hola, tengo un problema.",saludo,correcta,I154
+"hola, tengo un problemita",saludo,informal,I154
+ola tengo un problema,saludo,errores_ortograficos,I154
+"Saludos, ¿me pueden atender?",saludo,correcta,I155
+"saludos, me atienden?",saludo,informal,I155
+saludos me pueden atender,saludo,errores_ortograficos,I155
+Hola equipo de soporte.,saludo,correcta,I156
+hola soporte,saludo,informal,I156
+ola equipo de soporte,saludo,errores_ortograficos,I156
+¿Qué clima hará mañana en Lima?,fuera_de_alcance,correcta,I157
+qué clima va a hacer mañana,fuera_de_alcance,informal,I157
+que clima hara mañana en lima,fuera_de_alcance,errores_ortograficos,I157
+¿Quién ganó el partido de ayer?,fuera_de_alcance,correcta,I158
+quién ganó el partido de anoche,fuera_de_alcance,informal,I158
+quien gano el partido de ayer,fuera_de_alcance,errores_ortograficos,I158
+Cuéntame un chiste.,fuera_de_alcance,correcta,I159
+cuéntame un chiste pe,fuera_de_alcance,informal,I159
+cuentame un chiste,fuera_de_alcance,errores_ortograficos,I159
+¿Cómo se prepara un ceviche?,fuera_de_alcance,correcta,I160
+cómo se hace el ceviche,fuera_de_alcance,informal,I160
+como se prepara un seviche,fuera_de_alcance,errores_ortograficos,I160
+Quiero pedir vacaciones para diciembre.,fuera_de_alcance,correcta,I161
+quiero pedir mis vacaciones de diciembre,fuera_de_alcance,informal,I161
+quiero pedir bacaciones para diciembre,fuera_de_alcance,errores_ortograficos,I161
+¿Cuál es el mejor celular para comprar este año?,fuera_de_alcance,correcta,I162
+cuál es el mejor cel pa comprar,fuera_de_alcance,informal,I162
+cual es el mejor selular para comprar este año,fuera_de_alcance,errores_ortograficos,I162
+¿A qué hora cierra el comedor?,fuera_de_alcance,correcta,I163
+a qué hora cierra el comedor,fuera_de_alcance,informal,I163
+a que ora sierra el comedor,fuera_de_alcance,errores_ortograficos,I163
+Necesito saber cuánto es mi sueldo este mes.,fuera_de_alcance,correcta,I164
+cuánto me toca de sueldo este mes,fuera_de_alcance,informal,I164
+nesecito saber cuanto es mi sueldo este mes,fuera_de_alcance,errores_ortograficos,I164
+¿Me puedes recomendar una película?,fuera_de_alcance,correcta,I165
+recomiéndame una peli,fuera_de_alcance,informal,I165
+me puedes recomendar una pelicula,fuera_de_alcance,errores_ortograficos,I165
+¿Cuál es la capital de Francia?,fuera_de_alcance,correcta,I166
+cuál es la capital de francia,fuera_de_alcance,informal,I166
+cual es la capital de francia,fuera_de_alcance,errores_ortograficos,I166
+Necesito un certificado de trabajo.,fuera_de_alcance,correcta,I167
+necesito mi constancia de trabajo,fuera_de_alcance,informal,I167
+nesecito un sertificado de trabajo,fuera_de_alcance,errores_ortograficos,I167
+"Traduce esta frase al inglés, por favor.",fuera_de_alcance,correcta,I168
+traduce esto al inglés porfa,fuera_de_alcance,informal,I168
+traduse esta frase al ingles por fabor,fuera_de_alcance,errores_ortograficos,I168
+¿Qué día es el feriado de octubre?,fuera_de_alcance,correcta,I169
+cuándo es el feriado de octubre,fuera_de_alcance,informal,I169
+que dia es el feriado de octubre,fuera_de_alcance,errores_ortograficos,I169
+¿Cuánto está el dólar hoy?,fuera_de_alcance,correcta,I170
+a cómo está el dólar hoy,fuera_de_alcance,informal,I170
+cuanto esta el dolar oy,fuera_de_alcance,errores_ortograficos,I170
+El equipo es el LAP-ADM-03.,aportar_dato,correcta,I171
+mi pc es la lap-adm-03 nomas,aportar_dato,informal,I171
+el ekipo es el LAP-ADM-03,aportar_dato,errores_ortograficos,I171
+Trabajo en la sede de San Isidro.,aportar_dato,correcta,I172
+yo estoy en la sede de san isidro,aportar_dato,informal,I172
+trabajo en la sede de san isidrro,aportar_dato,errores_ortograficos,I172
+Sale un cuadro que dice error de red 651.,aportar_dato,correcta,I173
+sale un cuadrito de error de red 651,aportar_dato,informal,I173
+sale un cuadro que dise eror de red 651,aportar_dato,errores_ortograficos,I173
+Desde el martes por la noche.,aportar_dato,correcta,I174
+desde el martes en la noche pe,aportar_dato,informal,I174
+desde el martes por la noche,aportar_dato,errores_ortograficos,I174
+Les pasa a todos los de mi piso.,aportar_dato,correcta,I175
+a todos los de mi piso les pasa,aportar_dato,informal,I175
+les pasa a todos los de mi piso,aportar_dato,errores_ortograficos,I175
+"Solo ocurre en mi computadora, en la de mi compañero sí abre.",aportar_dato,correcta,I176
+"solo en mi compu, en la de mi compañero sí abre",aportar_dato,informal,I176
+solo ocurre en mi computadora en la de mi compañero si abre,aportar_dato,errores_ortograficos,I176
+Estoy en la oficina de Arequipa.,aportar_dato,correcta,I177
+estoy en la oficina de arequipa,aportar_dato,informal,I177
+estoy en la ofisina de arekipa,aportar_dato,errores_ortograficos,I177
+Uso Chrome como navegador.,aportar_dato,correcta,I178
+uso el chrome,aportar_dato,informal,I178
+uso crome como nabegador,aportar_dato,errores_ortograficos,I178
+El mensaje dice que la contraseña no es válida.,aportar_dato,correcta,I179
+dice contraseña no válida,aportar_dato,informal,I179
+el mensaje dise que la contraseña no es balida,aportar_dato,errores_ortograficos,I179
+Es una HP LaserJet de la oficina de gerencia.,aportar_dato,correcta,I180
+es una hp laserjet de gerencia,aportar_dato,informal,I180
+es una HP LaserJet de la ofisina de gerensia,aportar_dato,errores_ortograficos,I180
+Ya probé desconectar el cable y volverlo a conectar.,aportar_dato,correcta,I181
+ya desconecté el cable y lo volví a poner,aportar_dato,informal,I181
+ya probe desconectar el cable y bolberlo a conectar,aportar_dato,errores_ortograficos,I181
+Estoy usando Windows 10.,aportar_dato,correcta,I182
+tengo windows 10,aportar_dato,informal,I182
+estoy usando windous 10,aportar_dato,errores_ortograficos,I182
+Mi equipo está conectado por cable.,aportar_dato,correcta,I183
+mi pc está conectada por cable,aportar_dato,informal,I183
+mi ekipo esta conectado por cable,aportar_dato,errores_ortograficos,I183
+Pertenezco al área de Recursos Humanos.,aportar_dato,correcta,I184
+soy de recursos humanos,aportar_dato,informal,I184
+pertenesco al area de recursos umanos,aportar_dato,errores_ortograficos,I184
+Ya apagué y prendí el router.,aportar_dato,correcta,I185
+ya apagué y prendí el router,aportar_dato,informal,I185
+ya apage y prendi el router,aportar_dato,errores_ortograficos,I185
+Empezó hoy a las ocho de la mañana.,aportar_dato,correcta,I186
+empezó hoy a las 8 de la mañana,aportar_dato,informal,I186
+empeso oy a las ocho de la mañana,aportar_dato,errores_ortograficos,I186
+Aparece un código 0x80070005.,aportar_dato,correcta,I187
+me sale el código 0x80070005,aportar_dato,informal,I187
+aparese un codigo 0x80070005,aportar_dato,errores_ortograficos,I187
+La laptop es de la marca Dell.,aportar_dato,correcta,I188
+la lap es una dell,aportar_dato,informal,I188
+la laptop es de la marka dell,aportar_dato,errores_ortograficos,I188
+Es urgente porque tengo cierre contable hoy.,aportar_dato,correcta,I189
+"es urgente, tengo cierre contable hoy",aportar_dato,informal,I189
+es urjente porque tengo sierre contable oy,aportar_dato,errores_ortograficos,I189
+Nadie más de mi equipo puede abrirlo.,aportar_dato,correcta,I190
+nadie de mi equipo puede abrirlo,aportar_dato,informal,I190
+nadie mas de mi ekipo puede abrirlo,aportar_dato,errores_ortograficos,I190
+Mi número de anexo es 1234.,aportar_dato,correcta,I191
+mi anexo es el 1234,aportar_dato,informal,I191
+mi numero de anexo es 1234,aportar_dato,errores_ortograficos,I191
+"Sí, aparece conectado pero sin acceso a internet.",aportar_dato,correcta,I192
+"sí, sale conectado pero sin internet",aportar_dato,informal,I192
+si aparese conectado pero sin aceso a interne,aportar_dato,errores_ortograficos,I192
+"No, no me aparece ningún mensaje de error.",aportar_dato,correcta,I193
+"no, no sale ningún error",aportar_dato,informal,I193
+no no me aparese ningun mensaje de eror,aportar_dato,errores_ortograficos,I193
+"Sí, a mi compañera de al lado también le pasa.",aportar_dato,correcta,I194
+"sí, a mi compañera tambien le pasa",aportar_dato,informal,I194
+si a mi compañera de al lado tambien le pasa,aportar_dato,errores_ortograficos,I194
+"Es en el segundo piso, cerca de la sala de reuniones.",aportar_dato,correcta,I195
+es en el 2do piso por la sala de reuniones,aportar_dato,informal,I195
+es en el segundo piso serca de la sala de reuniones,aportar_dato,errores_ortograficos,I195
+No puedo cambiar la configuración del desvío de llamadas en mi teléfono.,reportar_falla,correcta,I196
+no logro desviar las llamadas de mi teléfono,reportar_falla,informal,I196
+no puedo cambiar la konfiguracion del desbio de llamadas,reportar_falla,errores_ortograficos,I196
+La videollamada se corta cada vez que comparto pantalla.,reportar_falla,correcta,I197
+se corta la videollamada cuando comparto pantalla,reportar_falla,informal,I197
+la bideollamada se corta cada bes que conparto pantalla,reportar_falla,errores_ortograficos,I197
+Mi cuenta no me deja iniciar sesión en la intranet.,reportar_falla,correcta,I198
+no me deja iniciar sesión en la intranet,reportar_falla,informal,I198
+mi cuenta no me deja iniciar sesion en la intranet,reportar_falla,errores_ortograficos,I198
+El servidor de archivos no responde y nadie puede abrir documentos.,reportar_falla,correcta,I199
+"el servidor de archivos no responde, nadie abre nada",reportar_falla,informal,I199
+el serbidor de archivos no responde y nadie puede abrir documentos,reportar_falla,errores_ortograficos,I199
+La computadora se apaga sola de un momento a otro.,reportar_falla,correcta,I200
+la pc se apaga sola de la nada,reportar_falla,informal,I200
+la computadora se apaga sola de un momento a otro,reportar_falla,errores_ortograficos,I200
+El sistema de caja se congela al cerrar el turno.,reportar_falla,correcta,I201
+el sistema de caja se cuelga al cerrar turno,reportar_falla,informal,I201
+el sistema de caja se congela al serrar el turno,reportar_falla,errores_ortograficos,I201
+"No puedo guardar archivos en el disco compartido, dice sin permiso.",reportar_falla,correcta,I202
+"no me deja guardar en el disco compartido, dice sin permiso",reportar_falla,informal,I202
+no puedo guardar archibos en el disco conpartido dise sin permiso,reportar_falla,errores_ortograficos,I202
+Hay un olor a quemado que viene de una regleta con equipos conectados.,reportar_falla,correcta,I203
+huele a quemado de la regleta donde está mi pc,reportar_falla,informal,I203
+ay un olor a kemado que biene de una regleta con ekipos conectados,reportar_falla,errores_ortograficos,I203
+Desde ayer la computadora me muestra un aviso de virus todo el tiempo.,reportar_falla,correcta,I204
+desde ayer me sale un aviso de virus a cada rato,reportar_falla,informal,I204
+desde ayer la computadora me muestra un aviso de birus todo el tiempo,reportar_falla,errores_ortograficos,I204
+El dominio ya no reconoce mi usuario al iniciar sesión.,reportar_falla,correcta,I205
+el dominio no reconoce mi usuario cuando entro,reportar_falla,informal,I205
+el dominio ya no reconose mi usuario al iniciar sesion,reportar_falla,errores_ortograficos,I205
+No suena el timbre de mi teléfono cuando entra una llamada.,reportar_falla,correcta,I206
+mi teléfono no suena cuando me llaman,reportar_falla,informal,I206
+no suena el timbre de mi telefono cuando entra una llamada,reportar_falla,errores_ortograficos,I206
+El proyector de la sala no muestra imagen aunque está encendido.,reportar_falla,correcta,I207
+el proyector está prendido pero no se ve nada,reportar_falla,informal,I207
+el proyector de la sala no muestra imajen aunke esta encendido,reportar_falla,errores_ortograficos,I207
+Las páginas internas cargan pero las externas dan error de certificado.,reportar_falla,correcta,I208
+las páginas de fuera dan error de certificado,reportar_falla,informal,I208
+las pajinas internas cargan pero las esternas dan eror de sertificado,reportar_falla,errores_ortograficos,I208
+No se puede abrir el archivo de Excel porque dice que está corrupto.,reportar_falla,correcta,I209
+el excel dice que el archivo está corrupto,reportar_falla,informal,I209
+no se puede abrir el archibo de ecxel porque dise que esta corupto,reportar_falla,errores_ortograficos,I209
+Se me borraron los archivos del escritorio después de una actualización.,reportar_falla,correcta,I210
+se me borraron los archivos del escritorio después de actualizar,reportar_falla,informal,I210
+se me borraron los archibos del escritorio despues de una actualisasion,reportar_falla,errores_ortograficos,I210
+El lector de huellas del ingreso no reconoce a nadie del área.,reportar_falla,correcta,I211
+el lector de huellas no reconoce a nadie del área,reportar_falla,informal,I211
+el lector de huellas del ingreso no reconose a nadie del area,reportar_falla,errores_ortograficos,I211
+La videoconferencia no deja entrar a los invitados externos.,reportar_falla,correcta,I212
+a los invitados de afuera no los deja entrar a la reunión,reportar_falla,informal,I212
+la bideoconferencia no deja entrar a los imbitados esternos,reportar_falla,errores_ortograficos,I212
+Mi laptop no detecta el cargador y la batería sigue bajando.,reportar_falla,correcta,I213
+"la lap no detecta el cargador, la batería baja",reportar_falla,informal,I213
+mi laptop no detecta el cargador y la bateria sigue bajando,reportar_falla,errores_ortograficos,I213
+El correo corporativo no me deja iniciar sesión desde el celular.,reportar_falla,correcta,I214
+el correo de la empresa no entra en mi cel,reportar_falla,informal,I214
+el correo corporatibo no me deja iniciar sesion desde el selular,reportar_falla,errores_ortograficos,I214
+Quiero acceso al repositorio de documentos legales.,solicitar_acceso,correcta,I215
+necesito entrar al repositorio de documentos legales,solicitar_acceso,informal,I215
+quiero aceso al repositorio de documentos legales,solicitar_acceso,errores_ortograficos,I215
+Necesito que habiliten mi usuario en el sistema de compras.,solicitar_acceso,correcta,I216
+habiliten mi usuario en el sistema de compras,solicitar_acceso,informal,I216
+nesecito que abiliten mi usuario en el sistema de conpras,solicitar_acceso,errores_ortograficos,I216
+Solicito que agreguen a mi equipo al grupo de correo de la gerencia.,solicitar_acceso,correcta,I217
+que me agreguen al grupo de correo de gerencia,solicitar_acceso,informal,I217
+solisito que agreguen a mi ekipo al grupo de correo de la gerencia,solicitar_acceso,errores_ortograficos,I217
+Necesito permisos para ver las carpetas del área de Finanzas.,solicitar_acceso,correcta,I218
+necesito ver las carpetas de finanzas,solicitar_acceso,informal,I218
+nesecito permisos para ber las carpetas del area de finanzas,solicitar_acceso,errores_ortograficos,I218
+Quisiera pedir un usuario para el sistema de inventarios.,solicitar_acceso,correcta,I219
+quisiera un usuario pal sistema de inventarios,solicitar_acceso,informal,I219
+quisiera pedir un usuario para el sistema de inbentarios,solicitar_acceso,errores_ortograficos,I219
+Necesito autorización para usar memorias USB en mi equipo.,solicitar_acceso,correcta,I220
+me autorizan usar usb en mi pc,solicitar_acceso,informal,I220
+nesecito autorisacion para usar memorias usb en mi ekipo,solicitar_acceso,errores_ortograficos,I220
+"Por favor, doy de alta a una persona nueva, necesita cuenta y acceso a la red.",solicitar_acceso,correcta,I221
+"va a ingresar alguien nuevo, necesita cuenta y red",solicitar_acceso,informal,I221
+por fabor doy de alta a una persona nueba necesita cuenta y aceso a la red,solicitar_acceso,errores_ortograficos,I221
+Necesito acceso al panel de administración de la página web.,solicitar_acceso,correcta,I222
+necesito entrar al panel de admin de la web,solicitar_acceso,informal,I222
+nesecito aceso al panel de administracion de la pajina web,solicitar_acceso,errores_ortograficos,I222
+Necesito una laptop de reemplazo mientras reparan la mía.,solicitar_equipo,correcta,I223
+una laptop prestada mientras arreglan la mía,solicitar_equipo,informal,I223
+nesecito una laptop de reenplazo mientras reparan la mia,solicitar_equipo,errores_ortograficos,I223
+Quisiera solicitar una pantalla más grande para diseño.,solicitar_equipo,correcta,I224
+quiero un monitor más grande pa diseño,solicitar_equipo,informal,I224
+quisiera solisitar una pantalla mas grande para diseño,solicitar_equipo,errores_ortograficos,I224
+Solicito una mochila y un mouse para el trabajo en campo.,solicitar_equipo,correcta,I225
+necesito mochila y mouse para el trabajo en campo,solicitar_equipo,informal,I225
+solisito una mochila y un maus para el trabajo en campo,solicitar_equipo,errores_ortograficos,I225
+Necesito que me presten un cable de red de cinco metros.,solicitar_equipo,correcta,I226
+me prestan un cable de red largo,solicitar_equipo,informal,I226
+nesecito que me presten un cable de red de sinco metros,solicitar_equipo,errores_ortograficos,I226
+Pido la instalación de Visual Studio Code en mi computadora.,solicitar_equipo,correcta,I227
+que me instalen el visual studio code,solicitar_equipo,informal,I227
+pido la instalasion de visual estudio code en mi computadora,solicitar_equipo,errores_ortograficos,I227
+Necesito un teléfono IP para el nuevo escritorio.,solicitar_equipo,correcta,I228
+un telefono pal escritorio nuevo,solicitar_equipo,informal,I228
+nesecito un telefono ip para el nuebo escritorio,solicitar_equipo,errores_ortograficos,I228
+Solicito una licencia de Microsoft Project.,solicitar_equipo,correcta,I229
+necesito licencia del project,solicitar_equipo,informal,I229
+solisito una lisencia de microsoft project,solicitar_equipo,errores_ortograficos,I229
+Quiero una tablet para tomar pedidos en el local.,solicitar_equipo,correcta,I230
+quiero una tablet pa tomar pedidos,solicitar_equipo,informal,I230
+quiero una tablet para tomar pedidos en el lokal,solicitar_equipo,errores_ortograficos,I230
+"Necesito que me envíen una clave nueva, la anterior no la recuerdo.",restablecer_clave,correcta,I231
+"me mandan una clave nueva, no me acuerdo la anterior",restablecer_clave,informal,I231
+nesecito que me envien una clabe nueba la anterior no la recuerdo,restablecer_clave,errores_ortograficos,I231
+"Mi cuenta de dominio está bloqueada, ¿pueden liberarla?",restablecer_clave,correcta,I232
+"mi cuenta de dominio está bloqueada, la liberan",restablecer_clave,informal,I232
+mi cuenta de dominio esta bloqeada pueden liberarla,restablecer_clave,errores_ortograficos,I232
+Cambié mi contraseña y ahora no me acuerdo cuál puse.,restablecer_clave,correcta,I233
+cambié la clave y ya no sé cuál puse,restablecer_clave,informal,I233
+cambie mi contraseña y ahora no me acuerdo cual puse,restablecer_clave,errores_ortograficos,I233
+Quiero resetear la contraseña del sistema de planillas.,restablecer_clave,correcta,I234
+quiero resetear la clave de planillas,restablecer_clave,informal,I234
+quiero reseteaar la contraseña del sistema de planiyas,restablecer_clave,errores_ortograficos,I234
+Mi clave caducó mientras estaba de vacaciones.,restablecer_clave,correcta,I235
+mi clave caducó en mis vacaciones,restablecer_clave,informal,I235
+mi clabe caduco mientras estaba de bacaciones,restablecer_clave,errores_ortograficos,I235
+"Necesito recuperar mi acceso, no puedo recordar mi PIN.",restablecer_clave,correcta,I236
+"no recuerdo mi pin, necesito recuperar mi acceso",restablecer_clave,informal,I236
+nesecito recuperar mi aceso no puedo recordar mi pin,restablecer_clave,errores_ortograficos,I236
+"Todo bien ahora, gracias por la ayuda con el correo.",confirmar_solucion,correcta,I237
+"todo bien ahora, gracias por lo del correo",confirmar_solucion,informal,I237
+todo bien aora grasias por la ayuda con el coreo,confirmar_solucion,errores_ortograficos,I237
+Ya está funcionando otra vez.,confirmar_solucion,correcta,I238
+ya está funcionando otra vez,confirmar_solucion,informal,I238
+ya esta funsionando otra bes,confirmar_solucion,errores_ortograficos,I238
+"Sí, con eso se arregló.",confirmar_solucion,correcta,I239
+"sí, con eso se arregló",confirmar_solucion,informal,I239
+si con eso se areglo,confirmar_solucion,errores_ortograficos,I239
+"Gracias, ya pude entrar al sistema.",confirmar_solucion,correcta,I240
+"gracias, ya pude entrar al sistema",confirmar_solucion,informal,I240
+grasias ya pude entrar al sistema,confirmar_solucion,errores_ortograficos,I240
+"Excelente, ya está resuelto.",confirmar_solucion,correcta,I241
+"excelente, ya está resuelto",confirmar_solucion,informal,I241
+exelente ya esta resuelto,confirmar_solucion,errores_ortograficos,I241
+"Ya reconoce el monitor, quedó bien.",confirmar_solucion,correcta,I242
+"ya reconoce el monitor, quedó bien",confirmar_solucion,informal,I242
+ya reconose el monitor quedo bien,confirmar_solucion,errores_ortograficos,I242
+Quisiera saber si ya revisaron mi solicitud de acceso.,consultar_estado,correcta,I243
+ya vieron mi solicitud de acceso,consultar_estado,informal,I243
+quisiera saber si ya rebisaron mi solisitud de aceso,consultar_estado,errores_ortograficos,I243
+¿Hay alguna respuesta para mi caso del teléfono?,consultar_estado,correcta,I244
+hay respuesta para mi caso del teléfono,consultar_estado,informal,I244
+ay alguna respuesta para mi caso del telefono,consultar_estado,errores_ortograficos,I244
+¿En qué va el ticket que abrí esta mañana?,consultar_estado,correcta,I245
+en qué va el ticket de esta mañana,consultar_estado,informal,I245
+en que ba el tiket que abri esta mañana,consultar_estado,errores_ortograficos,I245
+Sigo esperando noticias de mi incidencia.,consultar_estado,correcta,I246
+sigo esperando noticias de mi incidencia,consultar_estado,informal,I246
+sigo esperando noticias de mi insidencia,consultar_estado,errores_ortograficos,I246
+¿Me pueden decir si ya hay técnico asignado?,consultar_estado,correcta,I247
+me dicen si ya hay técnico asignado,consultar_estado,informal,I247
+me pueden desir si ya hay tecnico asignado,consultar_estado,errores_ortograficos,I247
+¿Mi pedido de la laptop ya fue aprobado?,consultar_estado,correcta,I248
+mi pedido de laptop ya fue aprobado,consultar_estado,informal,I248
+mi pedido de la laptop ya fue aprobado,consultar_estado,errores_ortograficos,I248
+Es increíble que sigan sin solucionarlo después de tantos reclamos.,queja,correcta,I249
+increíble que sigan sin solucionarlo con tantos reclamos,queja,informal,I249
+es increible que sigan sin solusionarlo despues de tantos reclamos,queja,errores_ortograficos,I249
+"Pésimo servicio, nadie contesta el teléfono de soporte.",queja,correcta,I250
+"pésimo servicio, nadie contesta en soporte",queja,informal,I250
+pesimo serbicio nadie contesta el telefono de soporte,queja,errores_ortograficos,I250
+Estoy muy disgustado con el trato que recibí del técnico.,queja,correcta,I251
+estoy disgustado con el trato del técnico,queja,informal,I251
+estoy muy disgustado con el trato que resibi del tecnico,queja,errores_ortograficos,I251
+Llevo toda la semana trabajando mal por culpa de esta falla y a nadie le importa.,queja,correcta,I252
+toda la semana así y a nadie le importa,queja,informal,I252
+llebo toda la semana trabajando mal por culpa de esta falla y a nadie le importa,queja,errores_ortograficos,I252
+"Quiero un reclamo por escrito, ya me cansé de esperar.",queja,correcta,I253
+"quiero reclamar, ya me cansé de esperar",queja,informal,I253
+quiero un reclamo por escrito ya me canse de esperar,queja,errores_ortograficos,I253
+"Me prometieron una solución para ayer y sigo igual, qué falta de seriedad.",queja,correcta,I254
+"me prometieron para ayer y nada, qué falta de seriedad",queja,informal,I254
+me prometieron una solusion para ayer y sigo ygual que falta de seriedad,queja,errores_ortograficos,I254
+Prefiero que un técnico me atienda por teléfono.,pedir_tecnico,correcta,I255
+que un técnico me atienda por teléfono,pedir_tecnico,informal,I255
+prefiero que un tecnico me atienda por telefono,pedir_tecnico,errores_ortograficos,I255
+Necesito soporte presencial en mi puesto.,pedir_tecnico,correcta,I256
+necesito soporte presencial en mi puesto,pedir_tecnico,informal,I256
+nesecito soporte presensial en mi puesto,pedir_tecnico,errores_ortograficos,I256
+¿Pueden derivarme con un especialista en redes?,pedir_tecnico,correcta,I257
+me derivan con alguien de redes,pedir_tecnico,informal,I257
+pueden derivarme con un especialista en redes,pedir_tecnico,errores_ortograficos,I257
+"No logro resolverlo sola, necesito que alguien lo vea.",pedir_tecnico,correcta,I258
+"no puedo sola, que alguien lo vea",pedir_tecnico,informal,I258
+no logro resolberlo sola nesecito que alguien lo vea,pedir_tecnico,errores_ortograficos,I258
+Lo hice de nuevo y el error continúa.,sigue_igual,correcta,I259
+lo repetí y el error sigue,sigue_igual,informal,I259
+lo hise de nuebo y el eror continua,sigue_igual,errores_ortograficos,I259
+"Sin cambios, sigue sin conectar.",sigue_igual,correcta,I260
+"sin cambios, sigue sin conectar",sigue_igual,informal,I260
+sin cambios sigue sin conectar,sigue_igual,errores_ortograficos,I260
+Seguimos con el mismo problema.,sigue_igual,correcta,I261
+seguimos con lo mismo,sigue_igual,informal,I261
+seguimos con el mismo problema,sigue_igual,errores_ortograficos,I261
+Reinicié como me dijeron y no hubo mejora.,sigue_igual,correcta,I262
+reinicié como dijeron y no mejoró,sigue_igual,informal,I262
+reinicie como me dijeron y no hubo mejora,sigue_igual,errores_ortograficos,I262
+¿Me puedes ayudar con una receta de pollo a la brasa?,fuera_de_alcance,correcta,I263
+ayúdame con una receta de pollo a la brasa,fuera_de_alcance,informal,I263
+me puedes ayudar con una resesta de pollo a la brasa,fuera_de_alcance,errores_ortograficos,I263
+¿Cuándo es la reunión general de la empresa?,fuera_de_alcance,correcta,I264
+cuándo es la reunión general de la empresa,fuera_de_alcance,informal,I264
+cuando es la reunion general de la empresa,fuera_de_alcance,errores_ortograficos,I264
+Necesito saber el saldo de mi cuenta de ahorros.,fuera_de_alcance,correcta,I265
+cuánto tengo en mi cuenta de ahorros,fuera_de_alcance,informal,I265
+nesecito saber el saldo de mi cuenta de aorros,fuera_de_alcance,errores_ortograficos,I265
+¿Me puedes escribir un poema?,fuera_de_alcance,correcta,I266
+escríbeme un poema,fuera_de_alcance,informal,I266
+me puedes escribir un poema,fuera_de_alcance,errores_ortograficos,I266
+¿Dónde queda la oficina de recursos humanos?,fuera_de_alcance,correcta,I267
+dónde queda recursos humanos,fuera_de_alcance,informal,I267
+donde queda la ofisina de recursos umanos,fuera_de_alcance,errores_ortograficos,I267
+Háblame del último partido de la selección.,fuera_de_alcance,correcta,I268
+cuéntame del último partido de la selección,fuera_de_alcance,informal,I268
+ablame del ultimo partido de la seleccion,fuera_de_alcance,errores_ortograficos,I268
+¿Cuál es el horario de atención del banco?,fuera_de_alcance,correcta,I269
+a qué hora atiende el banco,fuera_de_alcance,informal,I269
+cual es el orario de atension del banco,fuera_de_alcance,errores_ortograficos,I269
+"Buen día, ¿puedo consultar algo?",saludo,correcta,I270
+"buen día, puedo preguntar algo",saludo,informal,I270
+buen dia puedo konsultar algo,saludo,errores_ortograficos,I270
+"Hola, ¿ya están atendiendo?",saludo,correcta,I271
+"hola, ya están atendiendo",saludo,informal,I271
+ola ya estan atendiendo,saludo,errores_ortograficos,I271
+Gracias por atenderme tan bien.,agradecer,correcta,I272
+gracias por atenderme tan bien,agradecer,informal,I272
+grasias por atenderme tan bien,agradecer,errores_ortograficos,I272
+Se agradece la rapidez.,agradecer,correcta,I273
+se agradece la rapidez,agradecer,informal,I273
+se agradese la rapides,agradecer,errores_ortograficos,I273
+Dime una adivinanza.,fuera_de_alcance,correcta,I274
+dime una adivinanza pe,fuera_de_alcance,informal,I274
+dime una adibinanza,fuera_de_alcance,errores_ortograficos,I274
+¿Qué opinas de la política?,fuera_de_alcance,correcta,I275
+qué opinas de la política,fuera_de_alcance,informal,I275
+que opinas de la politika,fuera_de_alcance,errores_ortograficos,I275
+Cuéntame una historia de miedo.,fuera_de_alcance,correcta,I276
+cuéntame un cuento de terror,fuera_de_alcance,informal,I276
+cuentame una istoria de miedo,fuera_de_alcance,errores_ortograficos,I276
+¿Qué canción me recomiendas para hoy?,fuera_de_alcance,correcta,I277
+qué música me recomiendas,fuera_de_alcance,informal,I277
+que cancion me recomiendas para oy,fuera_de_alcance,errores_ortograficos,I277
+"Está bien, gracias por el momento.",agradecer,correcta,I278
+"ya, gracias por ahora",agradecer,informal,I278
+esta bien grasias por el momento,agradecer,errores_ortograficos,I278
+"Gracias, por ahora es todo lo que necesito.",agradecer,correcta,I279
+"gracias, por ahora nada más",agradecer,informal,I279
+grasias por ahora es todo lo que nesecito,agradecer,errores_ortograficos,I279
+"Lo hice tal cual y quedó, muchas gracias.",confirmar_solucion,correcta,I280
+"lo hice tal cual y quedó, gracias",confirmar_solucion,informal,I280
+lo hise tal cual y quedo muchas grasias,confirmar_solucion,errores_ortograficos,I280
+"Hecho, todo quedó perfecto.",confirmar_solucion,correcta,I281
+"hecho, todo quedó perfecto",confirmar_solucion,informal,I281
+echo todo quedo perfecto,confirmar_solucion,errores_ortograficos,I281
+No hay internet.,reportar_falla,correcta,I282
+no hay internet pe,reportar_falla,informal,I282
+no ay interne,reportar_falla,errores_ortograficos,I282
+La computadora no enciende.,reportar_falla,correcta,I283
+la compu no enciende,reportar_falla,informal,I283
+la computadora no ensiende,reportar_falla,errores_ortograficos,I283
+Se cierra Word solo.,reportar_falla,correcta,I284
+se cierra el word solo,reportar_falla,informal,I284
+se sierra word solo,reportar_falla,errores_ortograficos,I284
+No carga Outlook.,reportar_falla,correcta,I285
+no carga el outlook,reportar_falla,informal,I285
+no carga outlok,reportar_falla,errores_ortograficos,I285
+La impresora no responde.,reportar_falla,correcta,I286
+la impresora no responde nada,reportar_falla,informal,I286
+la inpresora no responde,reportar_falla,errores_ortograficos,I286
+El sistema está caído.,reportar_falla,correcta,I287
+el sistema está caído,reportar_falla,informal,I287
+el sistema esta caido,reportar_falla,errores_ortograficos,I287
+Se cayó el wifi.,reportar_falla,correcta,I288
+se cayó el wifi,reportar_falla,informal,I288
+se cayo el wifi,reportar_falla,errores_ortograficos,I288
+No funciona el teléfono.,reportar_falla,correcta,I289
+el teléfono no funciona,reportar_falla,informal,I289
+no funsiona el telefono,reportar_falla,errores_ortograficos,I289
+No abre la página de la intranet.,reportar_falla,correcta,I290
+la intranet no abre,reportar_falla,informal,I290
+no abre la pajina de la intranet,reportar_falla,errores_ortograficos,I290
+Se me congeló la pantalla.,reportar_falla,correcta,I291
+se me congeló la pc,reportar_falla,informal,I291
+se me congelo la pantala,reportar_falla,errores_ortograficos,I291
+Mi teclado no responde.,reportar_falla,correcta,I292
+el teclado no responde,reportar_falla,informal,I292
+mi teclado no responde,reportar_falla,errores_ortograficos,I292
+No puedo abrir los archivos de la red.,reportar_falla,correcta,I293
+no abre nada de la carpeta de red,reportar_falla,informal,I293
+no puedo abrir los archibos de la red,reportar_falla,errores_ortograficos,I293
+El internet está caído para todos en el edificio.,reportar_falla,correcta,I294
+no hay internet para nadie en el edificio,reportar_falla,informal,I294
+el interne esta caido para todos en el edificio,reportar_falla,errores_ortograficos,I294
+Toda la oficina está sin red desde las nueve.,reportar_falla,correcta,I295
+toda la oficina sin red desde las 9,reportar_falla,informal,I295
+toda la ofisina esta sin red desde las nueve,reportar_falla,errores_ortograficos,I295
+El sistema de caja está caído en todas las tiendas.,reportar_falla,correcta,I296
+el sistema de caja se cayó en todas las tiendas,reportar_falla,informal,I296
+el sistema de caja esta caido en todas las tiendas,reportar_falla,errores_ortograficos,I296
+Se cayó la red de toda la empresa.,reportar_falla,correcta,I297
+se cayó la red de toda la empresa pe,reportar_falla,informal,I297
+se cayo la red de toda la empresa,reportar_falla,errores_ortograficos,I297
+Nadie del piso puede imprimir.,reportar_falla,correcta,I298
+nadie del piso puede imprimir,reportar_falla,informal,I298
+nadie del piso puede inprimir,reportar_falla,errores_ortograficos,I298
+La central telefónica está caída.,reportar_falla,correcta,I299
+la central telefónica se cayó,reportar_falla,informal,I299
+la sentral telefonica esta caida,reportar_falla,errores_ortograficos,I299
+El correo no funciona para nadie en la sede.,reportar_falla,correcta,I300
+el correo no va para nadie en la sede,reportar_falla,informal,I300
+el correo no funsiona para nadie en la sede,reportar_falla,errores_ortograficos,I300
+Ningún servidor responde y no podemos trabajar.,reportar_falla,correcta,I301
+"ningún servidor responde, no podemos trabajar",reportar_falla,informal,I301
+ningun serbidor responde y no podemos trabajar,reportar_falla,errores_ortograficos,I301
+Mi PC es la LAP-ADM-05.,aportar_dato,correcta,I302
+mi pc es la lap-adm-05,aportar_dato,informal,I302
+mi pc es la LAP-ADM-05,aportar_dato,errores_ortograficos,I302
+El equipo se llama NB-GER-02.,aportar_dato,correcta,I303
+el equipo se llama nb-ger-02,aportar_dato,informal,I303
+el ekipo se llama NB-GER-02,aportar_dato,errores_ortograficos,I303
+Estoy en el piso 4.,aportar_dato,correcta,I304
+estoy en el cuarto piso nomas,aportar_dato,informal,I304
+estoy en el piso cuatro,aportar_dato,errores_ortograficos,I304
+En el tercer piso.,aportar_dato,correcta,I305
+en el 3er piso,aportar_dato,informal,I305
+en el tersser piso,aportar_dato,errores_ortograficos,I305
+Sede Miraflores.,aportar_dato,correcta,I306
+en la sede de miraflores,aportar_dato,informal,I306
+sede mirafloress,aportar_dato,errores_ortograficos,I306
+Es en San Borja.,aportar_dato,correcta,I307
+en san borja pe,aportar_dato,informal,I307
+es en san borja,aportar_dato,errores_ortograficos,I307
+Desde esta tarde.,aportar_dato,correcta,I308
+desde la tarde nomas,aportar_dato,informal,I308
+desde esta tarde,aportar_dato,errores_ortograficos,I308
+Desde hace una semana.,aportar_dato,correcta,I309
+hace una semana ya,aportar_dato,informal,I309
+desde hase una semana,aportar_dato,errores_ortograficos,I309
+Con Outlook.,aportar_dato,correcta,I310
+con el outlook,aportar_dato,informal,I310
+con outlok,aportar_dato,errores_ortograficos,I310
+En Excel.,aportar_dato,correcta,I311
+en el excel,aportar_dato,informal,I311
+en ecxel,aportar_dato,errores_ortograficos,I311
+Solo a mí.,aportar_dato,correcta,I312
+solo a mi pe,aportar_dato,informal,I312
+solo a mi,aportar_dato,errores_ortograficos,I312
+A todos mis compañeros.,aportar_dato,correcta,I313
+a todos mis compañeros también,aportar_dato,informal,I313
+a todos mis compañeros,aportar_dato,errores_ortograficos,I313
+No me sale ningún mensaje.,aportar_dato,correcta,I314
+no sale ningún mensaje,aportar_dato,informal,I314
+no me sale ningun mensage,aportar_dato,errores_ortograficos,I314
+El código es 0x80070057.,aportar_dato,correcta,I315
+el código es 0x80070057,aportar_dato,informal,I315
+el codigo es 0x80070057,aportar_dato,errores_ortograficos,I315
+Se me bloqueó el usuario del dominio.,restablecer_clave,correcta,I316
+"se me bloqueó el usuario, ayuda",restablecer_clave,informal,I316
+se me bloqueo el usuaro del dominio,restablecer_clave,errores_ortograficos,I316
+No puedo entrar porque olvidé la clave de Windows.,restablecer_clave,correcta,I317
+no entro porque se me olvidó la clave del windows,restablecer_clave,informal,I317
+no puedo entrar porke olbide la clabe de windous,restablecer_clave,errores_ortograficos,I317
+"Mi contraseña ya no sirve, la cambiaron y no sé cuál es.",restablecer_clave,correcta,I318
+mi clave ya no sirve y no sé cuál es la nueva,restablecer_clave,informal,I318
+mi contraseña ya no sirbe la canbiaron y no se cual es,restablecer_clave,errores_ortograficos,I318
+Necesito que reseteen mi usuario de red.,restablecer_clave,correcta,I319
+reseteen mi usuario de la red porfa,restablecer_clave,informal,I319
+nesecito que reseteen mi usuario de red,restablecer_clave,errores_ortograficos,I319
+Dice que mi cuenta está inhabilitada por intentos fallidos.,restablecer_clave,correcta,I320
+dice que mi cuenta está inhabilitada por tantos intentos,restablecer_clave,informal,I320
+dise que mi cuenta esta inabilitada por intentos fayidos,restablecer_clave,errores_ortograficos,I320
+¿Cómo va lo de mi solicitud de acceso a la carpeta?,consultar_estado,correcta,I321
+cómo va lo de mi pedido de acceso a la carpeta,consultar_estado,informal,I321
+como ba lo de mi solisitud de aceso a la carpeta,consultar_estado,errores_ortograficos,I321
+¿Se sabe algo de lo que reporté?,consultar_estado,correcta,I322
+se sabe algo de lo que reporté,consultar_estado,informal,I322
+se sabe algo de lo que reporte,consultar_estado,errores_ortograficos,I322
+¿Qué pasó con mi caso de la impresora?,consultar_estado,correcta,I323
+qué pasó con lo de mi impresora,consultar_estado,informal,I323
+que paso con mi caso de la inpresora,consultar_estado,errores_ortograficos,I323
+Quisiera saber si mi incidencia ya está asignada.,consultar_estado,correcta,I324
+quiero saber si ya asignaron mi incidencia,consultar_estado,informal,I324
+quisiera saber si mi insidencia ya esta asignada,consultar_estado,errores_ortograficos,I324
+¿Cuánto más demora lo de mi usuario?,consultar_estado,correcta,I325
+cuánto más demora lo de mi usuario nuevo,consultar_estado,informal,I325
+cuanto mas demora lo de mi usuaro,consultar_estado,errores_ortograficos,I325
+Quiero que me den un usuario para el sistema nuevo.,solicitar_acceso,correcta,I326
+quiero que me den un usuario pal sistema nuevo,solicitar_acceso,informal,I326
+quiero que me den un usuaro para el sistema nuebo,solicitar_acceso,errores_ortograficos,I326
+Necesito que me den permisos de administrador en mi laptop.,solicitar_acceso,correcta,I327
+necesito permisos de admin en mi lap,solicitar_acceso,informal,I327
+nesecito que me den permisos de administrador en mi laptop,solicitar_acceso,errores_ortograficos,I327
+Quisiera que me habiliten el acceso remoto desde mi casa.,solicitar_acceso,correcta,I328
+me habilitan el acceso remoto desde casa,solicitar_acceso,informal,I328
+quisiera que me abiliten el aceso remoto desde mi casa,solicitar_acceso,errores_ortograficos,I328
+¿Me pueden dar acceso de lectura al sistema de ventas?,solicitar_acceso,correcta,I329
+me dan acceso de lectura al sistema de ventas,solicitar_acceso,informal,I329
+me pueden dar aceso de lectura al sistema de bentas,solicitar_acceso,errores_ortograficos,I329
+Necesito que me presten una laptop para una capacitación.,solicitar_equipo,correcta,I330
+me prestan una laptop pa una capacitación,solicitar_equipo,informal,I330
+nesecito que me presten una laptop para una capasitacion,solicitar_equipo,errores_ortograficos,I330
+Requiero un monitor adicional para mi puesto.,solicitar_equipo,correcta,I331
+necesito otro monitor para mi puesto,solicitar_equipo,informal,I331
+requiero un monitor adisional para mi puesto,solicitar_equipo,errores_ortograficos,I331
+Quiero que me instalen Teams en mi laptop nueva.,solicitar_equipo,correcta,I332
+que me instalen el teams en mi lap nueva,solicitar_equipo,informal,I332
+quiero que me istalen tims en mi laptop nueba,solicitar_equipo,errores_ortograficos,I332
+Necesito unos audífonos con micrófono para la central.,solicitar_equipo,correcta,I333
+unos audífonos con micro para la central,solicitar_equipo,informal,I333
+nesecito unos audifonos con microfono para la sentral,solicitar_equipo,errores_ortograficos,I333
+La pantalla se queda negra por momentos.,reportar_falla,correcta,I334
+la pantalla se pone negra de rato en rato,reportar_falla,informal,I334
+la pantala se kedo negra por momentos,reportar_falla,errores_ortograficos,I334
+El ventilador de la computadora hace mucho ruido.,reportar_falla,correcta,I335
+"la compu hace un ruidazo, el ventilador",reportar_falla,informal,I335
+el bentilador de la computadora ase mucho ruido,reportar_falla,errores_ortograficos,I335
+El mouse hace doble clic solo.,reportar_falla,correcta,I336
+el mouse hace doble clic solito,reportar_falla,informal,I336
+el maus ase doble clik solo,reportar_falla,errores_ortograficos,I336
+La laptop se reinicia sin avisar.,reportar_falla,correcta,I337
+la lap se reinicia de la nada,reportar_falla,informal,I337
+la laptop se reinisia sin abisar,reportar_falla,errores_ortograficos,I337
+Se pierde la conexión con el servidor de archivos.,reportar_falla,correcta,I338
+se corta la conexión con el servidor de archivos,reportar_falla,informal,I338
+se pierde la conexion con el serbidor de archibos,reportar_falla,errores_ortograficos,I338
+Las videollamadas salen con demora y cortes.,reportar_falla,correcta,I339
+las videollamadas salen con retraso y se cortan,reportar_falla,informal,I339
+las bideollamadas salen con demora y cortes,reportar_falla,errores_ortograficos,I339
+El sistema de reservas muestra un error al guardar.,reportar_falla,correcta,I340
+el sistema de reservas bota error al guardar,reportar_falla,informal,I340
+el sistema de reserbas muestra un eror al guardar,reportar_falla,errores_ortograficos,I340
+El escritorio de Windows se bloquea apenas inicia.,reportar_falla,correcta,I341
+el windows se traba apenas prende,reportar_falla,informal,I341
+el escritorio de windous se bloquea apenas inisia,reportar_falla,errores_ortograficos,I341
+El equipo se queda en el logo y no avanza.,reportar_falla,correcta,I342
+la pc se queda en el logo y no pasa de ahí,reportar_falla,informal,I342
+el ekipo se kedo en el logo y no abanza,reportar_falla,errores_ortograficos,I342
+Los correos llegan con muchísimo retraso.,reportar_falla,correcta,I343
+los correos llegan tardísimo,reportar_falla,informal,I343
+los corros llegan con muchisimo retraso,reportar_falla,errores_ortograficos,I343
+"Es increíble, llevo semanas pidiendo lo mismo.",queja,correcta,I344
+"increíble, semanas pidiendo lo mismo",queja,informal,I344
+es increible llebo semanas pidiendo lo mismo,queja,errores_ortograficos,I344
+Nadie del soporte contesta mis mensajes.,queja,correcta,I345
+nadie de soporte me contesta,queja,informal,I345
+nadie del soporte contesta mis mensajes,queja,errores_ortograficos,I345
+"Qué mal manejo de mi caso, estoy muy enojado.",queja,correcta,I346
+"qué mal manejo de mi caso, estoy enojadísimo",queja,informal,I346
+que mal manejo de mi caso estoy muy enojado,queja,errores_ortograficos,I346
+Estoy conectado a la red de invitados.,aportar_dato,correcta,I347
+estoy en la red de invitados,aportar_dato,informal,I347
+estoy conectado a la red de imbitados,aportar_dato,errores_ortograficos,I347
+Es en la sala de reuniones del segundo piso.,aportar_dato,correcta,I348
+es en la sala de reuniones del 2do piso,aportar_dato,informal,I348
+es en la sala de reuniones del segundo piso,aportar_dato,errores_ortograficos,I348
+El programa se llama Contasis.,aportar_dato,correcta,I349
+el programa es el contasis,aportar_dato,informal,I349
+el programa se llama kontasis,aportar_dato,errores_ortograficos,I349
+La impresora la comparte todo el piso.,aportar_dato,correcta,I350
+esa impresora la usa todo el piso,aportar_dato,informal,I350
+la inpresora la conparte todo el piso,aportar_dato,errores_ortograficos,I350
+Mi supervisor lo intentó y le pasa igual.,aportar_dato,correcta,I351
+mi supervisor lo probó y le pasa igual,aportar_dato,informal,I351
+mi supervisor lo intento y le pasa ygual,aportar_dato,errores_ortograficos,I351

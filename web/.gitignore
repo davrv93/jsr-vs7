@@ -1,0 +1,9 @@
+node_modules
+dist
+server
+tmp
+.vite
+*.tsbuildinfo
+test-results
+playwright-report
+capturas

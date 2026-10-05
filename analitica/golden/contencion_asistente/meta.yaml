@@ -1,0 +1,59 @@
+# Golden query contencion_asistente · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: contencion_asistente
+nombre: "Contención del asistente"
+version: 1
+unidad: "%"
+dueno: Datos
+definicion: "Porcentaje de casos (conversaciones) que el asistente resolvió por sí solo y la persona confirmó, sin abrir incidencia."
+base: "Casos iniciados en el periodo (dia de Lima) y ya concluidos. Los casos todavía abiertos se excluyen del denominador y se informan aparte. Los casos no tienen grupo: el parámetro grupo no aplica."
+parametros:
+  - desde
+  - hasta
+atribucion_grupo: no_aplica
+columnas:
+  - "casos_concluidos: casos iniciados en el periodo que ya no estan abiertos"
+  - "contenidos: resueltos por el asistente, confirmados y sin incidencia"
+  - "porcentaje: contenidos / casos_concluidos x 100, NULL si no hay concluidos"
+  - "casos_abiertos_excluidos: casos del periodo todavia abiertos"
+bordes:
+  - "Denominador cero: porcentaje NULL."
+  - "Un caso resuelto por el asistente que despues termina con incidencia NO es contenido (se lee la ultima version del caso)."
+  - "Por eso no se calcula con una vista materializada: el estado de un caso puede retroceder."
+  - "Casos abandonados (cerrados sin resolver) cuentan en el denominador."
+objetivo: "SUPUESTO: 40 % o mas"
+preguntas_equivalentes:
+  - "¿Cuántos casos resuelve el asistente solo?"
+  - "Contención del asistente"
+  - "¿Qué porcentaje de conversaciones se resuelve sin abrir incidencia?"
+  - "Tasa de autoservicio del bot"
+  - "¿Cuántas consultas resolvió el asistente sin técnico?"
+  - "¿El asistente está evitando incidencias?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

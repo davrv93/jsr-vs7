@@ -8,7 +8,7 @@ Baruka ([`referencias/baruka/ARQUITECTURA.md`](referencias/baruka/ARQUITECTURA.m
 - un juez local open source («Jev local»);
 - la reportería en ClickHouse con golden queries.
 
-Estado: **diseño, sin código** (05-10-2026). Las cifras marcadas **[E]** son estimaciones que se miden en el plan;
+Estado: **diseño con implementación local** (05-10-2026); donde el código difiere, manda `docs/CONTRATOS.md`. Las cifras marcadas **[E]** son estimaciones que se miden en el plan;
 las fuentes de los modelos están en [`docs/INVESTIGACION_JEV_LOCAL.md`](docs/INVESTIGACION_JEV_LOCAL.md).
 
 ---
@@ -49,7 +49,8 @@ flowchart LR
 | Servicio | Tecnología | Responsabilidad |
 |---|---|---|
 | `jsrbot_evolution` (+ su Postgres) | evolution-go | Canal WhatsApp, igual que en Baruka |
-| `jsrbot_backend` | Go | API de la consola; webhook; flujo del caso; **incidencias, SLA, asignación, escalamiento**; eventos; outbox hacia ClickHouse; golden queries; avisos |
+| `jsrbot_motor` | Go | **Incidencias, SLA, asignación, escalamiento**; eventos; vigía; outbox hacia ClickHouse; golden queries (API interna `/interno/*`) |
+| `jsrbot_pasarela` | OCaml (Dream) | API de la consola; autenticación y roles; webhook de WhatsApp; flujo del caso; envío de avisos; chat web; estado público |
 | `jsrbot_agente` | Python 3.12, FastAPI, onnxruntime | Clasificador local, memoria, etapas, RAG sobre la base de conocimiento, redacción, **verificación de grounding**, resumen del caso |
 | `jsrbot_juez` | `llama-server` (llama.cpp) | LLM pequeño para la cascada de clasificación y «¿contestó?», con salida por esquema JSON |
 | `jsrbot_postgres` | Postgres 16 | Fuente de verdad: incidencias, eventos, técnicos, configuración, conocimiento, feedback |

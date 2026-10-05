@@ -1,0 +1,10 @@
+# Huella de las tablas VIGENTES de ClickHouse tras cargar la semilla: vista, filas, suma de cityHash64 de las columnas.
+# Genera: analitica/probar_reconstruccion.sh --actualizar. Cambia si cambia la semilla o el esquema: es la idea.
+v_eventos 4511 4635786293569674766
+v_incidencias 624 3984972046033445413
+v_tiempos 624 1484031804329221478
+v_casos 1203 15037611087914587660
+v_mensajes 6905 5064407801054639214
+v_feedback 1036 9964444541594465467
+v_encuestas 774 13495362662635912422
+v_kpi_diario 1329 10588475997884836779

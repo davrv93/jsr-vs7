@@ -1,0 +1,61 @@
+# Golden query csat · definicion oficial del KPI. Se edita aqui y se regenera catalogo.json (herramientas/generar_catalogo.py).
+kpi: csat
+nombre: "Satisfacción (CSAT)"
+version: 1
+unidad: "1 a 5"
+dueno: Datos
+definicion: "Media de las notas de la encuesta (1 a 5), el porcentaje de respuestas de 4 o 5 y la tasa de respuesta."
+base: "Encuestas enviadas en el periodo (dia de Lima de su fecha de envio) del grupo de origen elegido. Una encuesta sin puntaje esta enviada y sin responder: cuenta en la tasa de respuesta pero no en la media. Las encuestas de casos resueltos por el asistente no tienen grupo y solo entran sin filtro de grupo."
+parametros:
+  - desde
+  - hasta
+  - grupo
+atribucion_grupo: origen
+columnas:
+  - "enviadas: encuestas enviadas en el periodo"
+  - "respondidas: las que tienen puntaje"
+  - "tasa_respuesta_pct: respondidas / enviadas x 100"
+  - "csat_media: media del puntaje (1 a 5), NULL si no hay respuestas"
+  - "pct_4_5: respondidas con 4 o 5 / respondidas x 100, NULL si no hay respuestas"
+bordes:
+  - "Sin respuestas: csat_media y pct_4_5 NULL, nunca 0."
+  - "Encuesta sin responder: cuenta en enviadas, no en la media."
+  - "La misma encuesta llega dos veces (envio y respuesta): v_encuestas las junta por id."
+  - "Una encuesta enviada en octubre no entra en septiembre aunque la incidencia sea de septiembre."
+objetivo: "SUPUESTO: 4,2 o mas y 85 % de respuestas de 4 o 5"
+preguntas_equivalentes:
+  - "¿Cuál es la satisfacción de los usuarios?"
+  - "CSAT del mes"
+  - "¿Qué porcentaje de usuarios calificó 4 o 5?"
+  - "¿Cuántos usuarios respondieron la encuesta?"
+  - "Nota promedio de la encuesta de satisfacción"
+  - "¿Están contentos los usuarios con la atención?"
+pruebas:
+  - archivo: esperado.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_septiembre.csv
+    desde: "2026-09-01"
+    hasta: "2026-09-30"
+    grupo: ""
+  - archivo: esperado_redes_agosto.csv
+    desde: "2026-08-01"
+    hasta: "2026-08-31"
+    grupo: "Redes"
+  - archivo: esperado_borde_31jul_1ago.csv
+    desde: "2026-07-31"
+    hasta: "2026-08-01"
+    grupo: ""
+  - archivo: esperado_grupo_sin_datos.csv
+    desde: "2026-07-01"
+    hasta: "2026-09-30"
+    grupo: "Seguridad"
+  - archivo: esperado_octubre.csv
+    desde: "2026-10-01"
+    hasta: "2026-10-05"
+    grupo: ""
+  - archivo: esperado_periodo_vacio.csv
+    desde: "2026-12-01"
+    hasta: "2026-12-31"
+    grupo: ""

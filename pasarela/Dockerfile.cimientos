@@ -1,0 +1,30 @@
+# Cimientos de la pasarela: OCaml + todas las dependencias, ya compiladas.
+# Es la capa cara (compilar opam lleva 10-25 min); se construye UNA vez (`make cimientos`) y la usan
+# `make construir`, `make probar` y el Dockerfile final. No lleva codigo de la pasarela.
+#
+# Alpine (musl) a proposito: el binario se enlaza contra musl y corre en la imagen final Alpine. Un binario
+# compilado en Debian (glibc) no arranca en Alpine.
+FROM ocaml/opam:alpine-3.19-ocaml-5.1 AS cimientos
+USER root
+RUN apk add --no-cache gmp-dev pkgconf openssl-dev m4 libev-dev zlib-dev linux-headers \
+                       postgresql-dev libffi-dev bash curl
+USER opam
+# Sin fijar versiones: opam resuelve un conjunto coherente (dream + caqti van de la mano). Si una se rompe, se
+# fija AQUI con el motivo escrito.
+#  - dream: servidor HTTP, SSE, middleware.
+#  - caqti, caqti-lwt, caqti-driver-postgresql: acceso a Postgres con consultas parametrizadas.
+#  - cohttp-lwt-unix: cliente HTTP hacia el agente, el motor y evolution-go.
+#  - digestif: SHA-256 y HMAC (JWT, PBKDF2). base64: codificacion de JWT.
+#  - yojson, re: JSON y expresiones regulares.
+#  - alcotest, alcotest-lwt: pruebas.
+RUN opam update -y \
+ && opam install -y dune lwt yojson re dream digestif base64 caqti caqti-lwt caqti-driver-postgresql \
+                    cohttp-lwt-unix alcotest alcotest-lwt \
+ && opam clean -a -c
+WORKDIR /w
+# Directorio de compilacion persistente: `make construir` y `make probar` montan aqui un volumen con nombre, asi
+# dune no recompila todo en cada ejecucion. Existe en la imagen para que el volumen herede el dueno (opam).
+RUN mkdir -p /home/opam/_build
+USER root
+RUN apk add --no-cache jq postgresql-client
+USER opam

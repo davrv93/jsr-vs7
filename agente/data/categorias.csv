@@ -1,0 +1,430 @@
+mensaje,categoria,variante,grupo_id
+No me abre el correo desde esta mañana.,correo,correcta,C001
+oye no me jala el outlook desde temprano,correo,informal,C001
+no me abre el coreo desde esta mañana,correo,errores_ortograficos,C001
+Outlook no sincroniza mis correos nuevos.,correo,correcta,C002
+el outlook no me trae los correos nuevos,correo,informal,C002
+outlok no sincroniza mis corros nuebos,correo,errores_ortograficos,C002
+"No puedo enviar correos, se quedan en la bandeja de salida.",correo,correcta,C003
+mis correos se quedan en la bandeja de salida,correo,informal,C003
+no puedo enbiar corros se quedan en la bandeja de salida,correo,errores_ortograficos,C003
+Mi buzón de correo está lleno y no recibo mensajes.,correo,correcta,C004
+"mi correo esta lleno, ya no me llega nada",correo,informal,C004
+mi buson de correo esta lleno y no resibo mensajes,correo,errores_ortograficos,C004
+El correo me pide la contraseña una y otra vez.,correo,correcta,C005
+el outlook me pide la clave a cada rato,correo,informal,C005
+el correo me pide la contraseña una y otra bes,correo,errores_ortograficos,C005
+No me llegan los correos de un cliente específico.,correo,correcta,C006
+no me llegan los correos de un cliente,correo,informal,C006
+no me llegan los corros de un cliente especifico,correo,errores_ortograficos,C006
+Necesito configurar mi correo en el celular.,correo,correcta,C007
+quiero poner mi correo en el cel,correo,informal,C007
+nesecito konfigurar mi correo en el selular,correo,errores_ortograficos,C007
+Los correos que envío llegan a la carpeta de spam del destinatario.,correo,correcta,C008
+mis correos le llegan como spam al cliente,correo,informal,C008
+los corros que envio llegan a la carpeta de espam del destinatario,correo,errores_ortograficos,C008
+Se perdió una carpeta de mi correo con mensajes importantes.,correo,correcta,C009
+se me perdió una carpeta del correo con cosas importantes,correo,informal,C009
+se perdio una carpeta de mi correo con mensajes importantes,correo,errores_ortograficos,C009
+El calendario de Outlook no muestra mis reuniones.,correo,correcta,C010
+el calendario del outlook no me muestra las reuniones,correo,informal,C010
+el calendario de outlok no muestra mis reuniones,correo,errores_ortograficos,C010
+Olvidé mi contraseña y no puedo iniciar sesión.,cuentas_accesos,correcta,C011
+se me olvidó la clave y no puedo entrar,cuentas_accesos,informal,C011
+olbide mi contraseña y no puedo iniciar sesion,cuentas_accesos,errores_ortograficos,C011
+Mi usuario está bloqueado después de varios intentos.,cuentas_accesos,correcta,C012
+mi usuario se bloqueó por poner mal la clave,cuentas_accesos,informal,C012
+mi usuario esta bloqeado despues de barios intentos,cuentas_accesos,errores_ortograficos,C012
+Necesito acceso a la carpeta compartida de mi área.,cuentas_accesos,correcta,C013
+necesito acceso a la carpeta de mi area,cuentas_accesos,informal,C013
+nesecito aceso a la carpeta conpartida de mi area,cuentas_accesos,errores_ortograficos,C013
+Mi contraseña expiró y el sistema no me deja cambiarla.,cuentas_accesos,correcta,C014
+me dice que mi clave expiró y no la puedo cambiar,cuentas_accesos,informal,C014
+mi contraseña espiro y el sistema no me deja cambiarla,cuentas_accesos,errores_ortograficos,C014
+Necesito que creen un usuario para un colaborador nuevo.,cuentas_accesos,correcta,C015
+hay un nuevo y necesita su usuario,cuentas_accesos,informal,C015
+nesecito que creen un usuario para un colaborador nuebo,cuentas_accesos,errores_ortograficos,C015
+"No me deja entrar a mi cuenta, dice que el usuario no existe.",cuentas_accesos,correcta,C016
+"me dice que mi usuario no existe, no entro",cuentas_accesos,informal,C016
+no me deja entrar a mi cuenta dise que el usuario no existe,cuentas_accesos,errores_ortograficos,C016
+Me piden un código de verificación que no me llega al celular.,cuentas_accesos,correcta,C017
+el codigo de verificacion no me llega al cel,cuentas_accesos,informal,C017
+me piden un codigo de berificacion que no me llega al selular,cuentas_accesos,errores_ortograficos,C017
+Necesito permisos de administrador para instalar un programa.,cuentas_accesos,correcta,C018
+me dan permisos de admin pa instalar un programa,cuentas_accesos,informal,C018
+nesecito permisos de administrador para istalar un programa,cuentas_accesos,errores_ortograficos,C018
+Mi cuenta fue desactivada y no sé por qué.,cuentas_accesos,correcta,C019
+me desactivaron la cuenta y no sé por qué,cuentas_accesos,informal,C019
+mi cuenta fue desactibada y no se por que,cuentas_accesos,errores_ortograficos,C019
+Quiero cambiar mi contraseña por seguridad.,cuentas_accesos,correcta,C020
+quiero cambiar mi clave por seguridad,cuentas_accesos,informal,C020
+quiero cambiar mi contraseña por seguridá,cuentas_accesos,errores_ortograficos,C020
+El internet está muy lento en toda mi área.,red_wifi,correcta,C021
+"el internet esta lentisimo, no carga nada",red_wifi,informal,C021
+el interne esta muy lento en toda mi aria,red_wifi,errores_ortograficos,C021
+El wifi se desconecta cada pocos minutos.,red_wifi,correcta,C022
+el wifi se corta cada ratito,red_wifi,informal,C022
+el wifi se desconekta cada pocos minutos,red_wifi,errores_ortograficos,C022
+"No tengo internet en mi computadora, pero el wifi aparece conectado.",red_wifi,correcta,C023
+dice conectado pero no hay internet,red_wifi,informal,C023
+no tengo interne en mi computadora pero el wifi aparese conectado,red_wifi,errores_ortograficos,C023
+No encuentro la red wifi de la oficina en mi laptop.,red_wifi,correcta,C024
+no me sale el wifi de la oficina en mi lap,red_wifi,informal,C024
+no encuentro la red wifi de la ofisina en mi laptop,red_wifi,errores_ortograficos,C024
+El punto de red de mi escritorio no funciona.,red_wifi,correcta,C025
+el cable de red de mi escritorio no da internet,red_wifi,informal,C025
+el punto de red de mi escritorio no funsiona,red_wifi,errores_ortograficos,C025
+"No puedo abrir ninguna página web, solo funciona el correo.",red_wifi,correcta,C026
+"ninguna pagina abre, solo el correo",red_wifi,informal,C026
+no puedo abrir ninguna pajina web solo funsiona el correo,red_wifi,errores_ortograficos,C026
+Se cayó el internet en todo el piso.,red_wifi,correcta,C027
+se cayó el internet en todo el piso pe,red_wifi,informal,C027
+se cayo el interne en todo el piso,red_wifi,errores_ortograficos,C027
+La señal del wifi es muy débil en la sala de reuniones.,red_wifi,correcta,C028
+en la sala de reuniones casi no llega el wifi,red_wifi,informal,C028
+la señal del wifi es muy debil en la sala de reuniones,red_wifi,errores_ortograficos,C028
+No puedo conectarme al wifi de invitados con mi celular.,red_wifi,correcta,C029
+mi cel no se conecta al wifi de invitados,red_wifi,informal,C029
+no puedo conectarme al wifi de imbitados con mi selular,red_wifi,errores_ortograficos,C029
+La conexión a la red es intermitente y se corta la videollamada.,red_wifi,correcta,C030
+"el internet va y viene, se corta la videollamada",red_wifi,informal,C030
+la conexion a la red es intermitente y se corta la bideollamada,red_wifi,errores_ortograficos,C030
+No puedo conectarme a la VPN desde mi casa.,vpn,correcta,C031
+no me conecta la vpn desde casa,vpn,informal,C031
+no puedo conectarme a la vepeene desde mi casa,vpn,errores_ortograficos,C031
+La VPN se conecta pero no puedo abrir los sistemas de la empresa.,vpn,correcta,C032
+conecta la vpn pero no entro a los sistemas,vpn,informal,C032
+la vpn se conecta pero no puedo abrir los sistemas de la empresa,vpn,errores_ortograficos,C032
+La VPN me da error de autenticación.,vpn,correcta,C033
+la vpn me bota error de autenticacion,vpn,informal,C033
+la vpn me da eror de autentificacion,vpn,errores_ortograficos,C033
+La VPN se desconecta cada diez minutos.,vpn,correcta,C034
+la vpn se cae cada diez minutos,vpn,informal,C034
+la vpn se desconekta cada diez minutos,vpn,errores_ortograficos,C034
+Necesito instalar el cliente VPN en mi laptop personal.,vpn,correcta,C035
+necesito instalar la vpn en mi lap personal,vpn,informal,C035
+nesecito istalar el cliente vpn en mi laptop personal,vpn,errores_ortograficos,C035
+"Con la VPN conectada, el internet se vuelve muy lento.",vpn,correcta,C036
+con la vpn el internet se pone lentisimo,vpn,informal,C036
+con la vpn conectada el interne se bulbe muy lento,vpn,errores_ortograficos,C036
+No puedo acceder a la carpeta compartida cuando uso la VPN.,vpn,correcta,C037
+con la vpn no abro la carpeta compartida,vpn,informal,C037
+no puedo acceder a la carpeta conpartida cuando uso la vpn,vpn,errores_ortograficos,C037
+El cliente de la VPN se queda en conectando y no avanza.,vpn,correcta,C038
+la vpn se queda en conectando nomas,vpn,informal,C038
+el cliente de la vpn se kede en conectando y no abanza,vpn,errores_ortograficos,C038
+Me dice que mi certificado de la VPN venció.,vpn,correcta,C039
+me dice que mi certificado de la vpn caducó,vpn,informal,C039
+me dise que mi sertificado de la vpn bencio,vpn,errores_ortograficos,C039
+La VPN funciona en mi laptop pero no en mi celular.,vpn,correcta,C040
+la vpn va en mi lap pero en el cel no,vpn,informal,C040
+la vpn funsiona en mi laptop pero no en mi selular,vpn,errores_ortograficos,C040
+La impresora del tercer piso no imprime.,impresoras,correcta,C041
+la impresora del 3er piso no saca nada,impresoras,informal,C041
+la inpresora del tercer piso no inprime,impresoras,errores_ortograficos,C041
+La impresora imprime con rayas o manchas.,impresoras,correcta,C042
+la impresora saca las hojas con rayas,impresoras,informal,C042
+la inpresora inprime con rayas o manchas,impresoras,errores_ortograficos,C042
+Hay un atasco de papel que no puedo sacar.,impresoras,correcta,C043
+se atoró el papel y no sale,impresoras,informal,C043
+ay un atasko de papel que no puedo sacar,impresoras,errores_ortograficos,C043
+Mi computadora no encuentra la impresora de la oficina.,impresoras,correcta,C044
+mi compu no ve la impresora de la oficina,impresoras,informal,C044
+mi computadora no encuentra la inpresora de la ofisina,impresoras,errores_ortograficos,C044
+Los trabajos de impresión se quedan en cola y no salen.,impresoras,correcta,C045
+lo que mando a imprimir se queda en cola,impresoras,informal,C045
+los trabajos de inpresion se kedan en cola y no salen,impresoras,errores_ortograficos,C045
+Necesito instalar el controlador de una impresora nueva.,impresoras,correcta,C046
+necesito instalar la impresora nueva en mi pc,impresoras,informal,C046
+nesecito istalar el controlador de una inpresora nueba,impresoras,errores_ortograficos,C046
+Se acabó el tóner y no tenemos repuesto.,impresoras,correcta,C047
+se acabó el toner y no hay repuesto,impresoras,informal,C047
+se acabo el toner y no tenemos repuesto,impresoras,errores_ortograficos,C047
+El escáner de la multifuncional no envía los documentos al correo.,impresoras,correcta,C048
+el escaner no manda los docs al correo,impresoras,informal,C048
+el escaner de la multifunsional no envia los documentos al correo,impresoras,errores_ortograficos,C048
+"La impresora imprime en blanco, salen las hojas vacías.",impresoras,correcta,C049
+la impresora saca las hojas en blanco,impresoras,informal,C049
+la inpresora inprime en blanco salen las hojas bacias,impresoras,errores_ortograficos,C049
+La impresora dice sin conexión aunque está encendida.,impresoras,correcta,C050
+dice sin conexión pero está prendida,impresoras,informal,C050
+la inpresora dise sin conexion aunke esta encendida,impresoras,errores_ortograficos,C050
+Mi computadora está muy lenta y se queda pegada.,equipo,correcta,C051
+mi compu esta lentisima y se cuelga,equipo,informal,C051
+mi computadora esta muy lenta y se kede pegada,equipo,errores_ortograficos,C051
+Me salió una pantalla azul y se reinició.,equipo,correcta,C052
+se me puso la pantalla azul y se reinició,equipo,informal,C052
+me salio una pantalla asul y se reinicio,equipo,errores_ortograficos,C052
+"Mi laptop no enciende, ni siquiera prende la luz.",equipo,correcta,C053
+"mi lap no prende, no sale ni la luz",equipo,informal,C053
+mi laptop no ensiende ni siquiera prende la luz,equipo,errores_ortograficos,C053
+La batería de mi laptop se descarga en menos de una hora.,equipo,correcta,C054
+la bateria de mi lap dura menos de una hora,equipo,informal,C054
+la bateria de mi laptop se descarga en menos de una ora,equipo,errores_ortograficos,C054
+El monitor no muestra imagen aunque la computadora está encendida.,equipo,correcta,C055
+el monitor no da imagen pero la pc esta prendida,equipo,informal,C055
+el monitor no muestra imajen aunke la computadora esta encendida,equipo,errores_ortograficos,C055
+"El teclado dejó de funcionar, algunas teclas no responden.",equipo,correcta,C056
+"el teclado ya no sirve, unas teclas no responden",equipo,informal,C056
+el teclado dejo de funsionar algunas teclas no responden,equipo,errores_ortograficos,C056
+La computadora hace un ruido fuerte y se calienta mucho.,equipo,correcta,C057
+la compu hace un ruido feo y se calienta,equipo,informal,C057
+la computadora ase un ruido fuerte y se calienta mucho,equipo,errores_ortograficos,C057
+"No tengo espacio en el disco duro, me sale que está lleno.",equipo,correcta,C058
+me sale que el disco esta lleno,equipo,informal,C058
+no tengo espasio en el disco duro me sale que esta lleno,equipo,errores_ortograficos,C058
+Mi laptop no reconoce el mouse ni la memoria USB.,equipo,correcta,C059
+mi lap no reconoce el mouse ni la usb,equipo,informal,C059
+mi laptop no reconose el maus ni la memoria usb,equipo,errores_ortograficos,C059
+La cámara web no funciona en las videollamadas.,equipo,correcta,C060
+la camara no funciona en las videollamadas,equipo,informal,C060
+la camara web no funsiona en las bideollamadas,equipo,errores_ortograficos,C060
+Excel se cierra solo cuando abro un archivo grande.,software_oficina,correcta,C061
+el excel se cierra solo con archivos pesados,software_oficina,informal,C061
+el ecxel se sierra solo cuando abro un archibo grande,software_oficina,errores_ortograficos,C061
+Word se congeló y perdí el documento.,software_oficina,correcta,C062
+el word se colgó y perdí el documento,software_oficina,informal,C062
+word se congelo y perdi el documento,software_oficina,errores_ortograficos,C062
+En Teams no se escucha el audio de las reuniones.,software_oficina,correcta,C063
+en el teams no se escucha nada,software_oficina,informal,C063
+en tims no se escucha el audio de las reuniones,software_oficina,errores_ortograficos,C063
+Teams no me deja compartir pantalla.,software_oficina,correcta,C064
+el teams no me deja compartir pantalla,software_oficina,informal,C064
+tims no me deja conpartir pantalla,software_oficina,errores_ortograficos,C064
+"PowerPoint no abre mi presentación, dice que está dañada.",software_oficina,correcta,C065
+"el powerpoint no abre mi presentacion, dice dañada",software_oficina,informal,C065
+power point no abre mi presentasion dise que esta dañada,software_oficina,errores_ortograficos,C065
+Necesito instalar Zoom para una reunión con un cliente.,software_oficina,correcta,C066
+necesito instalar zoom pa una reunion con un cliente,software_oficina,informal,C066
+nesecito istalar zoom para una reunion con un cliente,software_oficina,errores_ortograficos,C066
+"El PDF no abre, me sale un error.",software_oficina,correcta,C067
+"el pdf no abre, sale error",software_oficina,informal,C067
+el pdf no abre me sale un eror,software_oficina,errores_ortograficos,C067
+Excel me dice que el archivo está bloqueado para edición.,software_oficina,correcta,C068
+el excel dice que el archivo esta bloqueado,software_oficina,informal,C068
+ecxel me dise que el archibo esta bloqeado para edision,software_oficina,errores_ortograficos,C068
+Se me desinstaló el antivirus y no sé cómo reinstalarlo.,software_oficina,correcta,C069
+"ya no tengo el antivirus, cómo lo vuelvo a instalar",software_oficina,informal,C069
+se me desinstalo el antibirus y no se como reinstalarlo,software_oficina,errores_ortograficos,C069
+Word me guarda los documentos con un formato extraño.,software_oficina,correcta,C070
+el word me cambia el formato de los documentos,software_oficina,informal,C070
+word me guarda los documentos con un formato estraño,software_oficina,errores_ortograficos,C070
+El sistema interno de ventas no carga.,sistema_interno,correcta,C071
+el sistema de ventas no abre,sistema_interno,informal,C071
+el sistema interno de bentas no carga,sistema_interno,errores_ortograficos,C071
+El sistema de facturación me bota un error al emitir comprobantes.,sistema_interno,correcta,C072
+el sistema de facturacion me da error al emitir,sistema_interno,informal,C072
+el sistema de fakturacion me bota un eror al emitir comprobantes,sistema_interno,errores_ortograficos,C072
+No puedo ingresar al sistema de planillas.,sistema_interno,correcta,C073
+no puedo entrar al sistema de planillas,sistema_interno,informal,C073
+no puedo ingresar al sistema de planiyas,sistema_interno,errores_ortograficos,C073
+El módulo de inventarios se queda cargando y no responde.,sistema_interno,correcta,C074
+el modulo de inventarios se queda cargando,sistema_interno,informal,C074
+el modulo de inbentarios se kedo cargando y no responde,sistema_interno,errores_ortograficos,C074
+El reporte del sistema sale con datos desactualizados.,sistema_interno,correcta,C075
+el reporte del sistema sale con datos viejos,sistema_interno,informal,C075
+el reporte del sistema sale con datos desactualisados,sistema_interno,errores_ortograficos,C075
+Me aparece error 500 en el sistema de reservas.,sistema_interno,correcta,C076
+me sale error 500 en el sistema de reservas,sistema_interno,informal,C076
+me aparese eror 500 en el sistema de reserbas,sistema_interno,errores_ortograficos,C076
+El sistema contable no me deja guardar el asiento.,sistema_interno,correcta,C077
+el sistema contable no me deja guardar,sistema_interno,informal,C077
+el sistema contable no me deja guardar el asiento,sistema_interno,errores_ortograficos,C077
+El sistema de tickets de atención al cliente está caído.,sistema_interno,correcta,C078
+se cayó el sistema de tickets de atencion,sistema_interno,informal,C078
+el sistema de tikets de atension al cliente esta caido,sistema_interno,errores_ortograficos,C078
+La aplicación de gestión de proyectos va muy lenta.,sistema_interno,correcta,C079
+el sistema de proyectos va lentisimo,sistema_interno,informal,C079
+la aplicasion de gestion de proyectos va muy lenta,sistema_interno,errores_ortograficos,C079
+El sistema no me muestra el menú de compras.,sistema_interno,correcta,C080
+no me sale el menu de compras en el sistema,sistema_interno,informal,C080
+el sistema no me muestra el menu de conpras,sistema_interno,errores_ortograficos,C080
+El teléfono de mi escritorio no tiene tono.,telefonia,correcta,C081
+mi anexo no da tono,telefonia,informal,C081
+el telefono de mi escritorio no tiene tono,telefonia,errores_ortograficos,C081
+No puedo hacer llamadas externas desde mi anexo.,telefonia,correcta,C082
+desde mi anexo no puedo llamar afuera,telefonia,informal,C082
+no puedo acer llamadas esternas desde mi anexo,telefonia,errores_ortograficos,C082
+Mi anexo suena pero no se escucha a la otra persona.,telefonia,correcta,C083
+el anexo suena pero no se escucha nada,telefonia,informal,C083
+mi anexo suena pero no se escucha a la otra persona,telefonia,errores_ortograficos,C083
+Necesito que me desvíen mi anexo al celular.,telefonia,correcta,C084
+necesito desviar mi anexo a mi cel,telefonia,informal,C084
+nesecito que me desbien mi anexo al selular,telefonia,errores_ortograficos,C084
+El teléfono IP se reinicia solo todo el tiempo.,telefonia,correcta,C085
+el telefono ip se reinicia solo,telefonia,informal,C085
+el telefono ip se reinisia solo todo el tiempo,telefonia,errores_ortograficos,C085
+No me llegan las llamadas de la central.,telefonia,correcta,C086
+no me entran las llamadas de la central,telefonia,informal,C086
+no me llegan las llamadas de la sentral,telefonia,errores_ortograficos,C086
+El buzón de voz de mi anexo no funciona.,telefonia,correcta,C087
+el buzon de voz de mi anexo no va,telefonia,informal,C087
+el buson de boz de mi anexo no funsiona,telefonia,errores_ortograficos,C087
+Las llamadas se cortan a los pocos segundos.,telefonia,correcta,C088
+las llamadas se cortan a los segundos,telefonia,informal,C088
+las llamadas se cortan a los pocos segundos,telefonia,errores_ortograficos,C088
+Necesito un anexo nuevo para una persona que ingresó.,telefonia,correcta,C089
+necesito un anexo pa un nuevo,telefonia,informal,C089
+nesecito un anexo nuebo para una persona que ingreso,telefonia,errores_ortograficos,C089
+Se escucha eco y ruido en las llamadas del teléfono.,telefonia,correcta,C090
+las llamadas tienen eco y ruido,telefonia,informal,C090
+se escucha eko y ruido en las llamadas del telefono,telefonia,errores_ortograficos,C090
+Se malogró el aire acondicionado de la oficina.,otro,correcta,C091
+el aire acondicionado no enfría,otro,informal,C091
+se malogro el aire acondisionado de la ofisina,otro,errores_ortograficos,C091
+La cámara de seguridad del pasillo no graba.,otro,correcta,C092
+la camara de seguridad del pasillo no graba,otro,informal,C092
+la camara de seguridad del pasillo no grava,otro,errores_ortograficos,C092
+El control de acceso con tarjeta de la puerta no abre.,otro,correcta,C093
+la tarjeta de la puerta ya no abre,otro,informal,C093
+el control de aceso con tarjeta de la puerta no abre,otro,errores_ortograficos,C093
+No sé a qué área corresponde mi consulta.,otro,correcta,C094
+no sé a quien le toca mi consulta,otro,informal,C094
+no se a que area corresponde mi konsulta,otro,errores_ortograficos,C094
+Quiero reportar algo raro que vi en una computadora ajena.,otro,correcta,C095
+vi algo raro en la pc de un compañero,otro,informal,C095
+quiero reportar algo raro que bi en una computadora ajena,otro,errores_ortograficos,C095
+Se fue la luz en toda la oficina.,otro,correcta,C096
+se fue la luz en toda la oficina,otro,informal,C096
+se fue la luz en toda la ofisina,otro,errores_ortograficos,C096
+Necesito mover mi escritorio y mis equipos a otro piso.,otro,correcta,C097
+me voy a cambiar de piso con mis equipos,otro,informal,C097
+nesecito mober mi escritorio y mis ekipos a otro piso,otro,errores_ortograficos,C097
+La pizarra digital de la sala de reuniones no responde al tacto.,otro,correcta,C098
+la pizarra digital no responde al tacto,otro,informal,C098
+la pisarra digital de la sala de reuniones no responde al tacto,otro,errores_ortograficos,C098
+Tengo una sugerencia para mejorar el servicio de soporte.,otro,correcta,C099
+tengo una sugerencia pal soporte,otro,informal,C099
+tengo una sugerensia para mejorar el servisio de soporte,otro,errores_ortograficos,C099
+El reloj biométrico de asistencia no marca mi huella.,otro,correcta,C100
+el reloj de asistencia no lee mi huella,otro,informal,C100
+el reloj biometrico de asistensia no marca mi huella,otro,errores_ortograficos,C100
+Se está goteando el techo de la sala de servidores.,otro,correcta,C101
+gotea el techo de la sala de servidores,otro,informal,C101
+se esta goteando el techo de la sala de serbidores,otro,errores_ortograficos,C101
+El torniquete de la entrada no deja pasar a nadie.,otro,correcta,C102
+el torniquete de la entrada no deja pasar,otro,informal,C102
+el tornikete de la entrada no deja pasar a nadie,otro,errores_ortograficos,C102
+Quiero reportar que falta un extintor en el pasillo.,otro,correcta,C103
+falta un extintor en el pasillo,otro,informal,C103
+quiero reportar que falta un estintor en el pasillo,otro,errores_ortograficos,C103
+Se rompió el vidrio de la ventana de la sala de reuniones.,otro,correcta,C104
+se rompió el vidrio de la ventana de la sala,otro,informal,C104
+se rompio el bidrio de la bentana de la sala de reuniones,otro,errores_ortograficos,C104
+Necesito que revisen la instalación eléctrica de mi escritorio.,otro,correcta,C105
+que revisen la luz de mi escritorio,otro,informal,C105
+nesecito que rebisen la instalasion electrica de mi escritorio,otro,errores_ortograficos,C105
+El ascensor se quedó detenido entre dos pisos.,otro,correcta,C106
+el ascensor se quedó parado entre dos pisos,otro,informal,C106
+el asensor se kedo detenido entre dos pisos,otro,errores_ortograficos,C106
+Quisiera hacer una consulta que no es de computadoras.,otro,correcta,C107
+una consulta que no tiene que ver con compus,otro,informal,C107
+quisiera acer una konsulta que no es de computadoras,otro,errores_ortograficos,C107
+La alarma de incendios suena sin motivo.,otro,correcta,C108
+la alarma de incendios suena sola,otro,informal,C108
+la alarma de insendios suena sin motibo,otro,errores_ortograficos,C108
+Hay una gotera y un cable pelado cerca del rack.,otro,correcta,C109
+hay un cable pelado cerca del rack,otro,informal,C109
+ay una gotera y un cable pelado serca del rak,otro,errores_ortograficos,C109
+El control remoto del portón no funciona.,otro,correcta,C110
+el control del portón no funciona,otro,informal,C110
+el kontrol remoto del porton no funsiona,otro,errores_ortograficos,C110
+Se atascó la puerta de la sala de reuniones y no abre.,otro,correcta,C111
+la puerta de la sala de reuniones se trabó,otro,informal,C111
+se atasco la puerta de la sala de reuniones y no abre,otro,errores_ortograficos,C111
+Necesito coordinar el traslado de un monitor a otra sede.,otro,correcta,C112
+hay que llevar un monitor a otra sede,otro,informal,C112
+nesecito coordinar el traslado de un monitor a otra sede,otro,errores_ortograficos,C112
+Mi perfil de Windows no carga y me inicia con uno temporal.,cuentas_accesos,correcta,C113
+"mi perfil de windows no carga, entro con uno temporal",cuentas_accesos,informal,C113
+mi perfil de windous no carga y me inicia con uno temporal,cuentas_accesos,errores_ortograficos,C113
+El inicio de sesión único me rebota a la misma pantalla.,cuentas_accesos,correcta,C114
+el login único me devuelve a la misma pantalla,cuentas_accesos,informal,C114
+el inicio de sesion unico me rebota a la misma pantalla,cuentas_accesos,errores_ortograficos,C114
+No me llega el código de autenticación en dos pasos.,cuentas_accesos,correcta,C115
+no me llega el código de la doble verificación,cuentas_accesos,informal,C115
+no me llega el codigo de autentificacion en dos pasos,cuentas_accesos,errores_ortograficos,C115
+No tengo permisos para abrir la carpeta de Gerencia.,cuentas_accesos,correcta,C116
+no tengo permiso pa la carpeta de gerencia,cuentas_accesos,informal,C116
+no tengo permisos para abrir la carpeta de jerencia,cuentas_accesos,errores_ortograficos,C116
+Necesito dar de alta a una persona nueva con su cuenta de red.,cuentas_accesos,correcta,C117
+hay una persona nueva y necesita su cuenta de red,cuentas_accesos,informal,C117
+nesecito dar de alta a una persona nueba con su cuenta de red,cuentas_accesos,errores_ortograficos,C117
+Mi contraseña no cumple con la política y no sé qué poner.,cuentas_accesos,correcta,C118
+mi clave no cumple la política y no sé qué poner,cuentas_accesos,informal,C118
+mi contraseña no cumple con la politica y no se que poner,cuentas_accesos,errores_ortograficos,C118
+La laptop se calienta tanto que quema al tocarla.,equipo,correcta,C119
+la lap quema de lo caliente,equipo,informal,C119
+la laptop se calienta tanto que kema al tocarla,equipo,errores_ortograficos,C119
+El mouse se mueve solo por la pantalla.,equipo,correcta,C120
+el mouse se mueve solo,equipo,informal,C120
+el maus se mueve solo por la pantalla,equipo,errores_ortograficos,C120
+Se me cayó el café sobre el teclado de la laptop.,equipo,correcta,C121
+se me cayó café en el teclado de la lap,equipo,informal,C121
+se me cayo cafe sobre el teclado de la laptop,equipo,errores_ortograficos,C121
+La pantalla del equipo se ve con rayas verticales.,equipo,correcta,C122
+la pantalla tiene rayas verticales,equipo,informal,C122
+la pantalla del ekipo se be con rayas berticales,equipo,errores_ortograficos,C122
+La computadora no detecta mis audífonos ni los parlantes.,equipo,correcta,C123
+la compu no detecta audífonos ni parlantes,equipo,informal,C123
+la computadora no detecta mis audifonos ni los parlantes,equipo,errores_ortograficos,C123
+Mi equipo tarda mucho en iniciar y los programas se abren lentos.,equipo,correcta,C124
+mi pc tarda en iniciar y todo abre lento,equipo,informal,C124
+mi ekipo tarda mucho en iniciar y los programas se abren lentos,equipo,errores_ortograficos,C124
+Necesito instalar Adobe Reader para abrir unos documentos.,software_oficina,correcta,C125
+necesito instalar el adobe reader,software_oficina,informal,C125
+nesecito istalar adobe reader para abrir unos documentos,software_oficina,errores_ortograficos,C125
+El Excel me muestra fórmulas con error de referencia.,software_oficina,correcta,C126
+el excel me bota error de referencia,software_oficina,informal,C126
+el ecxel me muestra formulas con eror de referensia,software_oficina,errores_ortograficos,C126
+Teams se queda en la pantalla de carga y no abre.,software_oficina,correcta,C127
+el teams se queda cargando,software_oficina,informal,C127
+tims se kedo en la pantalla de carga y no abre,software_oficina,errores_ortograficos,C127
+El antivirus bloquea un programa que necesito usar.,software_oficina,correcta,C128
+el antivirus me bloquea un programa que necesito,software_oficina,informal,C128
+el antibirus bloquea un programa que nesecito usar,software_oficina,errores_ortograficos,C128
+Se perdieron los cambios del documento de Word que no guardé.,software_oficina,correcta,C129
+se perdió lo que no guardé en el word,software_oficina,informal,C129
+se perdieron los cambios del documento de word que no guarde,software_oficina,errores_ortograficos,C129
+Necesito que me instalen Visual Studio Code en mi computadora.,software_oficina,correcta,C130
+que me instalen el visual studio code,software_oficina,informal,C130
+nesecito que me istalen visual estudio code en mi computadora,software_oficina,errores_ortograficos,C130
+No puedo transferir llamadas a otro anexo.,telefonia,correcta,C131
+no puedo pasar llamadas a otro anexo,telefonia,informal,C131
+no puedo transferir llamadas a otro anecso,telefonia,errores_ortograficos,C131
+"La diadema del teléfono no funciona, no se escucha nada.",telefonia,correcta,C132
+la diadema del teléfono no suena,telefonia,informal,C132
+la diadema del telefono no funsiona no se escucha nada,telefonia,errores_ortograficos,C132
+Se cortó la comunicación de toda la central telefónica.,telefonia,correcta,C133
+se cayó toda la central telefónica,telefonia,informal,C133
+se corto la comunicasion de toda la sentral telefonica,telefonia,errores_ortograficos,C133
+El teléfono muestra el mensaje registrando y no hace nada.,telefonia,correcta,C134
+el teléfono dice registrando y no avanza,telefonia,informal,C134
+el telefono muestra el mensaje rejistrando y no ase nada,telefonia,errores_ortograficos,C134
+Quiero cambiar el saludo del buzón de voz.,telefonia,correcta,C135
+quiero cambiar el mensaje del buzón de voz,telefonia,informal,C135
+quiero cambiar el saludo del buson de voz,telefonia,errores_ortograficos,C135
+No puedo conectarme al wifi desde mi tablet.,red_wifi,correcta,C136
+mi tablet no se conecta al wifi,red_wifi,informal,C136
+no puedo conectarme al wifi desde mi tablet,red_wifi,errores_ortograficos,C136
+La red de la sede se cayó y no hay internet en ningún piso.,red_wifi,correcta,C137
+se cayó la red de toda la sede,red_wifi,informal,C137
+la red de la sede se cayo y no ay interne en ningun piso,red_wifi,errores_ortograficos,C137
+El internet va bien pero la página del banco no abre.,red_wifi,correcta,C138
+el internet va bien pero no abre la página del banco,red_wifi,informal,C138
+el interne va bien pero la pajina del banco no abre,red_wifi,errores_ortograficos,C138
+La conexión por cable es mucho más lenta que ayer.,red_wifi,correcta,C139
+el cable de red va más lento que ayer,red_wifi,informal,C139
+la conexion por cable es mucho mas lenta que ayer,red_wifi,errores_ortograficos,C139
+No puedo abrir los archivos adjuntos que me envían por correo.,correo,correcta,C140
+no abro los adjuntos del correo,correo,informal,C140
+no puedo abrir los archibos adjuntos que me envian por correo,correo,errores_ortograficos,C140
+Quiero configurar una firma automática en mis correos.,correo,correcta,C141
+quiero poner una firma en mis correos,correo,informal,C141
+quiero konfigurar una firma automatica en mis corros,correo,errores_ortograficos,C141
+Recibí un correo sospechoso pidiendo mi contraseña.,correo,correcta,C142
+me llegó un correo raro que pide mi clave,correo,informal,C142
+resibi un correo sospechoso pidiendo mi contraseña,correo,errores_ortograficos,C142
+Mi correo se llenó y me pide liberar espacio.,correo,correcta,C143
+"mi correo se llenó, pide liberar espacio",correo,informal,C143
+mi correo se lleno y me pide liberar espasio,correo,errores_ortograficos,C143
